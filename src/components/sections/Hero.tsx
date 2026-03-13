@@ -26,8 +26,10 @@ export function Hero() {
           </div>
           
           <div className="flex flex-col items-center gap-6 pt-2">
-            <Button size="lg" className="h-14 px-8 text-base font-bold rounded-full shadow-md hover:bg-primary/90 transition-all group w-fit min-w-[200px]">
-              Pegar agora! <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            <Button asChild size="lg" className="h-14 px-8 text-base font-bold rounded-full shadow-md hover:bg-primary/90 transition-all group w-fit min-w-[200px]">
+              <a href="#pricing">
+                Pegar agora! <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </a>
             </Button>
           </div>
         </div>

@@ -33,8 +33,10 @@ export function WhatYouGet() {
           </div>
 
           <div className="text-center">
-            <Button size="lg" className="h-14 px-8 text-base font-bold rounded-full shadow-md group">
-              QUERO MEU ACESSO AGORA <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            <Button asChild size="lg" className="h-14 px-8 text-base font-bold rounded-full shadow-md group">
+              <a href="#pricing">
+                QUERO MEU ACESSO AGORA <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </a>
             </Button>
           </div>
         </div>

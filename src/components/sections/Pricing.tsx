@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 
 export function Pricing() {
   return (
-    <section className="py-24 bg-secondary">
+    <section id="pricing" className="py-24 bg-secondary">
       <div className="container mx-auto px-6">
         <div className="text-center mb-20 space-y-4">
           <h2 className="text-2xl md:text-3xl font-bold font-headline leading-tight">Escolha o seu plano e comece hoje</h2>
