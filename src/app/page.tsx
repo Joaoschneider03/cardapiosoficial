@@ -7,7 +7,6 @@ import { Pricing } from "@/components/sections/Pricing";
 import { Guarantee } from "@/components/sections/Guarantee";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { Footer } from "@/components/sections/Footer";
-import { PersonalizedTool } from "@/components/sections/PersonalizedTool";
 
 export default function Home() {
   return (
@@ -16,7 +15,6 @@ export default function Home() {
       <TargetAudience />
       <WhatYouGet />
       <Testimonials />
-      <PersonalizedTool />
       <AboutCreator />
       <Pricing />
       <Guarantee />
