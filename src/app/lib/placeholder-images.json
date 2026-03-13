@@ -1,3 +1,4 @@
+
 {
   "placeholderImages": [
     {
@@ -11,6 +12,12 @@
       "description": "Dra. Rayane, creator of the program",
       "imageUrl": "https://picsum.photos/seed/rayane456/400/400",
       "imageHint": "nutritionist woman"
+    },
+    {
+      "id": "hero-mockup",
+      "description": "Mockup principal dos cardápios FitKids",
+      "imageUrl": "https://i.postimg.cc/C1M5QdfY/mockup-pagina.png",
+      "imageHint": "kids nutrition"
     }
   ]
 }
