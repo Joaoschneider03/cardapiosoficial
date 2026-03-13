@@ -17,11 +17,11 @@ export function Hero() {
 
       <div className="container mx-auto px-4 py-12 md:py-20 flex flex-col lg:flex-row items-center gap-12">
         <div className="flex-1 text-center lg:text-left space-y-8">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-headline leading-tight text-foreground">
-            Seu filho no peso ideal <span className="text-primary">sem sofrimento</span>, sem briga na mesa e sem dieta complicada
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold font-headline leading-tight text-foreground">
+            +100 Cardápios Anti Obesidade Infantil, para o seu filho ficar no <span className="text-primary">peso ideal</span> sem abrir mão do sabor!
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0">
-            O único material imprimível com +100 cardápios práticos, gostosos e aprovados por crianças que vai transformar a alimentação do seu filho em semanas — não em anos.
+            O único material imprimível com +100 cardápios práticos, gostosos e aprovados por crianças que vai transformar a alimentação do seu filho em semanas.
           </p>
           
           <div className="flex flex-col items-center lg:items-start gap-4">
