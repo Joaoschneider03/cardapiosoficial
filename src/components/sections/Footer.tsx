@@ -1,20 +1,23 @@
 export function Footer() {
   return (
-    <footer className="bg-[#1A1A1A] text-white/70 py-16">
-      <div className="container mx-auto px-4 text-center space-y-8">
-        <h3 className="text-2xl font-bold font-headline text-white">+100 Cardápios Anti Obesidade Infantil</h3>
-        
-        <p className="max-w-2xl mx-auto text-sm">
-          © 2025 +100 Cardápios Anti Obesidade Infantil — Todos os direitos reservados
-        </p>
-        
-        <div className="flex justify-center gap-6 text-sm underline">
-          <a href="#" className="hover:text-primary transition-colors">Política de Privacidade</a>
-          <a href="#" className="hover:text-primary transition-colors">Termos de Uso</a>
+    <footer className="bg-foreground text-white/60 py-20">
+      <div className="container mx-auto px-6 text-center space-y-10">
+        <div className="space-y-2">
+          <h3 className="text-xl font-bold font-headline text-white">Cardápios FitKids</h3>
+          <p className="text-xs font-medium uppercase tracking-widest opacity-50">+100 Cardápios Anti Obesidade Infantil</p>
         </div>
         
-        <p className="text-xs max-w-xl mx-auto opacity-50">
-          Este produto é um material digital para download. Resultados podem variar de pessoa para pessoa.
+        <p className="max-w-2xl mx-auto text-xs font-medium">
+          © 2025 Todos os direitos reservados
+        </p>
+        
+        <div className="flex justify-center gap-8 text-[10px] font-bold uppercase tracking-widest">
+          <a href="#" className="hover:text-white transition-colors">Privacidade</a>
+          <a href="#" className="hover:text-white transition-colors">Termos</a>
+        </div>
+        
+        <p className="text-[10px] max-w-lg mx-auto opacity-30 leading-relaxed italic">
+          Este produto é um material digital para download. Os resultados dependem da aplicação do método e podem variar de pessoa para pessoa.
         </p>
       </div>
     </footer>

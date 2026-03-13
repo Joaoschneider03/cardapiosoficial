@@ -14,27 +14,27 @@ export function WhatYouGet() {
   ];
 
   return (
-    <section className="py-20 bg-secondary">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold font-headline text-center mb-12">
+    <section className="py-24 bg-secondary">
+      <div className="container mx-auto px-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-2xl md:text-3xl font-bold font-headline mb-16 max-w-2xl mx-auto leading-tight">
             Tudo que está dentro do +100 Cardápios Anti Obesidade Infantil
           </h2>
           
-          <div className="grid md:grid-cols-2 gap-y-6 gap-x-12 mb-12">
+          <div className="grid md:grid-cols-2 gap-6 mb-16">
             {items.map((item, idx) => (
-              <div key={idx} className="flex items-center gap-4 bg-white/50 p-4 rounded-xl border border-white/50 backdrop-blur-sm">
-                <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center shrink-0">
-                  <Leaf className="w-6 h-6 text-primary" />
+              <div key={idx} className="flex items-center gap-4 bg-white p-5 rounded-[1.5rem] border border-white shadow-sm transition-transform hover:scale-[1.02]">
+                <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center shrink-0">
+                  <Leaf className="w-4 h-4 text-primary" />
                 </div>
-                <span className="text-lg font-medium">{item}</span>
+                <span className="text-sm font-semibold text-left">{item}</span>
               </div>
             ))}
           </div>
 
           <div className="text-center">
-            <Button size="lg" className="h-16 px-10 text-xl font-bold rounded-full shadow-lg group">
-              QUERO MEU ACESSO AGORA <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+            <Button size="lg" className="h-14 px-8 text-base font-bold rounded-full shadow-md group">
+              QUERO MEU ACESSO AGORA <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Button>
           </div>
         </div>

@@ -25,31 +25,31 @@ export function Testimonials() {
   ];
 
   return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold font-headline text-center mb-16">
+    <section className="py-24 bg-white">
+      <div className="container mx-auto px-6">
+        <h2 className="text-2xl md:text-3xl font-bold font-headline text-center mb-20 max-w-2xl mx-auto leading-tight">
           Mães que já transformaram a alimentação dos filhos
         </h2>
         
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-10">
           {testimonials.map((t, idx) => (
-            <Card key={idx} className="border-none shadow-xl bg-muted/30">
-              <CardContent className="p-8 space-y-4">
+            <Card key={idx} className="border-none shadow-sm bg-muted/20 rounded-[2rem] hover:shadow-md transition-shadow">
+              <CardContent className="p-10 space-y-6">
                 <div className="flex items-center gap-4">
-                  <Avatar className="w-14 h-14 border-2 border-primary">
-                    <AvatarFallback className="bg-secondary text-primary font-bold text-xl">{t.initials}</AvatarFallback>
+                  <Avatar className="w-12 h-12 border-2 border-primary/20">
+                    <AvatarFallback className="bg-secondary text-primary font-bold text-base">{t.initials}</AvatarFallback>
                   </Avatar>
                   <div>
-                    <h4 className="font-bold text-lg">{t.name}</h4>
-                    <p className="text-sm text-muted-foreground">{t.location}</p>
+                    <h4 className="font-bold text-base">{t.name}</h4>
+                    <p className="text-xs text-muted-foreground">{t.location}</p>
                   </div>
                 </div>
                 
-                <div className="flex text-yellow-500">
-                  {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 fill-current" />)}
+                <div className="flex text-yellow-400 gap-0.5">
+                  {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-current" />)}
                 </div>
                 
-                <p className="text-lg italic text-foreground/80 leading-relaxed">
+                <p className="text-base italic text-foreground/70 leading-relaxed">
                   "{t.text}"
                 </p>
               </CardContent>

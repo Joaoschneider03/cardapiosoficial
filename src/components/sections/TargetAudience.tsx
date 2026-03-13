@@ -12,18 +12,20 @@ export function TargetAudience() {
   ];
 
   return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold font-headline text-center mb-12 text-primary">
+    <section className="py-24 bg-white">
+      <div className="container mx-auto px-6 text-center">
+        <h2 className="text-2xl md:text-3xl font-bold font-headline mb-16 text-primary max-w-2xl mx-auto leading-tight">
           Esse material foi feito para você se…
         </h2>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {points.map((text, idx) => (
-            <Card key={idx} className="border-secondary border-2 shadow-sm hover:shadow-md transition-shadow">
-              <CardContent className="p-6 flex gap-4 items-start">
-                <CheckCircle2 className="w-6 h-6 text-primary shrink-0 mt-1" />
-                <p className="text-lg font-medium text-foreground">{text}</p>
+            <Card key={idx} className="border-secondary/50 border shadow-none bg-secondary/20 hover:bg-secondary/40 transition-colors rounded-[2rem]">
+              <CardContent className="p-8 flex flex-col items-center gap-4 text-center">
+                <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-sm">
+                  <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
+                </div>
+                <p className="text-base font-medium text-foreground/80 leading-relaxed">{text}</p>
               </CardContent>
             </Card>
           ))}
