@@ -1,0 +1,16 @@
+{
+  "placeholderImages": [
+    {
+      "id": "product-mockup",
+      "description": "Product mockup for +100 Cardápios Anti Obesidade Infantil",
+      "imageUrl": "https://picsum.photos/seed/mockup123/400/500",
+      "imageHint": "product ebook"
+    },
+    {
+      "id": "dra-rayane",
+      "description": "Dra. Rayane, creator of the program",
+      "imageUrl": "https://picsum.photos/seed/rayane456/400/400",
+      "imageHint": "nutritionist woman"
+    }
+  ]
+}

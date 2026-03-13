@@ -1,0 +1,19 @@
+# **App Name**: Cardápios FitKids
+
+## Core Features:
+
+- Header & Hero Section Display: Showcases the main product value proposition with an impactful headline, subheadline, product mockup placeholder, and a prominent call-to-action button, ensuring responsive display across devices.
+- Benefit-Driven Content Sections: Organizes key selling points and content sections, including 'Para Quem É Esse Material' and 'O Que Você Vai Receber', using structured layouts with icons and clear descriptions to highlight product value.
+- Customer Testimonials & Creator Profile: Displays social proof through customer testimonials with star ratings and presents the creator's professional background and motivation, with responsive layouts for varying screen sizes.
+- Dynamic Pricing & Offer Display: Presents two distinct product pricing tiers with clear value differentiation, badges, strikethrough pricing for comparison, and emphasized call-to-action buttons with micro-text details.
+- Interactive FAQ Accordion: Provides an interactive Frequently Asked Questions section with a smooth accordion component that allows users to expand and collapse answers, enhancing user experience and information accessibility.
+- Guarantee and Footer Information: Communicates the product's unconditional money-back guarantee with an iconic visual, and includes a persistent footer with copyright information, privacy links, and disclaimer.
+- Personalized Benefit Statement Tool: An AI-powered tool that allows users to input a specific challenge they face (e.g., 'fussy eater', 'lack of cooking time'), generating a concise, tailored message highlighting how 'Cardápios FitKids' provides a relevant solution.
+
+## Style Guidelines:
+
+- Color scheme: Light, reflecting vitality and calm. Primary color: a vibrant green (#2D7A4F, HSL(155, 46%, 33%)) representing health and growth, used for accents, buttons, and key details. Main background color: pure white (#FFFFFF, HSL(0, 0%, 100%)) for a clean, dominant presence. Secondary background color: a heavily desaturated, light green (#E8F5EE, HSL(150, 40%, 94%)) used for alternating section backgrounds, visually linking to the primary hue. Text color: deep charcoal (#1A1A1A, HSL(0, 0%, 10%)) for high readability. Accent color for specific elements: A bright lime green (#33CC33, HSL(124, 70%, 50%)) for subtle highlights and complementary elements, and a golden yellow for star ratings.
+- Headline font: 'Playfair Display' (serif), providing an elegant, impactful, and sophisticated feel for titles. Body font: 'Nunito' (sans-serif), chosen for its clean, balanced, and modern appearance, ensuring high legibility for longer text blocks. Note: currently only Google Fonts are supported.
+- Use clean, minimalistic line icons that align with the themes of health and success. Icons like checkmarks, leaf motifs, and a shield for guarantee should be rendered in the primary green color for consistency and clarity.
+- Adopt a clean and modern layout with generous white space to prevent visual clutter and enhance readability. Content sections will be clearly separated and logically ordered. Implement grid-based layouts for card elements (e.g., benefits, testimonials, pricing) on desktop, transitioning to stacked single-column layouts for mobile responsiveness. Specific elements like the creator's profile will feature a responsive side-by-side (desktop) to stacked (mobile) arrangement.
+- Incorporate subtle animations to improve user interaction and engagement. Call-to-action buttons will feature a gentle darkening and shadow effect on hover. The FAQ section will include smooth, animated transitions for expanding and collapsing accordion items. Scroll behavior will be smooth when navigating to section anchors.
