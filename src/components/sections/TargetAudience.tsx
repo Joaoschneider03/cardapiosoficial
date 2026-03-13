@@ -18,12 +18,12 @@ export function TargetAudience() {
         
         <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {points.map((text, idx) => (
-            <Card key={idx} className="border-secondary/50 border shadow-none bg-secondary/10 hover:bg-secondary/30 transition-colors rounded-[2rem]">
-              <CardContent className="p-6 flex flex-col items-center gap-4 text-center">
-                <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-sm shrink-0">
-                  <CheckCircle2 className="w-5 h-5 text-primary" />
+            <Card key={idx} className="border-primary/30 border-2 shadow-sm bg-secondary/50 hover:bg-secondary/70 transition-colors rounded-[2.5rem] overflow-hidden">
+              <CardContent className="p-8 flex flex-col items-center gap-4 text-center">
+                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm shrink-0 border border-primary/10">
+                  <CheckCircle2 className="w-6 h-6 text-primary" />
                 </div>
-                <p className="text-sm md:text-base font-medium text-foreground/80 leading-relaxed">{text}</p>
+                <p className="text-sm md:text-base font-bold text-foreground/80 leading-relaxed">{text}</p>
               </CardContent>
             </Card>
           ))}
