@@ -4,15 +4,8 @@ import Image from "next/image";
 
 export function Hero() {
   return (
-    <header className="relative overflow-hidden bg-white pt-6">
-      <nav className="container mx-auto px-6 flex justify-center items-center h-14">
-        <div className="flex items-center gap-2">
-          <div className="w-7 h-7 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-base">R</div>
-          <span className="text-primary/80 font-bold text-xs tracking-tight uppercase">Cardápios FitKids</span>
-        </div>
-      </nav>
-
-      <div className="container mx-auto px-6 py-12 md:py-24 flex flex-col items-center">
+    <header className="relative overflow-hidden bg-white">
+      <div className="container mx-auto px-6 py-12 md:py-20 flex flex-col items-center">
         <div className="max-w-3xl text-center space-y-8">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold font-headline leading-tight text-foreground">
             <span className="text-primary">+100 Cardápios Anti Obesidade Infantil,</span> para o seu filho ficar no peso ideal sem abrir mão do sabor!
