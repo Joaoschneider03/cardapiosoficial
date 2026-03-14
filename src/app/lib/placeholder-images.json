@@ -1,4 +1,3 @@
-
 {
   "placeholderImages": [
     {
@@ -18,6 +17,12 @@
       "description": "Mockup principal dos cardápios FitKids",
       "imageUrl": "https://i.postimg.cc/C1M5QdfY/mockup-pagina.png",
       "imageHint": "kids nutrition"
+    },
+    {
+      "id": "mockup-cardapios",
+      "description": "Mockup dos +100 cardápios completos",
+      "imageUrl": "https://i.postimg.cc/nh0gQbsc/Gemini-Generated-Image-reuo1rreuo1rreuo.png",
+      "imageHint": "healthy meals"
     }
   ]
 }

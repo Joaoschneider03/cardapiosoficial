@@ -1,16 +1,42 @@
 import { ArrowRight, Image as ImageIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import { PlaceHolderImages } from "@/app/lib/placeholder-images";
 
 export function WhatYouGet() {
   const items = [
-    "+100 cardápios completos (café, almoço, lanche e jantar)",
-    "Cardápios organizados por faixa etária (2 a 12 anos)",
-    "Lista de compras semanal pronta para imprimir",
-    "Guia de substituições inteligentes (troca o ruim pelo saudável)",
-    "Cardápios especiais para festas e fins de semana",
-    "Dicas para crianças seletivas que recusam legumes",
-    "Tabela de porções por idade",
-    "Bônus: Planner semanal de refeições para imprimir"
+    {
+      title: "+100 cardápios completos (café, almoço, lanche e jantar)",
+      imageId: "mockup-cardapios"
+    },
+    {
+      title: "Cardápios organizados por faixa etária (2 a 12 anos)",
+      imageId: null
+    },
+    {
+      title: "Lista de compras semanal pronta para imprimir",
+      imageId: null
+    },
+    {
+      title: "Guia de substituições inteligentes (troca o ruim pelo saudável)",
+      imageId: null
+    },
+    {
+      title: "Cardápios especiais para festas e fins de semana",
+      imageId: null
+    },
+    {
+      title: "Dicas para crianças seletivas que recusam legumes",
+      imageId: null
+    },
+    {
+      title: "Tabela de porções por idade",
+      imageId: null
+    },
+    {
+      title: "Bônus: Planner semanal de refeições para imprimir",
+      imageId: null
+    }
   ];
 
   return (
@@ -22,20 +48,33 @@ export function WhatYouGet() {
           </h2>
           
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-            {items.map((item, idx) => (
-              <div key={idx} className="flex flex-col gap-6 bg-white p-6 rounded-[2.5rem] border border-white shadow-sm transition-transform hover:scale-[1.02] items-center text-center group">
-                <div className="w-full aspect-[4/5] bg-secondary/50 rounded-[2rem] flex flex-col items-center justify-center border-2 border-dashed border-primary/10 group-hover:border-primary/20 transition-colors overflow-hidden relative">
-                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 opacity-30">
-                    <ImageIcon className="w-10 h-10 text-primary" />
-                    <span className="text-[10px] font-bold uppercase tracking-tighter px-4">Espaço para Mockup</span>
+            {items.map((item, idx) => {
+              const imageData = item.imageId ? PlaceHolderImages.find(img => img.id === item.imageId) : null;
+              
+              return (
+                <div key={idx} className="flex flex-col gap-6 bg-white p-6 rounded-[2.5rem] border border-white shadow-sm transition-transform hover:scale-[1.02] items-center text-center group">
+                  <div className="w-full aspect-[4/5] bg-secondary/50 rounded-[2rem] flex flex-col items-center justify-center border-2 border-dashed border-primary/10 group-hover:border-primary/20 transition-colors overflow-hidden relative">
+                    {imageData ? (
+                      <Image 
+                        src={imageData.imageUrl}
+                        alt={imageData.description}
+                        fill
+                        className="object-contain p-4"
+                        data-ai-hint={imageData.imageHint}
+                      />
+                    ) : (
+                      <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 opacity-30">
+                        <ImageIcon className="w-10 h-10 text-primary" />
+                        <span className="text-[10px] font-bold uppercase tracking-tighter px-4">Espaço para Mockup</span>
+                      </div>
+                    )}
                   </div>
-                  {/* Quando você tiver as imagens, basta usar o componente Image do Next aqui */}
+                  <div className="flex-1 flex items-center justify-center px-2">
+                    <span className="text-sm font-bold leading-snug text-foreground/80">{item.title}</span>
+                  </div>
                 </div>
-                <div className="flex-1 flex items-center justify-center px-2">
-                  <span className="text-sm font-bold leading-snug text-foreground/80">{item}</span>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           <div className="text-center">
