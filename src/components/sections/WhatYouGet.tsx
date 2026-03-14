@@ -1,4 +1,4 @@
-import { Leaf, ArrowRight } from "lucide-react";
+import { ArrowRight, Image as ImageIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function WhatYouGet() {
@@ -16,24 +16,30 @@ export function WhatYouGet() {
   return (
     <section className="py-24 bg-secondary">
       <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl md:text-3xl font-bold font-headline mb-16 max-w-2xl mx-auto leading-tight">
+        <div className="max-w-5xl mx-auto text-center">
+          <h2 className="text-2xl md:text-3xl font-bold font-headline mb-16 max-w-2xl mx-auto leading-tight text-primary">
             Tudo que está dentro do +100 Cardápios Anti Obesidade Infantil
           </h2>
           
-          <div className="grid md:grid-cols-2 gap-6 mb-16">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
             {items.map((item, idx) => (
-              <div key={idx} className="flex items-center gap-4 bg-white p-5 rounded-[1.5rem] border border-white shadow-sm transition-transform hover:scale-[1.02]">
-                <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center shrink-0">
-                  <Leaf className="w-4 h-4 text-primary" />
+              <div key={idx} className="flex flex-col gap-6 bg-white p-6 rounded-[2.5rem] border border-white shadow-sm transition-transform hover:scale-[1.02] items-center text-center group">
+                <div className="w-full aspect-[4/5] bg-secondary/50 rounded-[2rem] flex flex-col items-center justify-center border-2 border-dashed border-primary/10 group-hover:border-primary/20 transition-colors overflow-hidden relative">
+                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 opacity-30">
+                    <ImageIcon className="w-10 h-10 text-primary" />
+                    <span className="text-[10px] font-bold uppercase tracking-tighter px-4">Espaço para Mockup</span>
+                  </div>
+                  {/* Quando você tiver as imagens, basta usar o componente Image do Next aqui */}
                 </div>
-                <span className="text-sm font-semibold text-left">{item}</span>
+                <div className="flex-1 flex items-center justify-center px-2">
+                  <span className="text-sm font-bold leading-snug text-foreground/80">{item}</span>
+                </div>
               </div>
             ))}
           </div>
 
           <div className="text-center">
-            <Button asChild size="lg" className="h-14 px-8 text-base font-bold rounded-full shadow-md group">
+            <Button asChild size="lg" className="h-14 px-10 text-base font-bold rounded-full shadow-md group">
               <a href="#pricing">
                 QUERO MEU ACESSO AGORA <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
