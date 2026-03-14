@@ -1,3 +1,4 @@
+
 import { ArrowRight, Image as ImageIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
@@ -11,7 +12,7 @@ export function WhatYouGet() {
     },
     {
       title: "Cardápios organizados por faixa etária (2 a 12 anos)",
-      imageId: null
+      imageId: "mockup-faixa-etaria"
     },
     {
       title: "Lista de compras semanal pronta para imprimir",
@@ -42,18 +43,18 @@ export function WhatYouGet() {
   return (
     <section className="py-24 bg-secondary">
       <div className="container mx-auto px-6">
-        <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-2xl md:text-3xl font-bold font-headline mb-16 max-w-2xl mx-auto leading-tight text-primary">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-2xl md:text-3xl font-bold font-headline mb-16 max-w-2xl mx-auto leading-tight">
             Tudo que está dentro do +100 Cardápios Anti Obesidade Infantil
           </h2>
           
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          <div className="grid md:grid-cols-2 gap-6 mb-16">
             {items.map((item, idx) => {
               const imageData = item.imageId ? PlaceHolderImages.find(img => img.id === item.imageId) : null;
               
               return (
                 <div key={idx} className="flex flex-col gap-6 bg-white p-6 rounded-[2.5rem] border border-white shadow-sm transition-transform hover:scale-[1.02] items-center text-center group">
-                  <div className="w-full aspect-[4/5] bg-secondary/50 rounded-[2rem] flex flex-col items-center justify-center border-2 border-dashed border-primary/10 group-hover:border-primary/20 transition-colors overflow-hidden relative">
+                  <div className="w-full aspect-[16/10] bg-secondary/50 rounded-[2rem] flex flex-col items-center justify-center border-2 border-dashed border-primary/10 group-hover:border-primary/20 transition-colors overflow-hidden relative">
                     {imageData ? (
                       <Image 
                         src={imageData.imageUrl}
@@ -69,7 +70,7 @@ export function WhatYouGet() {
                       </div>
                     )}
                   </div>
-                  <div className="flex-1 flex items-center justify-center px-2">
+                  <div className="px-2">
                     <span className="text-sm font-bold leading-snug text-foreground/80">{item.title}</span>
                   </div>
                 </div>

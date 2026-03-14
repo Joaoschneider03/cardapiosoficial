@@ -1,3 +1,4 @@
+
 {
   "placeholderImages": [
     {
@@ -20,9 +21,15 @@
     },
     {
       "id": "mockup-cardapios",
-      "description": "Mockup dos +100 cardápios completos",
+      "description": "+100 cardápios completos",
       "imageUrl": "https://i.postimg.cc/nh0gQbsc/Gemini-Generated-Image-reuo1rreuo1rreuo.png",
       "imageHint": "healthy meals"
+    },
+    {
+      "id": "mockup-faixa-etaria",
+      "description": "Cardápios por faixa etária",
+      "imageUrl": "https://i.postimg.cc/13nwDDXF/Gemini-Generated-Image-u21xygu21xygu21x.png",
+      "imageHint": "kids nutrition"
     }
   ]
 }
