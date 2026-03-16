@@ -28,7 +28,7 @@ export function WhatYouGet() {
     },
     {
       title: "Dicas para crianças seletivas que recusam legumes",
-      imageId: null
+      imageId: "mockup-seletivas"
     },
     {
       title: "Tabela de porções por idade",
@@ -44,7 +44,7 @@ export function WhatYouGet() {
     <section className="py-24 bg-secondary">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl md:text-3xl font-bold font-headline mb-16 max-w-2xl mx-auto leading-tight">
+          <h2 className="text-2xl md:text-3xl font-bold font-headline mb-16 max-w-2xl mx-auto leading-tight text-foreground">
             Tudo que está dentro do +100 Cardápios Anti Obesidade Infantil
           </h2>
           
