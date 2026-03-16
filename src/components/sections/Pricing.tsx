@@ -24,7 +24,7 @@ export function Pricing() {
                 <span className="text-3xl font-bold text-foreground">R$10,00</span>
               </div>
               <ul className="space-y-4">
-                <li className="flex items-center gap-3 text-sm font-medium text-foreground/70"><CheckCircle2 className="w-4 h-4 text-primary/50" /> Tudo do Essencial +</li>
+                <li className="flex items-center gap-3 text-sm font-medium text-foreground/70"><CheckCircle2 className="w-4 h-4 text-primary/50" /> +100 Cardápios Anti Obesidade Infantil</li>
                 <li className="flex items-center gap-3 text-sm font-medium text-foreground/70"><CheckCircle2 className="w-4 h-4 text-primary/50" /> Cardápios para festas</li>
                 <li className="flex items-center gap-3 text-sm font-medium text-foreground/70"><CheckCircle2 className="w-4 h-4 text-primary/50" /> Tabela de porções</li>
                 <li className="flex items-center gap-3 text-sm font-medium text-foreground/70"><CheckCircle2 className="w-4 h-4 text-primary/50" /> Dicas crianças seletivas</li>
