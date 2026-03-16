@@ -1,4 +1,3 @@
-
 {
   "placeholderImages": [
     {
@@ -60,6 +59,12 @@
       "description": "Tabela de porções por idade",
       "imageUrl": "https://i.postimg.cc/Hxq3k6Zt/Gemini-Generated-Image-5tp28b5tp28b5tp2.png",
       "imageHint": "portion sizes"
+    },
+    {
+      "id": "mockup-planner",
+      "description": "Planner semanal de refeições para imprimir",
+      "imageUrl": "https://i.postimg.cc/vZK0K8r0/Gemini-Generated-Image-41vdtj41vdtj41vd.png",
+      "imageHint": "weekly planner"
     }
   ]
 }

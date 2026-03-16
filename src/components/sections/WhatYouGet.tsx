@@ -1,4 +1,3 @@
-
 import { ArrowRight, Image as ImageIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
@@ -36,7 +35,7 @@ export function WhatYouGet() {
     },
     {
       title: "Bônus: Planner semanal de refeições para imprimir",
-      imageId: null
+      imageId: "mockup-planner"
     }
   ];
 
