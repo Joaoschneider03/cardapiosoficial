@@ -1,3 +1,88 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "product-mockup",
+      "description": "Product mockup for +100 Cardápios Anti Obesidade Infantil",
+      "imageUrl": "https://picsum.photos/seed/mockup123/400/500",
+      "imageHint": "product ebook"
+    },
+    {
+      "id": "dra-rayane",
+      "description": "Dra. Rayane, nutricionista criadora do programa",
+      "imageUrl": "https://i.postimg.cc/bvSSfwRj/EXPERTE-IMG.png",
+      "imageHint": "nutritionist woman"
+    },
+    {
+      "id": "hero-mockup",
+      "description": "Mockup principal dos cardápios FitKids",
+      "imageUrl": "https://i.postimg.cc/C1M5QdfY/mockup-pagina.png",
+      "imageHint": "kids nutrition"
+    },
+    {
+      "id": "mockup-cardapios",
+      "description": "+100 cardápios completos",
+      "imageUrl": "https://i.postimg.cc/nh0gQbsc/Gemini-Generated-Image-reuo1rreuo1rreuo.png",
+      "imageHint": "healthy meals"
+    },
+    {
+      "id": "mockup-faixa-etaria",
+      "description": "Cardápios por faixa etária",
+      "imageUrl": "https://i.postimg.cc/13nwDDXF/Gemini-Generated-Image-u21xygu21xygu21x.png",
+      "imageHint": "kids nutrition"
+    },
+    {
+      "id": "mockup-lista-compras",
+      "description": "Lista de compras semanal pronta para imprimir",
+      "imageUrl": "https://i.postimg.cc/sXSn3pcM/Gemini-Generated-Image-akd2d2akd2d2akd2.png",
+      "imageHint": "shopping list"
+    },
+    {
+      "id": "mockup-substituicoes",
+      "description": "Guia de substituições inteligentes",
+      "imageUrl": "https://i.postimg.cc/GpMQrXG3/Gemini-Generated-Image-3x0kuw3x0kuw3x0k.png",
+      "imageHint": "healthy swaps"
+    },
+    {
+      "id": "mockup-festas",
+      "description": "Cardápios especiais para festas e fins de semana",
+      "imageUrl": "https://i.postimg.cc/qR1hmqnM/Gemini-Generated-Image-u0rvzju0rvzju0rv.png",
+      "imageHint": "party food"
+    },
+    {
+      "id": "mockup-seletivas",
+      "description": "Dicas para crianças seletivas que recusam legumes",
+      "imageUrl": "https://i.postimg.cc/26fZKgVz/Gemini-Generated-Image-say91gsay91gsay9.png",
+      "imageHint": "picky eater"
+    },
+    {
+      "id": "mockup-porcoes",
+      "description": "Tabela de porções por idade",
+      "imageUrl": "https://i.postimg.cc/Hxq3k6Zt/Gemini-Generated-Image-5tp28b5tp28b5tp2.png",
+      "imageHint": "portion sizes"
+    },
+    {
+      "id": "mockup-planner",
+      "description": "Planner semanal de refeições para imprimir",
+      "imageUrl": "https://i.postimg.cc/vZK0K8r0/Gemini-Generated-Image-41vdtj41vdtj41vd.png",
+      "imageHint": "weekly planner"
+    },
+    {
+      "id": "testimonial-ana-paula",
+      "description": "Depoimento Ana Paula",
+      "imageUrl": "https://i.postimg.cc/GmPwDSZ3/2i.png",
+      "imageHint": "mother child"
+    },
+    {
+      "id": "testimonial-carla-mendes",
+      "description": "Depoimento Carla Mendes",
+      "imageUrl": "https://i.postimg.cc/tT3xGbcf/1i.png",
+      "imageHint": "mother child"
+    },
+    {
+      "id": "testimonial-fernanda-souza",
+      "description": "Depoimento Fernanda Souza",
+      "imageUrl": "https://i.postimg.cc/sXt9zy3V/22.png",
+      "imageHint": "mother child"
+    }
+  ]
 }
