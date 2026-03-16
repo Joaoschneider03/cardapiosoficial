@@ -13,11 +13,11 @@ export function Pricing() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto items-stretch">
-          {/* Plano Essencial */}
+          {/* Plano Econômico */}
           <Card className="border-border border bg-white flex flex-col hover:shadow-md transition-shadow rounded-[2.5rem]">
             <CardHeader className="text-center pb-0 pt-10">
               <Badge variant="secondary" className="w-fit mx-auto mb-4 bg-muted text-muted-foreground">Básico</Badge>
-              <CardTitle className="text-xl font-bold">Plano Essencial</CardTitle>
+              <CardTitle className="text-xl font-bold">Plano Econômico</CardTitle>
             </CardHeader>
             <CardContent className="flex-1 space-y-8 p-10">
               <div className="text-center">
@@ -33,7 +33,7 @@ export function Pricing() {
             </CardContent>
             <CardFooter className="p-10 pt-0">
               <Button variant="outline" className="w-full h-12 text-sm font-bold border-primary/20 text-primary hover:bg-primary/5 rounded-full">
-                Quero o Essencial
+                Quero o Econômico
               </Button>
             </CardFooter>
           </Card>
