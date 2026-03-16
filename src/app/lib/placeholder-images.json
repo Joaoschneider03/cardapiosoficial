@@ -1,4 +1,3 @@
-
 {
   "placeholderImages": [
     {
@@ -66,6 +65,12 @@
       "description": "Planner semanal de refeições para imprimir",
       "imageUrl": "https://i.postimg.cc/vZK0K8r0/Gemini-Generated-Image-41vdtj41vdtj41vd.png",
       "imageHint": "weekly planner"
+    },
+    {
+      "id": "testimonial-ana-paula",
+      "description": "Depoimento Ana Paula",
+      "imageUrl": "https://i.postimg.cc/tT3xGbcf/1i.png",
+      "imageHint": "mother child"
     }
   ]
 }

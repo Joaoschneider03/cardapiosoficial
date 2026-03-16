@@ -1,5 +1,7 @@
 import { Star } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import Image from "next/image";
+import { PlaceHolderImages } from "@/app/lib/placeholder-images";
 
 export function Testimonials() {
   const testimonials = [
@@ -7,7 +9,8 @@ export function Testimonials() {
       name: "Ana Paula",
       location: "São Paulo — SP",
       text: "Meu filho perdeu 4kg em 2 meses sem reclamar da comida. Os cardápios são tão gostosos que ele nem percebeu que estava comendo saudável. Melhor investimento que fiz!",
-      initials: "AP"
+      initials: "AP",
+      imageId: "testimonial-ana-paula"
     },
     {
       name: "Carla Mendes",
@@ -36,36 +39,47 @@ export function Testimonials() {
         </div>
         
         <div className="flex flex-col gap-10 max-w-4xl mx-auto">
-          {testimonials.map((t, idx) => (
-            <Card key={idx} className="border border-secondary shadow-sm bg-white rounded-[3rem] hover:shadow-md transition-shadow overflow-hidden">
-              <CardContent className="p-8 md:p-12 flex flex-col md:flex-row gap-10 items-center md:items-start text-center md:text-left">
-                {/* Espaço maior para a foto da mãe com o filho (Formato Vertical) */}
-                <div className="flex flex-col items-center md:items-start gap-4 shrink-0">
-                  <div className="w-40 h-52 md:w-48 md:h-64 relative rounded-[2.5rem] overflow-hidden border-4 border-white shadow-xl bg-secondary flex items-center justify-center rotate-2 hover:rotate-0 transition-transform duration-300">
-                    <span className="text-primary font-bold text-5xl opacity-30">{t.initials}</span>
-                    {/* Aqui entrará a imagem real da mãe com o filho */}
-                  </div>
-                  <div className="space-y-1">
-                    <h4 className="font-bold text-lg leading-tight">{t.name}</h4>
-                    <p className="text-xs text-muted-foreground font-bold uppercase tracking-wider">{t.location}</p>
-                    <div className="flex text-yellow-400 gap-0.5 justify-center md:justify-start pt-1">
-                      {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-current" />)}
+          {testimonials.map((t, idx) => {
+            const imageData = t.imageId ? PlaceHolderImages.find(img => img.id === t.imageId) : null;
+
+            return (
+              <Card key={idx} className="border border-secondary shadow-sm bg-white rounded-[3rem] hover:shadow-md transition-shadow overflow-hidden">
+                <CardContent className="p-8 md:p-12 flex flex-col md:flex-row gap-10 items-center md:items-start text-center md:text-left">
+                  <div className="flex flex-col items-center md:items-start gap-4 shrink-0">
+                    <div className="w-40 h-52 md:w-48 md:h-64 relative rounded-[2.5rem] overflow-hidden border-4 border-white shadow-xl bg-secondary flex items-center justify-center rotate-2 hover:rotate-0 transition-transform duration-300">
+                      {imageData ? (
+                        <Image 
+                          src={imageData.imageUrl} 
+                          alt={imageData.description} 
+                          fill 
+                          className="object-cover"
+                          data-ai-hint={imageData.imageHint}
+                        />
+                      ) : (
+                        <span className="text-primary font-bold text-5xl opacity-30">{t.initials}</span>
+                      )}
+                    </div>
+                    <div className="space-y-1">
+                      <h4 className="font-bold text-lg leading-tight">{t.name}</h4>
+                      <p className="text-xs text-muted-foreground font-bold uppercase tracking-wider">{t.location}</p>
+                      <div className="flex text-yellow-400 gap-0.5 justify-center md:justify-start pt-1">
+                        {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-current" />)}
+                      </div>
                     </div>
                   </div>
-                </div>
-                
-                {/* Conteúdo do Depoimento */}
-                <div className="flex-1 flex items-center">
-                  <div className="relative">
-                    <span className="text-primary/10 text-8xl absolute -top-12 -left-6 font-serif pointer-events-none italic select-none">“</span>
-                    <p className="text-base md:text-xl italic text-foreground/80 leading-relaxed font-medium relative z-10">
-                      {t.text}
-                    </p>
+                  
+                  <div className="flex-1 flex items-center">
+                    <div className="relative">
+                      <span className="text-primary/10 text-8xl absolute -top-12 -left-6 font-serif pointer-events-none italic select-none">“</span>
+                      <p className="text-base md:text-xl italic text-foreground/80 leading-relaxed font-medium relative z-10">
+                        {t.text}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
       </div>
     </section>
