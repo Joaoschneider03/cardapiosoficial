@@ -16,7 +16,7 @@ export function WhatYouGet() {
     },
     {
       title: "Lista de compras semanal pronta para imprimir",
-      imageId: null
+      imageId: "mockup-lista-compras"
     },
     {
       title: "Guia de substituições inteligentes (troca o ruim pelo saudável)",
@@ -48,30 +48,30 @@ export function WhatYouGet() {
             Tudo que está dentro do +100 Cardápios Anti Obesidade Infantil
           </h2>
           
-          <div className="grid md:grid-cols-2 gap-6 mb-16">
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 mb-16">
             {items.map((item, idx) => {
               const imageData = item.imageId ? PlaceHolderImages.find(img => img.id === item.imageId) : null;
               
               return (
-                <div key={idx} className="flex flex-col gap-6 bg-white p-6 rounded-[2.5rem] border border-white shadow-sm transition-transform hover:scale-[1.02] items-center text-center group">
-                  <div className="w-full aspect-[16/10] bg-secondary/50 rounded-[2rem] flex flex-col items-center justify-center border-2 border-dashed border-primary/10 group-hover:border-primary/20 transition-colors overflow-hidden relative">
+                <div key={idx} className="flex flex-col bg-white rounded-[2.5rem] border border-white shadow-sm transition-all hover:shadow-md hover:scale-[1.02] overflow-hidden group">
+                  <div className="w-full aspect-[4/3] bg-secondary/30 flex flex-col items-center justify-center relative overflow-hidden">
                     {imageData ? (
                       <Image 
                         src={imageData.imageUrl}
                         alt={imageData.description}
                         fill
-                        className="object-contain p-4"
+                        className="object-contain p-6 transition-transform duration-500 group-hover:scale-110"
                         data-ai-hint={imageData.imageHint}
                       />
                     ) : (
-                      <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 opacity-30">
-                        <ImageIcon className="w-10 h-10 text-primary" />
-                        <span className="text-[10px] font-bold uppercase tracking-tighter px-4">Espaço para Mockup</span>
+                      <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 opacity-20">
+                        <ImageIcon className="w-12 h-12 text-primary" />
+                        <span className="text-[10px] font-bold uppercase tracking-widest px-4 text-center">Espaço para Mockup</span>
                       </div>
                     )}
                   </div>
-                  <div className="px-2">
-                    <span className="text-sm font-bold leading-snug text-foreground/80">{item.title}</span>
+                  <div className="p-8 text-center bg-white border-t border-secondary/10">
+                    <h3 className="text-base font-bold leading-tight text-foreground/90">{item.title}</h3>
                   </div>
                 </div>
               );

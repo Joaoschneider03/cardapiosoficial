@@ -30,6 +30,12 @@
       "description": "Cardápios por faixa etária",
       "imageUrl": "https://i.postimg.cc/13nwDDXF/Gemini-Generated-Image-u21xygu21xygu21x.png",
       "imageHint": "kids nutrition"
+    },
+    {
+      "id": "mockup-lista-compras",
+      "description": "Lista de compras semanal pronta para imprimir",
+      "imageUrl": "https://i.postimg.cc/sXSn3pcM/Gemini-Generated-Image-akd2d2akd2d2akd2.png",
+      "imageHint": "shopping list"
     }
   ]
 }
