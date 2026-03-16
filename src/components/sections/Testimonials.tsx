@@ -8,7 +8,7 @@ export function Testimonials() {
     {
       name: "Ana Paula",
       location: "São Paulo — SP",
-      text: "Meu filho perdeu 4kg em 2 meses sem reclamar da comida. Os cardápios são tão gostosos que ele nem percebeu que estava comendo saudável. Melhor investimento que fiz!",
+      text: "Meu filho sofria bullying pelos coleguinhas por conta do peso, os cardápios ajudaram muito ele a ficar no peso ideal, são tão gostosos que ele nem percebeu que estava comendo saudável.",
       initials: "AP",
       imageId: "testimonial-ana-paula"
     },
