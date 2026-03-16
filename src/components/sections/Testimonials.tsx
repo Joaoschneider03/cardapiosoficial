@@ -1,3 +1,4 @@
+
 import { Star } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
@@ -16,7 +17,8 @@ export function Testimonials() {
       name: "Carla Mendes",
       location: "Belo Horizonte — MG",
       text: "Finalmente um material que funciona na prática. Imprimi, coloquei na geladeira e agora a semana toda está planejada. Minha filha já pediu para repetir vários pratos!",
-      initials: "CM"
+      initials: "CM",
+      imageId: "testimonial-carla-mendes"
     },
     {
       name: "Fernanda Souza",
@@ -56,7 +58,7 @@ export function Testimonials() {
                           data-ai-hint={imageData.imageHint}
                         />
                       ) : (
-                        <span className="text-primary font-bold text-5xl opacity-30">{t.initials}</span>
+                        <span className="bg-secondary text-primary font-bold text-5xl opacity-30">{t.initials}</span>
                       )}
                     </div>
                     <div className="space-y-1">
