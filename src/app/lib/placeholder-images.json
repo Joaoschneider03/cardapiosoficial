@@ -54,6 +54,12 @@
       "description": "Dicas para crianças seletivas que recusam legumes",
       "imageUrl": "https://i.postimg.cc/26fZKgVz/Gemini-Generated-Image-say91gsay91gsay9.png",
       "imageHint": "picky eater"
+    },
+    {
+      "id": "mockup-porcoes",
+      "description": "Tabela de porções por idade",
+      "imageUrl": "https://i.postimg.cc/Hxq3k6Zt/Gemini-Generated-Image-5tp28b5tp28b5tp2.png",
+      "imageHint": "portion sizes"
     }
   ]
 }

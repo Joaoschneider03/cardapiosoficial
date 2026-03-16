@@ -32,7 +32,7 @@ export function WhatYouGet() {
     },
     {
       title: "Tabela de porções por idade",
-      imageId: null
+      imageId: "mockup-porcoes"
     },
     {
       title: "Bônus: Planner semanal de refeições para imprimir",
