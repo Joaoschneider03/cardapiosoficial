@@ -42,6 +42,12 @@
       "description": "Guia de substituições inteligentes",
       "imageUrl": "https://i.postimg.cc/GpMQrXG3/Gemini-Generated-Image-3x0kuw3x0kuw3x0k.png",
       "imageHint": "healthy swaps"
+    },
+    {
+      "id": "mockup-festas",
+      "description": "Cardápios especiais para festas e fins de semana",
+      "imageUrl": "https://i.postimg.cc/QNwXNjxT/Gemini-Generated-Image-s484ohs484ohs484.png",
+      "imageHint": "party food"
     }
   ]
 }

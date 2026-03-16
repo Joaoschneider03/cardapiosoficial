@@ -24,7 +24,7 @@ export function WhatYouGet() {
     },
     {
       title: "Cardápios especiais para festas e fins de semana",
-      imageId: null
+      imageId: "mockup-festas"
     },
     {
       title: "Dicas para crianças seletivas que recusam legumes",
