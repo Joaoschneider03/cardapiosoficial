@@ -24,7 +24,9 @@ export function Pricing() {
                 <span className="text-3xl font-bold text-foreground">R$10,00</span>
               </div>
               <ul className="space-y-4">
-                <li className="flex items-center gap-3 text-sm font-bold text-primary"><CheckCircle2 className="w-4 h-4" /> +100 Cardápios Anti Obesidade Infantil</li>
+                <li className="flex items-center gap-3 text-sm font-bold text-primary">
+                  <CheckCircle2 className="w-4 h-4" /> +100 Cardápios Anti Obesidade Infantil
+                </li>
                 <li className="flex items-center gap-3 text-sm font-medium text-foreground/70"><CheckCircle2 className="w-4 h-4 text-primary/50" /> Cardápios para festas</li>
                 <li className="flex items-center gap-3 text-sm font-medium text-foreground/70"><CheckCircle2 className="w-4 h-4 text-primary/50" /> Tabela de porções</li>
                 <li className="flex items-center gap-3 text-sm font-medium text-foreground/70"><CheckCircle2 className="w-4 h-4 text-primary/50" /> Dicas crianças seletivas</li>
@@ -32,8 +34,8 @@ export function Pricing() {
               </ul>
             </CardContent>
             <CardFooter className="p-10 pt-0">
-              <Button variant="outline" className="w-full h-12 text-sm font-bold border-primary/20 text-primary hover:bg-primary/5 rounded-full">
-                Quero o Econômico
+              <Button className="w-full h-14 text-base font-bold shadow-md rounded-full group">
+                PEGAR AGORA! <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
             </CardFooter>
           </Card>
@@ -54,7 +56,9 @@ export function Pricing() {
                 <div className="text-4xl font-extrabold text-primary">R$19,90</div>
               </div>
               <ul className="space-y-4">
-                <li className="flex items-center gap-3 text-sm font-bold text-primary"><CheckCircle2 className="w-4 h-4" /> +100 Cardápios Anti Obesidade Infantil</li>
+                <li className="flex items-center gap-3 text-sm font-bold text-primary">
+                  <CheckCircle2 className="w-4 h-4" /> +100 Cardápios Anti Obesidade Infantil
+                </li>
                 <li className="flex items-center gap-3 text-sm font-medium text-foreground/70"><CheckCircle2 className="w-4 h-4 text-primary/50" /> Cardápios para festas</li>
                 <li className="flex items-center gap-3 text-sm font-medium text-foreground/70"><CheckCircle2 className="w-4 h-4 text-primary/50" /> Tabela de porções</li>
                 <li className="flex items-center gap-3 text-sm font-medium text-foreground/70"><CheckCircle2 className="w-4 h-4 text-primary/50" /> Dicas crianças seletivas</li>
@@ -64,7 +68,7 @@ export function Pricing() {
             
             <CardFooter className="p-10 pt-0 flex flex-col gap-4">
               <Button className="w-full h-14 text-base font-bold shadow-md rounded-full group">
-                QUERO O COMPLETO <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                PEGAR AGORA! <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
               <p className="text-center text-[10px] text-muted-foreground font-bold uppercase tracking-widest">
                 Até 12x de R$1,65
