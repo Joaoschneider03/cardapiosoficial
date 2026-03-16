@@ -32,13 +32,10 @@ export function AboutCreator() {
             </h2>
             <div className="space-y-5 text-base md:text-lg text-muted-foreground leading-relaxed font-medium">
               <p>
-                Sou a Dra. Rayane, nutricionista especializada em nutrição infantil e combate à obesidade em crianças.
+                Olá meu nome é Rayane, sou nutricionista especializada em nutrição infantil há mais de 8 anos ajudo mães a melhorarem a alimentação dos seus filhos.
               </p>
               <p>
-                Ao longo dos anos atendendo famílias, percebi que o maior obstáculo não era a falta de informação — era a falta de praticidade.
-              </p>
-              <p>
-                Criei este material para colocar na mão das mães exatamente o que funciona: cardápios testados, aprovados pelas crianças e simples de preparar.
+                Com base na minha experiência, criei o +100 Cardápios Anti Obesidade Infantil, um material com cardápios simples, práticos e acessíveis para ajudar mães com a rotina corrida a organizarem a alimentação das crianças e combaterem a obesidade infantil no dia a dia.
               </p>
             </div>
             <div className="pt-2">
