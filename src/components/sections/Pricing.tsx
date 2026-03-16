@@ -37,14 +37,21 @@ export function Pricing() {
           </Card>
 
           {/* Plano Completo */}
-          <Card className="border-primary border-2 flex flex-col relative shadow-xl z-10 bg-white rounded-[2.5rem] hover:scale-[1.02] transition-transform">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-white px-6 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase">
+          <Card className="border-primary border-2 flex flex-col relative shadow-xl z-10 bg-white rounded-[2.5rem] hover:scale-[1.02] transition-transform overflow-hidden group">
+            {/* Shine effect overlay */}
+            <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden rounded-[2.5rem]">
+              <div className="absolute inset-y-0 w-1/2 bg-gradient-to-r from-transparent via-white/40 to-transparent animate-shine" />
+            </div>
+
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-white px-6 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase z-30">
               Recomendado
             </div>
-            <CardHeader className="text-center pb-0 pt-12">
+            
+            <CardHeader className="text-center pb-0 pt-12 relative z-20">
               <CardTitle className="text-xl font-bold text-primary">Plano Completo</CardTitle>
             </CardHeader>
-            <CardContent className="flex-1 space-y-8 p-10">
+            
+            <CardContent className="flex-1 space-y-8 p-10 relative z-20">
               <div className="text-center space-y-1">
                 <span className="text-muted-foreground line-through text-base">R$47,00</span>
                 <div className="text-4xl font-extrabold text-primary">R$19,90</div>
@@ -57,7 +64,8 @@ export function Pricing() {
                 <li className="flex items-center gap-3 text-sm font-medium text-foreground/70"><CheckCircle2 className="w-4 h-4 text-primary/50" /> Bônus: Planner semanal</li>
               </ul>
             </CardContent>
-            <CardFooter className="p-10 pt-0 flex flex-col gap-4">
+            
+            <CardFooter className="p-10 pt-0 flex flex-col gap-4 relative z-20">
               <Button className="w-full h-14 text-base font-bold shadow-md rounded-full group">
                 QUERO O COMPLETO <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
