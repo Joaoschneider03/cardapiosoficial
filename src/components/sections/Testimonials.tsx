@@ -1,4 +1,3 @@
-
 import { Star } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
@@ -23,7 +22,7 @@ export function Testimonials() {
     {
       name: "Fernanda Souza",
       location: "Curitiba — PR",
-      text: "O pediatra ficou surpreso com a melhora em 6 semanas. A tabela de porções por idade mudou tudo pra mim. Recomendo para toda mãe!",
+      text: "Meu filho tem intolerância à lactose e também é muito seletivo com a alimentação, esse material esta ajudando muito facilitando minha rotina como mãe.",
       initials: "FS",
       imageId: "testimonial-fernanda-souza"
     }
