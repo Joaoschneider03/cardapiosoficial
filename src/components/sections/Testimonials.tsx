@@ -1,5 +1,4 @@
 import { Star } from "lucide-react";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
 
 export function Testimonials() {
@@ -25,33 +24,44 @@ export function Testimonials() {
   ];
 
   return (
-    <section className="py-12 bg-white">
+    <section className="py-24 bg-white">
       <div className="container mx-auto px-6">
-        <h2 className="text-xl md:text-2xl font-bold font-headline text-center mb-10 max-w-2xl mx-auto leading-tight">
-          Mães que já transformaram a alimentação dos filhos
-        </h2>
+        <div className="text-center mb-20 space-y-4">
+          <h2 className="text-2xl md:text-4xl font-extrabold font-headline leading-tight text-foreground">
+            Mães que já transformaram a alimentação dos filhos
+          </h2>
+          <p className="text-base text-muted-foreground max-w-2xl mx-auto font-medium">
+            Veja os resultados reais de famílias que recuperaram a saúde e o prazer de comer bem.
+          </p>
+        </div>
         
-        <div className="flex flex-col gap-6 max-w-3xl mx-auto">
+        <div className="flex flex-col gap-10 max-w-4xl mx-auto">
           {testimonials.map((t, idx) => (
-            <Card key={idx} className="border-none shadow-sm bg-muted/20 rounded-[2rem] hover:shadow-md transition-shadow overflow-hidden">
-              <CardContent className="p-6 md:p-8 flex flex-col md:flex-row gap-6 items-center md:items-start text-center md:text-left">
-                <div className="flex flex-col items-center md:items-start gap-3 shrink-0 md:w-40">
-                  <Avatar className="w-12 h-12 border-2 border-primary/20">
-                    <AvatarFallback className="bg-secondary text-primary font-bold text-lg">{t.initials}</AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <h4 className="font-bold text-sm leading-tight">{t.name}</h4>
-                    <p className="text-[10px] text-muted-foreground">{t.location}</p>
+            <Card key={idx} className="border border-secondary shadow-sm bg-white rounded-[3rem] hover:shadow-md transition-shadow overflow-hidden">
+              <CardContent className="p-8 md:p-12 flex flex-col md:flex-row gap-10 items-center md:items-start text-center md:text-left">
+                {/* Espaço maior para a foto da mãe com o filho (Formato Vertical) */}
+                <div className="flex flex-col items-center md:items-start gap-4 shrink-0">
+                  <div className="w-40 h-52 md:w-48 md:h-64 relative rounded-[2.5rem] overflow-hidden border-4 border-white shadow-xl bg-secondary flex items-center justify-center rotate-2 hover:rotate-0 transition-transform duration-300">
+                    <span className="text-primary font-bold text-5xl opacity-30">{t.initials}</span>
+                    {/* Aqui entrará a imagem real da mãe com o filho */}
                   </div>
-                  <div className="flex text-yellow-400 gap-0.5">
-                    {[...Array(5)].map((_, i) => <Star key={i} className="w-3 h-3 fill-current" />)}
+                  <div className="space-y-1">
+                    <h4 className="font-bold text-lg leading-tight">{t.name}</h4>
+                    <p className="text-xs text-muted-foreground font-bold uppercase tracking-wider">{t.location}</p>
+                    <div className="flex text-yellow-400 gap-0.5 justify-center md:justify-start pt-1">
+                      {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-current" />)}
+                    </div>
                   </div>
                 </div>
                 
+                {/* Conteúdo do Depoimento */}
                 <div className="flex-1 flex items-center">
-                  <p className="text-sm md:text-base italic text-foreground/70 leading-relaxed font-medium">
-                    "{t.text}"
-                  </p>
+                  <div className="relative">
+                    <span className="text-primary/10 text-8xl absolute -top-12 -left-6 font-serif pointer-events-none italic select-none">“</span>
+                    <p className="text-base md:text-xl italic text-foreground/80 leading-relaxed font-medium relative z-10">
+                      {t.text}
+                    </p>
+                  </div>
                 </div>
               </CardContent>
             </Card>
