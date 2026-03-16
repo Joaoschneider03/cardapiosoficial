@@ -36,6 +36,12 @@
       "description": "Lista de compras semanal pronta para imprimir",
       "imageUrl": "https://i.postimg.cc/sXSn3pcM/Gemini-Generated-Image-akd2d2akd2d2akd2.png",
       "imageHint": "shopping list"
+    },
+    {
+      "id": "mockup-substituicoes",
+      "description": "Guia de substituições inteligentes",
+      "imageUrl": "https://i.postimg.cc/GpMQrXG3/Gemini-Generated-Image-3x0kuw3x0kuw3x0k.png",
+      "imageHint": "healthy swaps"
     }
   ]
 }

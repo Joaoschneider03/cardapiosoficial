@@ -20,7 +20,7 @@ export function WhatYouGet() {
     },
     {
       title: "Guia de substituições inteligentes (troca o ruim pelo saudável)",
-      imageId: null
+      imageId: "mockup-substituicoes"
     },
     {
       title: "Cardápios especiais para festas e fins de semana",
