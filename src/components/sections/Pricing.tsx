@@ -40,14 +40,14 @@ export function Pricing() {
             </CardFooter>
           </Card>
 
-          {/* Plano Completo */}
+          {/* Plano Premium */}
           <Card className="border-primary border-2 flex flex-col relative shadow-xl z-10 bg-white rounded-[2.5rem] hover:scale-[1.02] transition-transform">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-white px-6 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase">
               Recomendado
             </div>
             
             <CardHeader className="text-center pb-0 pt-12">
-              <CardTitle className="text-xl font-bold text-primary">Plano Completo</CardTitle>
+              <CardTitle className="text-xl font-bold text-primary">Plano Premium</CardTitle>
             </CardHeader>
             
             <CardContent className="flex-1 space-y-8 p-10">
