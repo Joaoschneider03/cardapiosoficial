@@ -78,6 +78,12 @@
       "description": "Depoimento Carla Mendes",
       "imageUrl": "https://i.postimg.cc/tT3xGbcf/1i.png",
       "imageHint": "mother child"
+    },
+    {
+      "id": "testimonial-fernanda-souza",
+      "description": "Depoimento Fernanda Souza",
+      "imageUrl": "https://i.postimg.cc/sXt9zy3V/22.png",
+      "imageHint": "mother child"
     }
   ]
 }

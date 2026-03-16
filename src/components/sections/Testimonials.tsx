@@ -24,7 +24,8 @@ export function Testimonials() {
       name: "Fernanda Souza",
       location: "Curitiba — PR",
       text: "O pediatra ficou surpreso com a melhora em 6 semanas. A tabela de porções por idade mudou tudo pra mim. Recomendo para toda mãe!",
-      initials: "FS"
+      initials: "FS",
+      imageId: "testimonial-fernanda-souza"
     }
   ];
 
@@ -58,7 +59,7 @@ export function Testimonials() {
                           data-ai-hint={imageData.imageHint}
                         />
                       ) : (
-                        <span className="bg-secondary text-primary font-bold text-5xl opacity-30">{t.initials}</span>
+                        <span className="text-primary font-bold text-5xl opacity-30">{t.initials}</span>
                       )}
                     </div>
                     <div className="space-y-1">
