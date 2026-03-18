@@ -69,13 +69,10 @@ export function Pricing() {
               </ul>
             </CardContent>
             
-            <CardFooter className="p-10 pt-0 flex flex-col gap-4">
+            <CardFooter className="p-10 pt-0">
               <Button className="w-full h-14 text-base font-bold shadow-md rounded-full group">
                 PEGAR AGORA! <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <p className="text-center text-[10px] text-muted-foreground font-bold uppercase tracking-widest">
-                Até 12x de R$1,65
-              </p>
             </CardFooter>
           </Card>
         </div>
