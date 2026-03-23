@@ -13,7 +13,7 @@ export function Pricing() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto items-stretch">
-          {/* Plano Econômico */}
+          {/* Oferta Econômica */}
           <Card className="border-border border bg-white flex flex-col hover:shadow-md transition-shadow rounded-[2.5rem]">
             <CardHeader className="text-center pb-0 pt-10">
               <Badge variant="secondary" className="w-fit mx-auto mb-4 bg-muted text-muted-foreground">Básico</Badge>
@@ -42,7 +42,7 @@ export function Pricing() {
             </CardFooter>
           </Card>
 
-          {/* Plano Premium */}
+          {/* Oferta Premium */}
           <Card className="border-primary border-2 flex flex-col relative shadow-xl z-10 bg-white rounded-[2.5rem] hover:scale-[1.02] transition-transform">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-white px-6 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase">
               Recomendado
@@ -76,7 +76,7 @@ export function Pricing() {
             
             <CardFooter className="p-10 pt-0">
               <Button asChild className="w-full h-14 text-base font-bold shadow-md rounded-full group bg-primary hover:bg-primary/90 text-primary-foreground">
-                <a href="#">
+                <a href="https://pay.kiwify.com.br/GTyJjUV">
                   PEGAR AGORA! <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
               </Button>
