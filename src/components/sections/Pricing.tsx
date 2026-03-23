@@ -34,7 +34,7 @@ export function Pricing() {
               </ul>
             </CardContent>
             <CardFooter className="p-10 pt-0">
-              <Button asChild className="w-full h-14 text-base font-bold shadow-md rounded-full group">
+              <Button asChild className="w-full h-14 text-base font-bold shadow-md rounded-full group bg-primary hover:bg-primary/90 text-primary-foreground">
                 <a href="https://pay.kiwify.com.br/HyN7eak">
                   PEGAR AGORA! <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
@@ -49,7 +49,7 @@ export function Pricing() {
             </div>
             
             <CardHeader className="text-center pb-0 pt-12">
-              <CardTitle className="text-xl font-bold text-primary">Plano Premium</CardTitle>
+              <CardTitle className="text-xl font-bold text-primary">Oferta Premium</CardTitle>
             </CardHeader>
             
             <CardContent className="flex-1 space-y-8 p-10">
@@ -75,8 +75,10 @@ export function Pricing() {
             </CardContent>
             
             <CardFooter className="p-10 pt-0">
-              <Button className="w-full h-14 text-base font-bold shadow-md rounded-full group">
-                PEGAR AGORA! <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <Button asChild className="w-full h-14 text-base font-bold shadow-md rounded-full group bg-primary hover:bg-primary/90 text-primary-foreground">
+                <a href="#">
+                  PEGAR AGORA! <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </a>
               </Button>
             </CardFooter>
           </Card>
