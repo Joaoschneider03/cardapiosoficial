@@ -34,8 +34,10 @@ export function Pricing() {
               </ul>
             </CardContent>
             <CardFooter className="p-10 pt-0">
-              <Button className="w-full h-14 text-base font-bold shadow-md rounded-full group">
-                PEGAR AGORA! <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <Button asChild className="w-full h-14 text-base font-bold shadow-md rounded-full group">
+                <a href="https://pay.kiwify.com.br/HyN7eak">
+                  PEGAR AGORA! <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </a>
               </Button>
             </CardFooter>
           </Card>
