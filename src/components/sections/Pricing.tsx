@@ -17,7 +17,7 @@ export function Pricing() {
           <Card className="border-border border bg-white flex flex-col hover:shadow-md transition-shadow rounded-[2.5rem]">
             <CardHeader className="text-center pb-0 pt-10">
               <Badge variant="secondary" className="w-fit mx-auto mb-4 bg-muted text-muted-foreground">Básico</Badge>
-              <CardTitle className="text-xl font-bold">Plano Econômico</CardTitle>
+              <CardTitle className="text-xl font-bold">Oferta Econômica</CardTitle>
             </CardHeader>
             <CardContent className="flex-1 space-y-8 p-10">
               <div className="text-center">
