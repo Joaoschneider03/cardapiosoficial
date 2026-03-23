@@ -21,7 +21,7 @@ export function Pricing() {
             </CardHeader>
             <CardContent className="flex-1 space-y-8 p-10">
               <div className="text-center">
-                <span className="text-3xl font-bold text-foreground">R$10,00</span>
+                <span className="text-3xl font-bold text-foreground">R$9,90</span>
               </div>
               <ul className="space-y-4">
                 <li className="flex items-center gap-3 text-sm font-bold text-primary">
