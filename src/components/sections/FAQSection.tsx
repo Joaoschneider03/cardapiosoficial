@@ -9,7 +9,7 @@ export function FAQSection() {
   const faqs = [
     {
       q: "Como vou receber o material?",
-      a: "Imediatamente após o pagamento, você recebe o link por e-mail para baixar o PDF e imprimir em casa."
+      a: "Imediatamente após o pagamento, você recebe o link por e-mail para acessar todo o conteúdo."
     },
     {
       q: "Precisa de impressora especial?",
