@@ -10,7 +10,7 @@ export function WhatYouGet() {
       imageId: "mockup-cardapios"
     },
     {
-      title: "Cardápios organizados por faixa etária (2 a 12 anos)",
+      title: "Cardápios organizados por faixa etária (1 a 12 anos)",
       imageId: "mockup-faixa-etaria"
     },
     {

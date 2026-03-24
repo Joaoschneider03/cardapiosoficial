@@ -38,7 +38,7 @@ Product Information:
 - Core Promise: Seu filho no peso ideal sem sofrimento, sem briga na mesa e sem dieta complicada. Transformar a alimentação do seu filho em semanas.
 - Key Features & Benefits:
   - +100 cardápios completos (café, almoço, lanche e jantar)
-  - Cardápios organizados por faixa etária (2 a 12 anos)
+  - Cardápios organizados por faixa etária (1 a 12 anos)
   - Lista de compras semanal pronta para imprimir
   - Guia de substituições inteligentes (troca o ruim pelo saudável)
   - Cardápios especiais para festas e fins de semana

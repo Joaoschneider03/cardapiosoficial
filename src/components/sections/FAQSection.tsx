@@ -17,7 +17,7 @@ export function FAQSection() {
     },
     {
       q: "Para qual faixa etária é indicado?",
-      a: "Os cardápios são organizados para crianças de 2 a 12 anos, com porções adaptadas para cada fase."
+      a: "Os cardápios são organizados para crianças de 1 a 12 anos, com porções adaptadas para cada fase."
     },
     {
       q: "Meu filho é muito seletivo, vai funcionar?",
