@@ -11,11 +11,6 @@ export function Footer() {
           © 2025 Todos os direitos reservados
         </p>
         
-        <div className="flex justify-center gap-8 text-[10px] font-bold uppercase tracking-widest">
-          <a href="#" className="hover:text-white transition-colors">Privacidade</a>
-          <a href="#" className="hover:text-white transition-colors">Termos</a>
-        </div>
-        
         <p className="text-[10px] max-w-lg mx-auto opacity-30 leading-relaxed italic">
           Este produto é um material digital para download. Os resultados dependem da aplicação do método e podem variar de pessoa para pessoa.
         </p>
