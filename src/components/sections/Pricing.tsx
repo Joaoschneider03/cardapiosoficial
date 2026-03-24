@@ -8,7 +8,7 @@ export function Pricing() {
     <section id="pricing" className="py-24 bg-secondary">
       <div className="container mx-auto px-6">
         <div className="text-center mb-20 space-y-4">
-          <h2 className="text-2xl md:text-3xl font-bold font-headline leading-tight">Escolha o seu plano e comece hoje</h2>
+          <h2 className="text-2xl md:text-3xl font-bold font-headline leading-tight">Escolha a opção que mais te agrada! 👇👇</h2>
           <p className="text-base text-muted-foreground font-medium">Invista menos do que um lanche na saúde do seu filho</p>
         </div>
 
