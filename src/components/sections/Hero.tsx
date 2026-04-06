@@ -7,8 +7,8 @@ export function Hero() {
     <header className="relative overflow-hidden bg-white">
       <div className="container mx-auto px-6 py-12 md:py-20 flex flex-col items-center">
         <div className="max-w-3xl text-center space-y-8">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold font-headline leading-tight text-foreground">
-            <span className="text-primary">+100 Cardápios Anti Obesidade Infantil,</span> para o seu filho ficar no peso ideal sem abrir mão do sabor!
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold font-headline leading-tight text-foreground uppercase">
+            <span className="text-primary">+100 CARDÁPIOS ANTI OBESIDADE INFANTIL,</span> SEU FILHO NO PESO IDEAL SEM ABRIR MÃO DO SABOR!
           </h1>
           <p className="text-base text-muted-foreground max-w-lg mx-auto leading-relaxed font-medium">
             O único material imprimível com +100 cardápios práticos, gostosos e aprovados por crianças que vai transformar a alimentação do seu filho em semanas.
