@@ -1,5 +1,4 @@
 import type {Metadata} from 'next';
-import Script from 'next/script';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -21,19 +20,6 @@ export default function RootLayout({
       </head>
       <body className="font-body antialiased text-foreground bg-background">
         {children}
-
-        {/* UTMify Pixel Script */}
-        <Script id="utmify-pixel" strategy="afterInteractive">
-          {`window.pixelId = "68c8c6aff7bcf17b61ea4279"; var a = document.createElement("script"); a.setAttribute("async", ""); a.setAttribute("defer", ""); a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js"); document.head.appendChild(a);`}
-        </Script>
-
-        {/* UTMify Tracking Script */}
-        <Script 
-          src="https://cdn.utmify.com.br/scripts/utms/latest.js" 
-          data-utmify-prevent-xcod-sck 
-          data-utmify-prevent-subids 
-          strategy="afterInteractive"
-        />
       </body>
     </html>
   );

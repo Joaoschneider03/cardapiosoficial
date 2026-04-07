@@ -35,7 +35,7 @@ export function Pricing() {
             </CardContent>
             <CardFooter className="p-10 pt-0">
               <Button asChild className="w-full h-14 text-base font-bold shadow-md rounded-full group bg-primary hover:bg-primary/90 text-primary-foreground">
-                <a href="https://pay.kiwify.com.br/HyN7eak" suppressHydrationWarning>
+                <a href="https://pay.kiwify.com.br/HyN7eak">
                   PEGAR AGORA! <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
               </Button>
@@ -76,7 +76,7 @@ export function Pricing() {
             
             <CardFooter className="p-10 pt-0">
               <Button asChild className="w-full h-14 text-base font-bold shadow-md rounded-full group bg-primary hover:bg-primary/90 text-primary-foreground">
-                <a href="https://pay.kiwify.com.br/GTyJjUV" suppressHydrationWarning>
+                <a href="https://pay.kiwify.com.br/GTyJjUV">
                   PEGAR AGORA! <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
               </Button>
