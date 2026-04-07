@@ -17,6 +17,22 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+        
+        {/* UTMify Pixel Script */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.pixelId = "68c8c6aff7bcf17b61ea4279"; var a = document.createElement("script"); a.setAttribute("async", ""); a.setAttribute("defer", ""); a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js"); document.head.appendChild(a);`,
+          }}
+        />
+        
+        {/* UTMify Tracking Script */}
+        <script 
+          src="https://cdn.utmify.com.br/scripts/utms/latest.js" 
+          data-utmify-prevent-xcod-sck 
+          data-utmify-prevent-subids 
+          async 
+          defer 
+        />
       </head>
       <body className="font-body antialiased text-foreground bg-background">{children}</body>
     </html>
