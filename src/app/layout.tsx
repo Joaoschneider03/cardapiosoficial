@@ -18,20 +18,21 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
         
-        {/* Scripts UTMify - Inserção Estática Bruta */}
+        {/* Script do Pixel UTMify - Inserção Estática Bruta */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
               window.pixelId = "68c8c6aff7bcf17b61ea4279";
               var a = document.createElement("script");
-              a.async = true;
-              a.defer = true;
-              a.src = "https://cdn.utmify.com.br/scripts/pixel/pixel.js";
+              a.setAttribute("async", "");
+              a.setAttribute("defer", "");
+              a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
               document.head.appendChild(a);
             `,
           }}
         />
 
+        {/* Script de Rastreamento UTM - Inserção Estática Bruta */}
         <script
           src="https://cdn.utmify.com.br/scripts/utms/latest.js"
           data-utmify-prevent-xcod-sck
