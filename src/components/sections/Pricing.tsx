@@ -35,6 +35,7 @@ export function Pricing() {
             </CardContent>
             <CardFooter className="p-10 pt-0">
               <Button asChild className="w-full h-14 text-base font-bold shadow-md rounded-full group bg-primary hover:bg-primary/90 text-primary-foreground">
+                {/* suppressHydrationWarning é necessário porque o UTMify altera este link dinamicamente */}
                 <a href="https://pay.kiwify.com.br/HyN7eak" suppressHydrationWarning>
                   PEGAR AGORA! <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
@@ -76,6 +77,7 @@ export function Pricing() {
             
             <CardFooter className="p-10 pt-0">
               <Button asChild className="w-full h-14 text-base font-bold shadow-md rounded-full group bg-primary hover:bg-primary/90 text-primary-foreground">
+                {/* suppressHydrationWarning é necessário porque o UTMify altera este link dinamicamente */}
                 <a href="https://pay.kiwify.com.br/GTyJjUV" suppressHydrationWarning>
                   PEGAR AGORA! <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
