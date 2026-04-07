@@ -20,13 +20,13 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
         
         {/* UTMify Pixel Script */}
-        <Script id="utmify-pixel-config" strategy="afterInteractive">
+        <Script id="utmify-pixel" strategy="afterInteractive">
           {`window.pixelId = "68c8c6aff7bcf17b61ea4279"; var a = document.createElement("script"); a.setAttribute("async", ""); a.setAttribute("defer", ""); a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js"); document.head.appendChild(a);`}
         </Script>
 
         {/* UTMify Tracking Script */}
         <Script 
-          id="utmify-tracking-script"
+          id="utmify-tracking"
           src="https://cdn.utmify.com.br/scripts/utms/latest.js"
           data-utmify-prevent-xcod-sck
           data-utmify-prevent-subids
