@@ -1,7 +1,16 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
 export function Hero() {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   return (
     <header className="relative overflow-hidden bg-white">
       <div className="container mx-auto px-6 py-12 md:py-20 flex flex-col items-center">
@@ -15,17 +24,23 @@ export function Hero() {
           
           {/* Container VSL Mobile (Vertical) */}
           <div className="relative w-full max-w-[350px] mx-auto my-8 animate-in fade-in zoom-in-95 duration-700 shadow-2xl rounded-[2.5rem] overflow-hidden border-4 border-white bg-black aspect-[9/16]">
-            <div dangerouslySetInnerHTML={{ __html: `
-              <style>
-                wistia-player[media-id='p9v3ykae7d']:not(:defined) { 
-                  background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/p9v3ykae7d/swatch'); 
-                  display: block; 
-                  filter: blur(5px); 
-                  padding-top:177.78%; 
-                }
-              </style>
-              <wistia-player media-id="p9v3ykae7d" aspect="0.5625"></wistia-player>
-            ` }} />
+            {isMounted ? (
+              <div dangerouslySetInnerHTML={{ __html: `
+                <style>
+                  wistia-player[media-id='p9v3ykae7d']:not(:defined) { 
+                    background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/p9v3ykae7d/swatch'); 
+                    display: block; 
+                    filter: blur(5px); 
+                    padding-top:177.78%; 
+                  }
+                </style>
+                <wistia-player media-id="p9v3ykae7d" aspect="0.5625"></wistia-player>
+              ` }} />
+            ) : (
+              <div className="w-full h-full bg-black flex items-center justify-center">
+                <div className="w-12 h-12 border-4 border-primary/30 border-t-primary rounded-full animate-spin"></div>
+              </div>
+            )}
           </div>
           
           <div className="flex flex-col items-center gap-6 pt-2">
