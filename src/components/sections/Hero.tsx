@@ -23,7 +23,10 @@ export function Hero() {
           </p>
           
           {/* Container VSL Mobile (Vertical) */}
-          <div className="relative w-full max-w-[350px] mx-auto my-8 animate-in fade-in zoom-in-95 duration-700 shadow-2xl rounded-[2.5rem] overflow-hidden border-4 border-white bg-black aspect-[9/16]">
+          <div 
+            className="relative w-full max-w-[350px] mx-auto my-8 animate-in fade-in zoom-in-95 duration-700 shadow-2xl rounded-[2.5rem] overflow-hidden border-4 border-white bg-black aspect-[9/16]"
+            suppressHydrationWarning
+          >
             {isMounted ? (
               <div dangerouslySetInnerHTML={{ __html: `
                 <style>
