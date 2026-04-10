@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import Image from "next/image";
 
 export function Hero() {
   return (
@@ -14,15 +13,19 @@ export function Hero() {
             O único material imprimível com +100 cardápios práticos, gostosos e aprovados por crianças que vai transformar a alimentação do seu filho em semanas.
           </p>
           
-          <div className="relative w-full max-w-2xl mx-auto aspect-[16/10] my-8 animate-in fade-in zoom-in-95 duration-700">
-            <Image 
-              src="https://i.postimg.cc/C1M5QdfY/mockup-pagina.png" 
-              alt="Mockup principal dos cardápios FitKids"
-              fill
-              className="object-contain"
-              data-ai-hint="kids nutrition"
-              priority
-            />
+          {/* Container VSL Mobile (Vertical) */}
+          <div className="relative w-full max-w-[350px] mx-auto my-8 animate-in fade-in zoom-in-95 duration-700 shadow-2xl rounded-[2.5rem] overflow-hidden border-4 border-white bg-black aspect-[9/16]">
+            <div dangerouslySetInnerHTML={{ __html: `
+              <style>
+                wistia-player[media-id='p9v3ykae7d']:not(:defined) { 
+                  background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/p9v3ykae7d/swatch'); 
+                  display: block; 
+                  filter: blur(5px); 
+                  padding-top:177.78%; 
+                }
+              </style>
+              <wistia-player media-id="p9v3ykae7d" aspect="0.5625"></wistia-player>
+            ` }} />
           </div>
           
           <div className="flex flex-col items-center gap-6 pt-2">

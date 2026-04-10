@@ -18,6 +18,10 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
         
+        {/* Scripts Wistia VSL */}
+        <script src="https://fast.wistia.com/player.js" async></script>
+        <script src="https://fast.wistia.com/embed/p9v3ykae7d.js" async type="module"></script>
+
         {/* Script do Pixel UTMify - Inserção Estática Bruta */}
         <script
           dangerouslySetInnerHTML={{
