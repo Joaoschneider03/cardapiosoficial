@@ -10,11 +10,6 @@ export function Hero() {
 
   useEffect(() => {
     setIsMounted(true);
-    // Força o scroll para o topo ao carregar para evitar que o navegador pule para as ofertas
-    if (window.location.hash) {
-      window.history.replaceState(null, "", window.location.pathname);
-    }
-    window.scrollTo(0, 0);
   }, []);
 
   return (
