@@ -8,13 +8,6 @@ export function Hero() {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    // Garante que o scroll comece no topo e limpa qualquer âncora residual
-    if (typeof window !== 'undefined') {
-      window.scrollTo(0, 0);
-      if (window.location.hash) {
-        window.history.replaceState(null, "", window.location.pathname + window.location.search);
-      }
-    }
     setIsMounted(true);
   }, []);
 

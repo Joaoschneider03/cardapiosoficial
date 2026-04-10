@@ -18,15 +18,29 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
         
-        {/* Prevenção de restauração de scroll automática para evitar o "pulo" no load */}
-        <script dangerouslySetInnerHTML={{ __html: `if (typeof window !== 'undefined') { window.history.scrollRestoration = "manual"; }` }} />
+        {/* Prevenção de restauração de scroll automática imediata */}
+        <script
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{
+            __html: `
+              if (typeof window !== 'undefined') {
+                window.history.scrollRestoration = "manual";
+                if (window.location.hash) {
+                  window.scrollTo(0,0);
+                  window.history.replaceState(null, null, window.location.pathname + window.location.search);
+                }
+              }
+            `,
+          }}
+        />
 
         {/* Scripts Wistia VSL */}
         <script src="https://fast.wistia.com/player.js" async></script>
         <script src="https://fast.wistia.com/embed/p9v3ykae7d.js" async type="module"></script>
 
-        {/* Script do Pixel UTMify - Inserção Estática Bruta */}
+        {/* Script do Pixel UTMify - Inserção Estática Bruta com Proteção de Hidratação */}
         <script
+          suppressHydrationWarning
           dangerouslySetInnerHTML={{
             __html: `
               window.pixelId = "68c8c6aff7bcf17b61ea4279";
@@ -39,8 +53,9 @@ export default function RootLayout({
           }}
         />
 
-        {/* Script de Rastreamento UTM - Inserção Estática Bruta */}
+        {/* Script de Rastreamento UTM - Inserção Estática Bruta com Proteção de Hidratação */}
         <script
+          suppressHydrationWarning
           src="https://cdn.utmify.com.br/scripts/utms/latest.js"
           data-utmify-prevent-xcod-sck
           data-utmify-prevent-subids
