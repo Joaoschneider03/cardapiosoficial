@@ -1,4 +1,3 @@
-
 import type {Metadata} from 'next';
 import './globals.css';
 
@@ -19,6 +18,9 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
         
+        {/* Prevenção de restauração de scroll automática para evitar o "pulo" no load */}
+        <script dangerouslySetInnerHTML={{ __html: `if (typeof window !== 'undefined') { window.history.scrollRestoration = "manual"; }` }} />
+
         {/* Scripts Wistia VSL */}
         <script src="https://fast.wistia.com/player.js" async></script>
         <script src="https://fast.wistia.com/embed/p9v3ykae7d.js" async type="module"></script>

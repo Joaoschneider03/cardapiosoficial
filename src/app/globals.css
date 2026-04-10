@@ -45,6 +45,4 @@
   }
 }
 
-html {
-  scroll-behavior: smooth;
-}
+/* Removido scroll-behavior global para evitar saltos indesejados no load */

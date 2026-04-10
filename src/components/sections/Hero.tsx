@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useEffect } from "react";
@@ -9,8 +8,23 @@ export function Hero() {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    // Garante que o scroll comece no topo e limpa qualquer âncora residual
+    if (typeof window !== 'undefined') {
+      window.scrollTo(0, 0);
+      if (window.location.hash) {
+        window.history.replaceState(null, "", window.location.pathname + window.location.search);
+      }
+    }
     setIsMounted(true);
   }, []);
+
+  const scrollToPricing = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const element = document.getElementById('pricing');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <header className="relative overflow-hidden bg-white">
@@ -19,7 +33,7 @@ export function Hero() {
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold font-headline leading-tight text-foreground uppercase">
             <span className="text-primary">+100 CARDÁPIOS ANTI OBESIDADE INFANTIL,</span> SEU FILHO NO PESO IDEAL SEM ABRIR MÃO DO SABOR!
           </h1>
-          <p className="text-base text-muted-foreground max-w-lg mx-auto leading-relaxed font-bold">
+          <p className="text-base text-foreground max-w-lg mx-auto leading-relaxed font-bold italic">
             Material imprimível com +100 cardápios práticos, gostosos e aprovados por crianças.
           </p>
           
@@ -48,10 +62,12 @@ export function Hero() {
           </div>
           
           <div className="flex flex-col items-center gap-6 pt-2">
-            <Button asChild size="lg" className="h-14 px-8 text-base font-bold rounded-full shadow-md hover:bg-primary/90 transition-all group w-fit min-w-[200px]">
-              <a href="#pricing">
-                Pegar agora! <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </a>
+            <Button 
+              onClick={scrollToPricing}
+              size="lg" 
+              className="h-14 px-8 text-base font-bold rounded-full shadow-md hover:bg-primary/90 transition-all group w-fit min-w-[200px]"
+            >
+              Pegar agora! <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Button>
           </div>
         </div>

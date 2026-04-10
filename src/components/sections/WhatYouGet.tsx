@@ -1,3 +1,5 @@
+"use client";
+
 import { ArrowRight, Image as ImageIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
@@ -39,6 +41,14 @@ export function WhatYouGet() {
     }
   ];
 
+  const scrollToPricing = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const element = document.getElementById('pricing');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="py-24 bg-secondary">
       <div className="container mx-auto px-6">
@@ -78,10 +88,12 @@ export function WhatYouGet() {
           </div>
 
           <div className="text-center">
-            <Button asChild size="lg" className="h-14 px-10 text-base font-bold rounded-full shadow-md group">
-              <a href="#pricing">
-                QUERO MEU ACESSO AGORA <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </a>
+            <Button 
+              onClick={scrollToPricing}
+              size="lg" 
+              className="h-14 px-10 text-base font-bold rounded-full shadow-md group"
+            >
+              QUERO MEU ACESSO AGORA <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Button>
           </div>
         </div>
