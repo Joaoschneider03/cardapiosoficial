@@ -92,6 +92,7 @@ export function WhatYouGet() {
               onClick={scrollToPricing}
               size="lg" 
               className="h-14 px-10 text-base font-bold rounded-full shadow-md group"
+              suppressHydrationWarning
             >
               QUERO MEU ACESSO AGORA <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Button>

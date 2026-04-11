@@ -59,6 +59,7 @@ export function Hero() {
               onClick={scrollToPricing}
               size="lg" 
               className="h-14 px-8 text-base font-bold rounded-full shadow-md hover:bg-primary/90 transition-all group w-fit min-w-[200px]"
+              suppressHydrationWarning
             >
               Pegar agora! <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Button>
