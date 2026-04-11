@@ -1,4 +1,3 @@
-
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
@@ -34,12 +33,13 @@ export function Pricing() {
                 <li className="flex items-center gap-3 text-sm font-medium text-foreground/70"><CheckCircle2 className="w-4 h-4 text-primary/50" /> Bônus: Planner semanal</li>
               </ul>
             </CardContent>
-            <CardFooter className="p-10 pt-0">
+            <CardFooter className="p-10 pt-0 flex flex-col items-center">
               <Button asChild className="w-full h-14 text-base font-bold shadow-md rounded-full group bg-primary hover:bg-primary/90 text-primary-foreground">
                 <a href="https://pay.kiwify.com.br/HyN7eak" suppressHydrationWarning>
                   PEGAR AGORA! <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
               </Button>
+              <p className="mt-4 text-[10px] font-bold text-muted-foreground uppercase tracking-widest">Pagamento único!</p>
             </CardFooter>
           </Card>
 
@@ -75,12 +75,13 @@ export function Pricing() {
               </ul>
             </CardContent>
             
-            <CardFooter className="p-10 pt-0">
+            <CardFooter className="p-10 pt-0 flex flex-col items-center">
               <Button asChild className="w-full h-14 text-base font-bold shadow-md rounded-full group bg-primary hover:bg-primary/90 text-primary-foreground">
                 <a href="https://pay.kiwify.com.br/GTyJjUV" suppressHydrationWarning>
                   PEGAR AGORA! <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
               </Button>
+              <p className="mt-4 text-[10px] font-bold text-muted-foreground uppercase tracking-widest">Pagamento único!</p>
             </CardFooter>
           </Card>
         </div>
