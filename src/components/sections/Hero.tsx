@@ -14,10 +14,33 @@ export function Hero() {
 
   const scrollToPricing = (e: React.MouseEvent) => {
     e.preventDefault();
-    const element = document.getElementById('pricing');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    const target = document.getElementById('pricing');
+    if (!target) return;
+
+    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+    const startPosition = window.pageYOffset;
+    const distance = targetPosition - startPosition;
+    const duration = 1500; // Duração de 1.5 segundos para uma rolagem bem suave e lenta
+    let start: number | null = null;
+
+    function step(timestamp: number) {
+      if (!start) start = timestamp;
+      const progress = timestamp - start;
+      const percentage = Math.min(progress / duration, 1);
+      
+      // Função de easing (easeInOutQuad) para início e fim suaves
+      const easing = percentage < 0.5 
+        ? 2 * percentage * percentage 
+        : -1 + (4 - 2 * percentage) * percentage;
+
+      window.scrollTo(0, startPosition + distance * easing);
+
+      if (progress < duration) {
+        window.requestAnimationFrame(step);
+      }
     }
+
+    window.requestAnimationFrame(step);
   };
 
   return (
