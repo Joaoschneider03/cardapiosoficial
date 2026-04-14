@@ -80,11 +80,11 @@ export function BackRedirectOverlay() {
           
           <div className="space-y-8">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold font-headline leading-tight text-foreground uppercase italic">
-              Espere um pouco! Temos uma <span className="text-amber-600 underline decoration-amber-300">condição única</span> para você
+              Espere um pouco! Temos uma <span className="text-red-600 underline decoration-red-400">condição única</span> para você
             </h2>
             
             <p className="text-lg md:text-xl text-foreground max-w-lg mx-auto leading-relaxed font-bold italic">
-              Não saia ainda! Aproveite todas as vantagens da <span className="text-amber-600">OFERTA PREMIUM</span> pelo valor do plano básico: <span className="text-foreground border-b-4 border-amber-400">apenas R$ 9,90!</span>
+              Não saia ainda! Aproveite todas as vantagens da <span className="text-red-600">OFERTA PREMIUM</span> pelo valor do plano básico: <span className="text-foreground border-b-4 border-red-500">apenas R$ 9,90!</span>
             </p>
           </div>
 
