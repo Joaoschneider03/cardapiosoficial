@@ -103,30 +103,30 @@ export function BackRedirectOverlay() {
           </div>
 
           {/* Card Premium Gold Estreito, Sofisticado e Flutuante */}
-          <div className="max-w-lg mx-auto bg-gradient-to-br from-white via-amber-50/40 to-white rounded-[3rem] p-10 md:p-14 border-[3px] border-amber-200 shadow-[0_30px_70px_-15px_rgba(180,120,0,0.3)] relative overflow-hidden text-left group animate-float">
+          <div className="max-w-md mx-auto bg-gradient-to-br from-white via-amber-50/40 to-white rounded-[3rem] p-8 md:p-10 border-[3px] border-amber-200 shadow-[0_30px_70px_-15px_rgba(180,120,0,0.3)] relative overflow-hidden text-left group animate-float">
             
             {/* Efeitos de Luz Premium */}
             <div className="absolute -top-24 -left-24 w-64 h-64 bg-amber-200/30 blur-[100px] rounded-full pointer-events-none group-hover:translate-x-full transition-transform duration-1000"></div>
             <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-amber-300/20 blur-[100px] rounded-full pointer-events-none"></div>
             
-            <h3 className="text-2xl md:text-3xl font-black mb-10 flex items-center gap-3 text-amber-700 uppercase tracking-tighter italic">
-              <Sparkles className="w-7 h-7 fill-amber-500 text-amber-500 animate-spin-slow" /> 
+            <h3 className="text-xl md:text-2xl font-black mb-8 flex items-center gap-3 text-amber-700 uppercase tracking-tighter italic">
+              <Sparkles className="w-6 h-6 fill-amber-500 text-amber-500 animate-spin-slow" /> 
               TUDO DO PLANO PREMIUM:
             </h3>
             
-            <ul className="space-y-6">
+            <ul className="space-y-4">
               {benefits.map((benefit, i) => (
-                <li key={i} className="flex items-start gap-4 text-base md:text-xl font-extrabold text-foreground/90">
-                  <CheckCircle2 className="w-6 h-6 md:w-7 md:h-7 text-amber-500 shrink-0 mt-0.5" />
+                <li key={i} className="flex items-start gap-3 text-base md:text-lg font-extrabold text-foreground/90">
+                  <CheckCircle2 className="w-5 h-5 md:w-6 md:h-6 text-amber-500 shrink-0 mt-0.5" />
                   {benefit}
                 </li>
               ))}
             </ul>
 
-            <div className="mt-14 pt-10 border-t-2 border-amber-100 flex flex-col items-center">
-                <div className="flex flex-col items-center gap-1 mb-8">
+            <div className="mt-10 pt-8 border-t-2 border-amber-100 flex flex-col items-center">
+                <div className="flex flex-col items-center gap-1 mb-6">
                     <div className="relative">
-                      <span className="text-6xl md:text-7xl font-black text-amber-600 drop-shadow-sm">R$ 9,90</span>
+                      <span className="text-5xl md:text-6xl font-black text-amber-600 drop-shadow-sm">R$ 9,90</span>
                       <div className="absolute -top-4 -right-10 rotate-12 bg-red-600 text-white text-xs font-black px-4 py-1.5 rounded-full shadow-md animate-bounce">
                         HOJE!
                       </div>
@@ -135,17 +135,17 @@ export function BackRedirectOverlay() {
                 
                 <Button 
                     onClick={handleStay}
-                    className="w-full h-16 md:h-20 text-xl md:text-2xl font-black rounded-full shadow-[0_15px_40px_-5px_rgba(180,120,0,0.5)] hover:scale-105 transition-all bg-amber-600 hover:bg-amber-700 text-white uppercase italic tracking-wider group"
+                    className="w-full h-14 md:h-16 text-lg md:text-xl font-black rounded-full shadow-[0_15px_40px_-5px_rgba(180,120,0,0.5)] hover:scale-105 transition-all bg-amber-600 hover:bg-amber-700 text-white uppercase italic tracking-wider group"
                 >
-                    PEGAR AGORA! <ArrowRight className="ml-2 w-7 h-7 group-hover:translate-x-2 transition-transform" />
+                    PEGAR AGORA! <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-2 transition-transform" />
                 </Button>
                 
-                <div className="mt-8 flex flex-col items-center gap-3">
-                    <p className="text-sm font-black text-amber-700 uppercase tracking-[0.15em] flex items-center gap-2">
-                       <Zap className="w-5 h-5 fill-amber-500" /> Pagamento Único!
+                <div className="mt-6 flex flex-col items-center gap-3">
+                    <p className="text-xs font-black text-amber-700 uppercase tracking-[0.15em] flex items-center gap-2">
+                       <Zap className="w-4 h-4 fill-amber-500" /> Pagamento Único!
                     </p>
-                    <p className="text-xs font-bold text-muted-foreground/60 uppercase tracking-widest flex items-center gap-2">
-                        <ShieldCheck className="w-4 h-4" /> Transação 100% Criptografada
+                    <p className="text-[10px] font-bold text-muted-foreground/60 uppercase tracking-widest flex items-center gap-2">
+                        <ShieldCheck className="w-3.5 h-3.5" /> Transação 100% Criptografada
                     </p>
                 </div>
             </div>
