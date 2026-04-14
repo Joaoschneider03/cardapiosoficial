@@ -7,6 +7,7 @@ import { Pricing } from "@/components/sections/Pricing";
 import { Guarantee } from "@/components/sections/Guarantee";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { Footer } from "@/components/sections/Footer";
+import { BackRedirectOverlay } from "@/components/BackRedirectOverlay";
 
 export default function Home() {
   return (
@@ -20,6 +21,9 @@ export default function Home() {
       <Guarantee />
       <FAQSection />
       <Footer />
+      
+      {/* Componente de Backredirect que intercepta a saída */}
+      <BackRedirectOverlay />
     </main>
   );
 }
