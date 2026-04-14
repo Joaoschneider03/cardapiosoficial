@@ -6,20 +6,33 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardTitle, CardDescription } from "@/components/ui/card";
 import { Sparkles, Loader2, Wand2 } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 export function PersonalizedTool() {
   const [challenge, setChallenge] = useState("");
   const [result, setResult] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+  const { toast } = useToast();
 
   async function handleGenerate() {
     if (!challenge.trim()) return;
     setLoading(true);
+    setResult(null);
+    
     try {
-      const { benefitStatement } = await generatePersonalizedBenefitStatement({ challenge });
-      setResult(benefitStatement);
-    } catch (error) {
-      console.error(error);
+      const response = await generatePersonalizedBenefitStatement({ challenge });
+      if (response && response.benefitStatement) {
+        setResult(response.benefitStatement);
+      } else {
+        throw new Error("Resposta inválida da IA");
+      }
+    } catch (error: any) {
+      console.error("Erro ao gerar solução:", error);
+      toast({
+        variant: "destructive",
+        title: "Ops! Tivemos um problema.",
+        description: "Não conseguimos gerar sua solução agora. Por favor, tente novamente em instantes.",
+      });
     } finally {
       setLoading(false);
     }

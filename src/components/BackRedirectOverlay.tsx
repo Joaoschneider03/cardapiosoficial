@@ -1,45 +1,20 @@
 "use client";
 
-import { useEffect, useState, useCallback, useRef } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, ArrowRight, ShieldCheck, Zap, AlertTriangle } from "lucide-react";
 
+/**
+ * BackRedirectOverlay - Versão de Teste/Preview
+ * 
+ * Removido o listener de popstate para evitar conflito com o redirecionamento real.
+ * Este componente agora foca apenas na visualização manual através do atalho de debug.
+ */
 export function BackRedirectOverlay() {
   const [isOpen, setIsOpen] = useState(false);
-  const initialized = useRef(false);
-
-  // Função para injetar uma entrada no histórico que será interceptada
-  const setupHistory = useCallback(() => {
-    if (initialized.current) return;
-    
-    // Adiciona uma entrada extra no histórico após um pequeno delay para garantir que a página carregou
-    try {
-      window.history.pushState({ backRedirect: true }, "");
-      initialized.current = true;
-    } catch (e) {
-      console.warn("History push failed", e);
-    }
-  }, []);
 
   useEffect(() => {
-    const timer = setTimeout(setupHistory, 1000);
-
-    const handleInteraction = () => {
-      setupHistory();
-    };
-
-    window.addEventListener("touchstart", handleInteraction, { passive: true });
-    window.addEventListener("click", handleInteraction, { passive: true });
-    window.addEventListener("scroll", handleInteraction, { passive: true });
-
-    const onPopState = (event: PopStateEvent) => {
-      setIsOpen(true);
-      if (typeof document !== 'undefined') {
-        document.body.style.overflow = 'hidden';
-      }
-    };
-
     const handleManualOpen = () => {
       setIsOpen(true);
       if (typeof document !== 'undefined') {
@@ -48,21 +23,14 @@ export function BackRedirectOverlay() {
     };
 
     window.addEventListener("open-back-redirect", handleManualOpen);
-    window.addEventListener("popstate", onPopState);
 
     return () => {
-      clearTimeout(timer);
-      window.removeEventListener("popstate", onPopState);
       window.removeEventListener("open-back-redirect", handleManualOpen);
-      window.removeEventListener("touchstart", handleInteraction);
-      window.removeEventListener("click", handleInteraction);
-      window.removeEventListener("scroll", handleInteraction);
-      
       if (typeof document !== 'undefined') {
         document.body.style.overflow = 'auto';
       }
     };
-  }, [setupHistory]);
+  }, []);
 
   const handleStay = () => {
     window.location.href = "https://pay.kiwify.com.br/HyN7eak";
@@ -73,7 +41,6 @@ export function BackRedirectOverlay() {
     if (typeof document !== 'undefined') {
       document.body.style.overflow = 'auto';
     }
-    window.history.back();
   };
 
   if (!isOpen) return null;
@@ -112,7 +79,7 @@ export function BackRedirectOverlay() {
             </p>
           </div>
 
-          {/* Imagem de Mockup entre subheadline e card */}
+          {/* Imagem de Mockup */}
           <div className="max-w-md mx-auto py-4">
             <Image 
               src="https://i.postimg.cc/7LmjpkzM/mock.png" 
@@ -174,7 +141,7 @@ export function BackRedirectOverlay() {
             onClick={handleLeave}
             className="py-6 text-[11px] font-bold text-muted-foreground/50 uppercase tracking-[0.2em] hover:text-red-500 transition-colors"
           >
-            Não, prefiro perder meu desconto e sair agora
+            Fechar Visualização
           </button>
         </div>
       </div>
