@@ -76,15 +76,15 @@ export function BackRedirectOverlay() {
       </div>
 
       <div className="container mx-auto px-6 py-28 md:py-40 flex flex-col items-center">
-        <div className="max-w-2xl w-full space-y-12 text-center">
+        <div className="max-w-3xl w-full space-y-12 text-center">
           
           <div className="space-y-8">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold font-headline leading-tight text-foreground uppercase italic">
-              Espere um pouco! Temos uma <span className="text-red-600 underline decoration-red-400">condição única</span> para você
+              Espere um pouco! Temos uma <span className="text-amber-600 underline decoration-amber-400">condição única</span> para você
             </h2>
             
             <p className="text-lg md:text-xl text-foreground max-w-lg mx-auto leading-relaxed font-bold italic">
-              Não saia ainda! Aproveite todas as vantagens da <span className="text-red-600">OFERTA PREMIUM</span> pelo valor do plano básico: <span className="text-foreground border-b-4 border-red-500">apenas R$ 9,90!</span>
+              Não saia ainda! Aproveite todas as vantagens da <span className="text-amber-600">OFERTA PREMIUM</span> pelo valor do plano básico: <span className="text-foreground border-b-4 border-amber-500">apenas R$ 9,90!</span>
             </p>
           </div>
 
@@ -128,7 +128,7 @@ export function BackRedirectOverlay() {
                     onClick={handleStay}
                     className="w-full h-16 md:h-20 text-lg md:text-xl font-black rounded-full shadow-[0_10px_30px_-5px_rgba(180,120,0,0.4)] hover:scale-105 transition-all bg-amber-600 hover:bg-amber-700 text-white uppercase italic tracking-wider group"
                 >
-                    GARANTIR MEU ACESSO PREMIUM <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-2 transition-transform" />
+                    PEGAR AGORA! <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-2 transition-transform" />
                 </Button>
                 
                 <div className="mt-8 flex flex-col items-center gap-3">
