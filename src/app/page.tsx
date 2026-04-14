@@ -8,8 +8,6 @@ import { Guarantee } from "@/components/sections/Guarantee";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { Footer } from "@/components/sections/Footer";
 import { ExitInterceptor } from "@/components/ExitInterceptor";
-import { BackRedirectOverlay } from "@/components/BackRedirectOverlay";
-import { DebugBackRedirect } from "@/components/DebugBackRedirect";
 
 export default function Home() {
   return (
@@ -24,14 +22,8 @@ export default function Home() {
       <FAQSection />
       <Footer />
       
-      {/* Componente que intercepta a saída e redireciona para /oferta-especial */}
+      {/* Componente invisível que intercepta o botão de voltar e redireciona para /oferta-especial */}
       <ExitInterceptor />
-
-      {/* Overlay para visualização manual através do atalho */}
-      <BackRedirectOverlay />
-
-      {/* Botão sutil de atalho para teste rápido no canto da tela */}
-      <DebugBackRedirect />
     </main>
   );
 }
