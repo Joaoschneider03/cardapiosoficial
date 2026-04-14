@@ -4,43 +4,45 @@
 import { useEffect, useRef } from "react";
 
 /**
- * ExitInterceptor - Sistema profissional de BackRedirect
+ * ExitInterceptor - Sistema de BackRedirect Profissional
  * 
- * Funcionalidade:
- * 1. Aguarda a primeira interação do usuário (click/touch/scroll) para injetar um estado no histórico.
- * 2. Monitora o evento 'popstate' (botão voltar/gesto).
- * 3. No primeiro 'voltar', redireciona para a página de oferta.
- * 4. Usa sessionStorage para garantir execução única por sessão.
+ * Este componente utiliza a técnica de ancoragem de histórico (History Anchoring).
+ * 1. Aguarda a primeira interação do usuário (essencial para Safari e Chrome modernos).
+ * 2. Injeta estados no histórico para criar uma "armadilha" de navegação.
+ * 3. Intercepta o evento 'popstate' para redirecionar o usuário na primeira tentativa de saída.
+ * 4. Usa sessionStorage para garantir que a ação ocorra apenas uma vez por sessão.
  */
 export function ExitInterceptor() {
   const REDIRECT_URL = "/oferta-especial";
-  const SESSION_KEY = "backredirect_executed";
+  const SESSION_KEY = "backredirect_done";
   const initialized = useRef(false);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
 
-    // 1. Verificação de proteção contra execução múltipla
-    const hasExecuted = sessionStorage.getItem(SESSION_KEY);
-    if (hasExecuted) return;
+    // Proteção: não executa se já tiver sido disparado nesta sessão
+    if (sessionStorage.getItem(SESSION_KEY)) return;
 
-    const setupHistoryAnchor = () => {
+    const setupHistoryTrap = () => {
       if (initialized.current) return;
       
       try {
-        // Injetamos um estado extra no histórico. 
-        // Agora o histórico é: [Página Anterior] -> [Página Atual (Estado Real)] -> [Página Atual (Estado Âncora)]
-        window.history.pushState({ exitAnchor: true }, "");
+        // Estado 1: A "Âncora" (Onde o usuário cairá ao clicar em voltar)
+        window.history.pushState({ isAnchor: true }, "");
+        // Estado 2: A "Página Real" (Onde o usuário está navegando agora)
+        window.history.pushState({ isCurrent: true }, "");
+        
         initialized.current = true;
       } catch (e) {
-        console.warn("Erro ao configurar âncora de histórico:", e);
+        console.warn("Erro ao configurar histórico:", e);
       }
     };
 
-    // 2. Ativação após interação (essencial para Chrome/Safari modernos)
-    const interactionEvents = ["mousedown", "touchstart", "scroll", "keydown"];
+    // Eventos de interação que ativam o sistema (Gesto do Usuário)
+    const interactionEvents = ["click", "touchstart", "scroll", "mousedown", "keydown"];
+    
     const onFirstInteraction = () => {
-      setupHistoryAnchor();
+      setupHistoryTrap();
       interactionEvents.forEach(event => {
         window.removeEventListener(event, onFirstInteraction);
       });
@@ -50,35 +52,20 @@ export function ExitInterceptor() {
       window.addEventListener(event, onFirstInteraction, { passive: true });
     });
 
-    // 3. Listener do evento PopState (Interceptação do Voltar)
-    const onPopState = (event: PopStateEvent) => {
-      // Se o estado 'exitAnchor' sumir, significa que o usuário tentou voltar
-      if (initialized.current && (!event.state || !event.state.exitAnchor)) {
+    // Listener de PopState (Detecção do botão Voltar)
+    const handlePopState = (event: PopStateEvent) => {
+      // Se o usuário tentar voltar e cair na nossa âncora
+      if (initialized.current && event.state?.isAnchor) {
         sessionStorage.setItem(SESSION_KEY, "true");
-        window.location.href = REDIRECT_URL;
+        // Redirecionamento forçado usando replace para evitar loops de histórico
+        window.location.replace(REDIRECT_URL);
       }
     };
 
-    // 4. Fallback para Links Externos (Opcional, mas solicitado)
-    const handleLinkClick = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      const anchor = target.closest("a");
-      
-      if (anchor && anchor.href && !anchor.href.includes(window.location.hostname)) {
-        if (!sessionStorage.getItem(SESSION_KEY)) {
-          e.preventDefault();
-          sessionStorage.setItem(SESSION_KEY, "true");
-          window.location.href = REDIRECT_URL;
-        }
-      }
-    };
-
-    window.addEventListener("popstate", onPopState);
-    document.addEventListener("click", handleLinkClick);
+    window.addEventListener("popstate", handlePopState);
 
     return () => {
-      window.removeEventListener("popstate", onPopState);
-      document.removeEventListener("click", handleLinkClick);
+      window.removeEventListener("popstate", handlePopState);
       interactionEvents.forEach(event => {
         window.removeEventListener(event, onFirstInteraction);
       });

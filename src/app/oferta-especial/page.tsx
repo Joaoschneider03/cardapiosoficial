@@ -23,8 +23,8 @@ export default function OfertaEspecial() {
 
   return (
     <main className="min-h-screen bg-white overflow-x-hidden font-body animate-in fade-in duration-500">
-      {/* Faixa de Alerta no Topo */}
-      <div className="bg-red-600 text-white py-3 flex items-center justify-center gap-4 shadow-md">
+      {/* Faixa de Alerta no Topo - Ajustada */}
+      <div className="bg-red-600 text-white py-3 flex items-center justify-center gap-4 shadow-md relative z-50">
         <AlertTriangle className="w-5 h-5 animate-pulse shrink-0 text-yellow-300" />
         <span className="text-sm md:text-base font-black uppercase tracking-[0.15em] whitespace-nowrap">
           CONDIÇÃO ÚNICA E EXCLUSIVA
@@ -45,7 +45,7 @@ export default function OfertaEspecial() {
             </p>
           </div>
 
-          {/* Imagem de Mockup entre Headline e Card */}
+          {/* Imagem de Mockup entre Headline e Card conforme solicitado */}
           <div className="max-w-md mx-auto py-4">
             <Image 
               src="https://i.postimg.cc/7LmjpkzM/mock.png" 
@@ -57,7 +57,7 @@ export default function OfertaEspecial() {
             />
           </div>
 
-          {/* Card Premium Gold Estreito com Flutuação */}
+          {/* Card Premium Gold Estreito com Flutuação - Sem Estrela e Sem Preço de 47 */}
           <div className="max-w-md mx-auto bg-gradient-to-br from-white via-amber-50/40 to-white rounded-[3rem] p-8 md:p-10 border-[3px] border-amber-200 shadow-[0_30px_70px_-15px_rgba(180,120,0,0.3)] relative overflow-hidden text-left animate-float">
             
             <div className="absolute -top-24 -left-24 w-64 h-64 bg-amber-200/30 blur-[100px] rounded-full pointer-events-none"></div>
