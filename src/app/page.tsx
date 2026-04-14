@@ -1,3 +1,4 @@
+
 import { Hero } from "@/components/sections/Hero";
 import { TargetAudience } from "@/components/sections/TargetAudience";
 import { WhatYouGet } from "@/components/sections/WhatYouGet";
@@ -7,8 +8,7 @@ import { Pricing } from "@/components/sections/Pricing";
 import { Guarantee } from "@/components/sections/Guarantee";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { Footer } from "@/components/sections/Footer";
-import { BackRedirectOverlay } from "@/components/BackRedirectOverlay";
-import { DebugBackRedirect } from "@/components/DebugBackRedirect";
+import { ExitInterceptor } from "@/components/ExitInterceptor";
 
 export default function Home() {
   return (
@@ -23,11 +23,8 @@ export default function Home() {
       <FAQSection />
       <Footer />
       
-      {/* Componente de Backredirect que intercepta a saída */}
-      <BackRedirectOverlay />
-
-      {/* Botão flutuante para testar visualização do BackRedirect */}
-      <DebugBackRedirect />
+      {/* Componente que intercepta a saída e redireciona para /oferta-especial */}
+      <ExitInterceptor />
     </main>
   );
 }
