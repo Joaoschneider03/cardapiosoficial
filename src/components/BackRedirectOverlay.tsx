@@ -67,7 +67,7 @@ export function BackRedirectOverlay() {
 
   return (
     <div className="fixed inset-0 z-[999999] bg-white overflow-y-auto animate-in fade-in duration-300 font-body">
-      {/* Barra de Alerta no Topo (Estática mas Absolute para rolar) */}
+      {/* Barra de Alerta no Topo (Absolute para rolar com a página) */}
       <div className="absolute top-0 left-0 right-0 bg-red-600 text-white py-4 flex items-center justify-center gap-4 z-10 shadow-lg">
         <AlertTriangle className="w-5 h-5 animate-pulse shrink-0 text-yellow-300" />
         <span className="text-[10px] md:text-xs font-black uppercase tracking-[0.2em] whitespace-nowrap">
@@ -89,10 +89,10 @@ export function BackRedirectOverlay() {
             </p>
           </div>
 
-          {/* Card Premium Gold Estreito */}
+          {/* Card Premium Gold Estreito e Sofisticado */}
           <div className="max-w-lg mx-auto bg-gradient-to-br from-white via-amber-50/30 to-white rounded-[3rem] p-10 md:p-14 border-[3px] border-amber-200 shadow-[0_20px_60px_-15px_rgba(180,120,0,0.2)] relative overflow-hidden text-left group">
             
-            {/* Efeito de Brilho/Luz */}
+            {/* Efeitos de Luz Premium */}
             <div className="absolute -top-24 -left-24 w-64 h-64 bg-amber-200/20 blur-[100px] rounded-full pointer-events-none group-hover:translate-x-full transition-transform duration-1000"></div>
             <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-amber-300/10 blur-[100px] rounded-full pointer-events-none"></div>
             
@@ -102,7 +102,7 @@ export function BackRedirectOverlay() {
             
             <h3 className="text-2xl font-black mb-10 flex items-center gap-3 text-amber-700 uppercase tracking-tighter italic">
               <Sparkles className="w-7 h-7 fill-amber-500 text-amber-500 animate-spin-slow" /> 
-              UPGRADE GOLD ATIVADO:
+              TUDO DO PLANO PREMIUM:
             </h3>
             
             <ul className="space-y-6">
@@ -129,7 +129,7 @@ export function BackRedirectOverlay() {
                     onClick={handleStay}
                     className="w-full h-16 md:h-20 text-lg md:text-xl font-black rounded-full shadow-[0_10px_30px_-5px_rgba(180,120,0,0.4)] hover:scale-105 transition-all bg-amber-600 hover:bg-amber-700 text-white uppercase italic tracking-wider group"
                 >
-                    GARANTIR MEU UPGRADE GOLD <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-2 transition-transform" />
+                    GARANTIR MEU ACESSO PREMIUM <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-2 transition-transform" />
                 </Button>
                 
                 <div className="mt-8 flex flex-col items-center gap-3">
