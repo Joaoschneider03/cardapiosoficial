@@ -4,14 +4,14 @@ import { Eye } from "lucide-react";
 
 export function DebugBackRedirect() {
   const handlePreview = () => {
-    // Dispara o evento que o BackRedirectOverlay está escutando
+    // Dispara o evento que o BackRedirectOverlay está escutando para abrir o modal manualmente
     window.dispatchEvent(new CustomEvent("open-back-redirect"));
   };
 
   return (
     <button
       onClick={handlePreview}
-      className="fixed bottom-4 right-4 z-[9999] w-10 h-10 bg-red-600 hover:bg-red-700 text-white rounded-full flex items-center justify-center shadow-lg transition-transform hover:scale-110 group opacity-50 hover:opacity-100"
+      className="fixed bottom-4 right-4 z-[9999] w-10 h-10 bg-red-600 hover:bg-red-700 text-white rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110 group opacity-40 hover:opacity-100"
       title="Visualizar BackRedirect"
     >
       <Eye className="w-5 h-5" />
