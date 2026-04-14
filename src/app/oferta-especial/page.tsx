@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from "next/image";
@@ -23,16 +22,16 @@ export default function OfertaEspecial() {
 
   return (
     <main className="min-h-screen bg-white overflow-x-hidden font-body animate-in fade-in duration-500">
-      {/* Faixa de Alerta no Topo - Ajustada */}
-      <div className="bg-red-600 text-white py-3 flex items-center justify-center gap-4 shadow-md relative z-50">
-        <AlertTriangle className="w-5 h-5 animate-pulse shrink-0 text-yellow-300" />
-        <span className="text-sm md:text-base font-black uppercase tracking-[0.15em] whitespace-nowrap">
+      {/* Faixa de Alerta no Topo - Design Enxuto */}
+      <div className="bg-red-600 text-white py-2 flex items-center justify-center gap-3 shadow-md relative z-50">
+        <AlertTriangle className="w-4 h-4 animate-pulse shrink-0 text-yellow-300" />
+        <span className="text-[10px] md:text-xs font-black uppercase tracking-[0.2em] whitespace-nowrap">
           CONDIÇÃO ÚNICA E EXCLUSIVA
         </span>
-        <AlertTriangle className="w-5 h-5 animate-pulse shrink-0 text-yellow-300" />
+        <AlertTriangle className="w-4 h-4 animate-pulse shrink-0 text-yellow-300" />
       </div>
 
-      <div className="container mx-auto px-6 py-12 md:py-20 flex flex-col items-center">
+      <div className="container mx-auto px-6 py-12 md:py-16 flex flex-col items-center">
         <div className="max-w-3xl w-full space-y-10 text-center">
           
           <div className="space-y-6">
@@ -45,11 +44,11 @@ export default function OfertaEspecial() {
             </p>
           </div>
 
-          {/* Imagem de Mockup entre Headline e Card conforme solicitado */}
+          {/* Imagem de Mockup centralizada entre Texto e Card */}
           <div className="max-w-md mx-auto py-4">
             <Image 
               src="https://i.postimg.cc/7LmjpkzM/mock.png" 
-              alt="Mockup Oferta" 
+              alt="Mockup Oferta Especial" 
               width={600} 
               height={400} 
               className="w-full h-auto object-contain drop-shadow-2xl"
@@ -57,7 +56,7 @@ export default function OfertaEspecial() {
             />
           </div>
 
-          {/* Card Premium Gold Estreito com Flutuação - Sem Estrela e Sem Preço de 47 */}
+          {/* Card Premium Gold Estreito com Flutuação - Design Limpo */}
           <div className="max-w-md mx-auto bg-gradient-to-br from-white via-amber-50/40 to-white rounded-[3rem] p-8 md:p-10 border-[3px] border-amber-200 shadow-[0_30px_70px_-15px_rgba(180,120,0,0.3)] relative overflow-hidden text-left animate-float">
             
             <div className="absolute -top-24 -left-24 w-64 h-64 bg-amber-200/30 blur-[100px] rounded-full pointer-events-none"></div>
@@ -106,7 +105,7 @@ export default function OfertaEspecial() {
 
           <button 
             onClick={() => window.history.back()}
-            className="py-6 text-[11px] font-bold text-muted-foreground/50 uppercase tracking-[0.2em] hover:text-red-500 transition-colors"
+            className="py-6 text-[10px] font-bold text-muted-foreground/50 uppercase tracking-[0.2em] hover:text-red-500 transition-colors"
           >
             Não, prefiro perder meu desconto e sair agora
           </button>

@@ -1,4 +1,3 @@
-
 import type {Metadata} from 'next';
 import './globals.css';
 
@@ -30,7 +29,7 @@ export default function RootLayout({
           }}
         />
 
-        {/* Script do Pixel UTMify */}
+        {/* Script do Pixel UTMify - Instalado Globalmente */}
         <script
           suppressHydrationWarning
           dangerouslySetInnerHTML={{
@@ -45,7 +44,7 @@ export default function RootLayout({
           }}
         />
 
-        {/* Script de Rastreamento UTMify */}
+        {/* Script de Rastreamento UTMify - Instalado Globalmente */}
         <script
           src="https://cdn.utmify.com.br/scripts/utms/latest.js"
           data-utmify-prevent-xcod-sck
