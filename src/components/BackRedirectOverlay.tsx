@@ -10,24 +10,15 @@ export function BackRedirectOverlay() {
   const [isOpen, setIsOpen] = useState(false);
   const initialized = useRef(false);
 
-  // Função para injetar o estado extra no histórico.
-  // Muitos navegadores exigem uma interação prévia do usuário (clique/toque) 
-  // para permitir que o popstate funcione de forma confiável para bloqueio.
   const setupHistory = useCallback(() => {
     if (initialized.current) return;
     initialized.current = true;
-    
-    // Adiciona um estado extra no histórico. 
-    // O histórico fica: [Site Anterior] -> [Nossa Página (Estado 0)] -> [Nossa Página (Estado 1)]
     window.history.pushState({ backRedirect: true }, "");
   }, []);
 
   useEffect(() => {
-    // Tenta inicializar o histórico imediatamente
     setupHistory();
 
-    // Como fallback para garantir ativação em mobile/browsers restritos,
-    // reinicializa no primeiro toque ou clique do usuário na página.
     const handleInteraction = () => {
       setupHistory();
       window.removeEventListener("touchstart", handleInteraction);
@@ -38,15 +29,18 @@ export function BackRedirectOverlay() {
     window.addEventListener("click", handleInteraction, { passive: true });
 
     const onPopState = (event: PopStateEvent) => {
-      // O evento dispara quando o usuário tenta "voltar" do Estado 1 para o Estado 0.
-      // Interceptamos aqui exibindo o overlay.
       setIsOpen(true);
     };
+
+    // Escuta evento personalizado para debug/visualização
+    const handleManualOpen = () => setIsOpen(true);
+    window.addEventListener("open-back-redirect", handleManualOpen);
 
     window.addEventListener("popstate", onPopState);
 
     return () => {
       window.removeEventListener("popstate", onPopState);
+      window.removeEventListener("open-back-redirect", handleManualOpen);
       window.removeEventListener("touchstart", handleInteraction);
       window.removeEventListener("click", handleInteraction);
     };
@@ -54,14 +48,11 @@ export function BackRedirectOverlay() {
 
   const handleStay = () => {
     setIsOpen(false);
-    // Redireciona para o checkout com a oferta de retenção
     window.location.href = "https://pay.kiwify.com.br/GTyJjUV";
   };
 
   const handleLeave = () => {
     setIsOpen(false);
-    // Como o popstate já nos moveu para o "Estado 0", 
-    // chamar back() novamente levará o usuário para fora do site.
     window.history.back();
   };
 

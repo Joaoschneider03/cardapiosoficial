@@ -8,6 +8,7 @@ import { Guarantee } from "@/components/sections/Guarantee";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { Footer } from "@/components/sections/Footer";
 import { BackRedirectOverlay } from "@/components/BackRedirectOverlay";
+import { DebugBackRedirect } from "@/components/DebugBackRedirect";
 
 export default function Home() {
   return (
@@ -24,6 +25,9 @@ export default function Home() {
       
       {/* Componente de Backredirect que intercepta a saída */}
       <BackRedirectOverlay />
+
+      {/* Botão flutuante para testar visualização do BackRedirect */}
+      <DebugBackRedirect />
     </main>
   );
 }
