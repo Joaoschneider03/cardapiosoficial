@@ -19,17 +19,12 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
         
-        {/* Prevenção de restauração de scroll automática imediata */}
+        {/* Desativa restauração automática de scroll para evitar saltos durante a manipulação do histórico */}
         <script
-          suppressHydrationWarning
           dangerouslySetInnerHTML={{
             __html: `
-              if (typeof window !== 'undefined') {
-                window.history.scrollRestoration = "manual";
-                if (window.location.hash) {
-                  window.scrollTo(0,0);
-                  window.history.replaceState(null, null, window.location.pathname + window.location.search);
-                }
+              if ('scrollRestoration' in history) {
+                history.scrollRestoration = 'manual';
               }
             `,
           }}
