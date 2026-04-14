@@ -10,15 +10,19 @@ export function BackRedirectOverlay() {
   const [isOpen, setIsOpen] = useState(false);
   const initialized = useRef(false);
 
+  // Função para injetar uma entrada no histórico que será interceptada
   const setupHistory = useCallback(() => {
     if (initialized.current) return;
     initialized.current = true;
+    // Adiciona uma entrada extra no histórico. O usuário agora está em "Página + 1"
     window.history.pushState({ backRedirect: true }, "");
   }, []);
 
   useEffect(() => {
+    // Tenta configurar o histórico no load
     setupHistory();
 
+    // Alguns navegadores exigem interação do usuário para permitir manipulação de histórico
     const handleInteraction = () => {
       setupHistory();
       window.removeEventListener("touchstart", handleInteraction);
@@ -29,12 +33,15 @@ export function BackRedirectOverlay() {
     window.addEventListener("click", handleInteraction, { passive: true });
 
     const onPopState = (event: PopStateEvent) => {
+      // Quando o usuário clica em voltar, o navegador sai da "Página + 1" e volta para a "Página Original"
+      // Aqui interceptamos e mostramos o overlay
       setIsOpen(true);
     };
 
     const handleManualOpen = () => setIsOpen(true);
     window.addEventListener("open-back-redirect", handleManualOpen);
 
+    // Ouve o evento de voltar do navegador
     window.addEventListener("popstate", onPopState);
 
     return () => {
@@ -46,11 +53,14 @@ export function BackRedirectOverlay() {
   }, [setupHistory]);
 
   const handleStay = () => {
+    // Redireciona para o checkout econômico
     window.location.href = "https://pay.kiwify.com.br/HyN7eak";
   };
 
   const handleLeave = () => {
     setIsOpen(false);
+    // Como o popstate já ocorreu uma vez para abrir o modal,
+    // chamar back() agora levará o usuário para a página REAL anterior (fora do nosso site)
     window.history.back();
   };
 
@@ -68,13 +78,13 @@ export function BackRedirectOverlay() {
 
   return (
     <div className="fixed inset-0 z-[999999] bg-white overflow-y-auto animate-in fade-in duration-300 font-body">
-      {/* Barra de Alerta no Topo (Absolute para rolar com a página) */}
+      {/* Barra de Alerta no Topo */}
       <div className="absolute top-0 left-0 right-0 bg-red-600 text-white py-3 md:py-4 flex items-center justify-center gap-4 md:gap-8 z-10 shadow-md">
-        <AlertTriangle className="w-5 h-5 md:w-7 md:h-7 animate-pulse shrink-0 text-yellow-300" />
-        <span className="text-sm md:text-lg lg:text-xl font-black uppercase tracking-[0.15em] whitespace-nowrap">
+        <AlertTriangle className="w-5 h-5 md:w-6 md:h-6 animate-pulse shrink-0 text-yellow-300" />
+        <span className="text-sm md:text-base font-black uppercase tracking-[0.15em] whitespace-nowrap">
           CONDIÇÃO ÚNICA E EXCLUSIVA
         </span>
-        <AlertTriangle className="w-5 h-5 md:w-7 md:h-7 animate-pulse shrink-0 text-yellow-300" />
+        <AlertTriangle className="w-5 h-5 md:w-6 md:h-6 animate-pulse shrink-0 text-yellow-300" />
       </div>
 
       <div className="container mx-auto px-6 py-24 md:py-36 flex flex-col items-center">
@@ -102,12 +112,11 @@ export function BackRedirectOverlay() {
             />
           </div>
 
-          {/* Card Premium Gold Estreito, Sofisticado e Flutuante */}
+          {/* Card Premium Gold Estreito */}
           <div className="max-w-md mx-auto bg-gradient-to-br from-white via-amber-50/40 to-white rounded-[3rem] p-8 md:p-10 border-[3px] border-amber-200 shadow-[0_30px_70px_-15px_rgba(180,120,0,0.3)] relative overflow-hidden text-left group animate-float">
             
             {/* Efeitos de Luz Premium */}
             <div className="absolute -top-24 -left-24 w-64 h-64 bg-amber-200/30 blur-[100px] rounded-full pointer-events-none group-hover:translate-x-full transition-transform duration-1000"></div>
-            <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-amber-300/20 blur-[100px] rounded-full pointer-events-none"></div>
             
             <h3 className="text-xl md:text-2xl font-black mb-8 flex items-center gap-3 text-amber-700 uppercase tracking-tighter italic">
               <Sparkles className="w-6 h-6 fill-amber-500 text-amber-500 animate-spin-slow" /> 
