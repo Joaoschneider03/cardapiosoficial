@@ -1,8 +1,9 @@
+
 "use client";
 
 import { useEffect, useState, useCallback, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, ArrowRight, ShieldCheck, Zap, Star, AlertTriangle, Sparkles } from "lucide-react";
+import { CheckCircle2, ArrowRight, ShieldCheck, Zap, AlertTriangle, Sparkles } from "lucide-react";
 
 export function BackRedirectOverlay() {
   const [isOpen, setIsOpen] = useState(false);
@@ -67,18 +68,18 @@ export function BackRedirectOverlay() {
   return (
     <div className="fixed inset-0 z-[999999] bg-white overflow-y-auto animate-in fade-in duration-300 font-body">
       {/* Barra de Alerta no Topo (Absolute para rolar com a página) */}
-      <div className="absolute top-0 left-0 right-0 bg-red-600 text-white py-4 md:py-5 flex items-center justify-center gap-4 md:gap-8 z-10 shadow-md">
-        <AlertTriangle className="w-6 h-6 md:w-8 md:h-8 animate-pulse shrink-0 text-yellow-300" />
-        <span className="text-sm md:text-xl lg:text-2xl font-black uppercase tracking-[0.15em] whitespace-nowrap">
+      <div className="absolute top-0 left-0 right-0 bg-red-600 text-white py-3 md:py-4 flex items-center justify-center gap-4 md:gap-8 z-10 shadow-md">
+        <AlertTriangle className="w-5 h-5 md:w-7 md:h-7 animate-pulse shrink-0 text-yellow-300" />
+        <span className="text-sm md:text-lg lg:text-xl font-black uppercase tracking-[0.15em] whitespace-nowrap">
           CONDIÇÃO ÚNICA E EXCLUSIVA
         </span>
-        <AlertTriangle className="w-6 h-6 md:w-8 md:h-8 animate-pulse shrink-0 text-yellow-300" />
+        <AlertTriangle className="w-5 h-5 md:w-7 md:h-7 animate-pulse shrink-0 text-yellow-300" />
       </div>
 
-      <div className="container mx-auto px-6 py-28 md:py-40 flex flex-col items-center">
-        <div className="max-w-3xl w-full space-y-12 text-center">
+      <div className="container mx-auto px-6 py-24 md:py-36 flex flex-col items-center">
+        <div className="max-w-3xl w-full space-y-10 text-center">
           
-          <div className="space-y-8">
+          <div className="space-y-6">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold font-headline leading-tight text-foreground uppercase italic">
               Espere um pouco! Temos uma <span className="text-amber-600 underline decoration-amber-400">condição única</span> para você
             </h2>
@@ -88,26 +89,22 @@ export function BackRedirectOverlay() {
             </p>
           </div>
 
-          {/* Card Premium Gold Estreito e Sofisticado */}
-          <div className="max-w-lg mx-auto bg-gradient-to-br from-white via-amber-50/30 to-white rounded-[3rem] p-10 md:p-14 border-[3px] border-amber-200 shadow-[0_20px_60px_-15px_rgba(180,120,0,0.2)] relative overflow-hidden text-left group">
+          {/* Card Premium Gold Estreito, Sofisticado e Flutuante */}
+          <div className="max-w-lg mx-auto bg-gradient-to-br from-white via-amber-50/40 to-white rounded-[3rem] p-10 md:p-14 border-[3px] border-amber-200 shadow-[0_30px_70px_-15px_rgba(180,120,0,0.3)] relative overflow-hidden text-left group animate-float">
             
             {/* Efeitos de Luz Premium */}
-            <div className="absolute -top-24 -left-24 w-64 h-64 bg-amber-200/20 blur-[100px] rounded-full pointer-events-none group-hover:translate-x-full transition-transform duration-1000"></div>
-            <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-amber-300/10 blur-[100px] rounded-full pointer-events-none"></div>
+            <div className="absolute -top-24 -left-24 w-64 h-64 bg-amber-200/30 blur-[100px] rounded-full pointer-events-none group-hover:translate-x-full transition-transform duration-1000"></div>
+            <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-amber-300/20 blur-[100px] rounded-full pointer-events-none"></div>
             
-            <div className="absolute top-0 right-0 p-6 opacity-10">
-              <Star className="w-32 h-32 text-amber-500" fill="currentColor" />
-            </div>
-            
-            <h3 className="text-2xl font-black mb-10 flex items-center gap-3 text-amber-700 uppercase tracking-tighter italic">
+            <h3 className="text-2xl md:text-3xl font-black mb-10 flex items-center gap-3 text-amber-700 uppercase tracking-tighter italic">
               <Sparkles className="w-7 h-7 fill-amber-500 text-amber-500 animate-spin-slow" /> 
               TUDO DO PLANO PREMIUM:
             </h3>
             
             <ul className="space-y-6">
               {benefits.map((benefit, i) => (
-                <li key={i} className="flex items-start gap-4 text-base md:text-lg font-extrabold text-foreground/90">
-                  <CheckCircle2 className="w-6 h-6 text-amber-500 shrink-0 mt-0.5" />
+                <li key={i} className="flex items-start gap-4 text-base md:text-xl font-extrabold text-foreground/90">
+                  <CheckCircle2 className="w-6 h-6 md:w-7 md:h-7 text-amber-500 shrink-0 mt-0.5" />
                   {benefit}
                 </li>
               ))}
@@ -115,10 +112,9 @@ export function BackRedirectOverlay() {
 
             <div className="mt-14 pt-10 border-t-2 border-amber-100 flex flex-col items-center">
                 <div className="flex flex-col items-center gap-1 mb-8">
-                    <span className="text-muted-foreground line-through text-xl font-bold italic opacity-60">R$ 47,00</span>
                     <div className="relative">
-                      <span className="text-5xl md:text-6xl font-black text-amber-600 drop-shadow-sm">R$ 9,90</span>
-                      <div className="absolute -top-4 -right-8 rotate-12 bg-red-600 text-white text-[10px] font-black px-3 py-1 rounded-full shadow-md animate-bounce">
+                      <span className="text-6xl md:text-7xl font-black text-amber-600 drop-shadow-sm">R$ 9,90</span>
+                      <div className="absolute -top-4 -right-10 rotate-12 bg-red-600 text-white text-xs font-black px-4 py-1.5 rounded-full shadow-md animate-bounce">
                         HOJE!
                       </div>
                     </div>
@@ -126,16 +122,16 @@ export function BackRedirectOverlay() {
                 
                 <Button 
                     onClick={handleStay}
-                    className="w-full h-16 md:h-20 text-lg md:text-xl font-black rounded-full shadow-[0_10px_30px_-5px_rgba(180,120,0,0.4)] hover:scale-105 transition-all bg-amber-600 hover:bg-amber-700 text-white uppercase italic tracking-wider group"
+                    className="w-full h-16 md:h-20 text-xl md:text-2xl font-black rounded-full shadow-[0_15px_40px_-5px_rgba(180,120,0,0.5)] hover:scale-105 transition-all bg-amber-600 hover:bg-amber-700 text-white uppercase italic tracking-wider group"
                 >
-                    PEGAR AGORA! <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-2 transition-transform" />
+                    PEGAR AGORA! <ArrowRight className="ml-2 w-7 h-7 group-hover:translate-x-2 transition-transform" />
                 </Button>
                 
                 <div className="mt-8 flex flex-col items-center gap-3">
-                    <p className="text-xs font-black text-amber-700 uppercase tracking-[0.15em] flex items-center gap-2">
-                       <Zap className="w-4 h-4 fill-amber-500" /> Pagamento Único!
+                    <p className="text-sm font-black text-amber-700 uppercase tracking-[0.15em] flex items-center gap-2">
+                       <Zap className="w-5 h-5 fill-amber-500" /> Pagamento Único!
                     </p>
-                    <p className="text-[10px] font-bold text-muted-foreground/60 uppercase tracking-widest flex items-center gap-2">
+                    <p className="text-xs font-bold text-muted-foreground/60 uppercase tracking-widest flex items-center gap-2">
                         <ShieldCheck className="w-4 h-4" /> Transação 100% Criptografada
                     </p>
                 </div>
@@ -144,7 +140,7 @@ export function BackRedirectOverlay() {
 
           <button 
             onClick={handleLeave}
-            className="py-6 text-[10px] font-bold text-muted-foreground/40 uppercase tracking-[0.2em] hover:text-red-500 transition-colors"
+            className="py-6 text-[11px] font-bold text-muted-foreground/50 uppercase tracking-[0.2em] hover:text-red-500 transition-colors"
           >
             Não, prefiro perder meu desconto e sair agora
           </button>
