@@ -1,64 +1,74 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Sparkles, X, ArrowRight, ShieldCheck, Gift } from "lucide-react";
+import { Sparkles, ArrowRight, ShieldCheck, Gift } from "lucide-react";
 
 export function BackRedirectOverlay() {
   const [isOpen, setIsOpen] = useState(false);
-  const [hasIntercepted, setHasIntercepted] = useState(false);
+  const initialized = useRef(false);
 
-  const handleIntercept = useCallback(() => {
-    if (!hasIntercepted) {
-      setIsOpen(true);
-      setHasIntercepted(true);
-    }
-  }, [hasIntercepted]);
+  // Função para injetar o estado extra no histórico.
+  // Muitos navegadores exigem uma interação prévia do usuário (clique/toque) 
+  // para permitir que o popstate funcione de forma confiável para bloqueio.
+  const setupHistory = useCallback(() => {
+    if (initialized.current) return;
+    initialized.current = true;
+    
+    // Adiciona um estado extra no histórico. 
+    // O histórico fica: [Site Anterior] -> [Nossa Página (Estado 0)] -> [Nossa Página (Estado 1)]
+    window.history.pushState({ backRedirect: true }, "");
+  }, []);
 
   useEffect(() => {
-    // Adiciona um estado extra no histórico para interceptar o "voltar"
-    window.history.pushState({ backRedirect: true }, "");
+    // Tenta inicializar o histórico imediatamente
+    setupHistory();
+
+    // Como fallback para garantir ativação em mobile/browsers restritos,
+    // reinicializa no primeiro toque ou clique do usuário na página.
+    const handleInteraction = () => {
+      setupHistory();
+      window.removeEventListener("touchstart", handleInteraction);
+      window.removeEventListener("click", handleInteraction);
+    };
+
+    window.addEventListener("touchstart", handleInteraction, { passive: true });
+    window.addEventListener("click", handleInteraction, { passive: true });
 
     const onPopState = (event: PopStateEvent) => {
-      // Se o usuário tentar voltar, mostramos o overlay
-      if (!isOpen) {
-        handleIntercept();
-      }
+      // O evento dispara quando o usuário tenta "voltar" do Estado 1 para o Estado 0.
+      // Interceptamos aqui exibindo o overlay.
+      setIsOpen(true);
     };
 
     window.addEventListener("popstate", onPopState);
 
-    // Fallback para fechar a página (interação de saída)
-    const handleVisibilityChange = () => {
-      if (document.visibilityState === "hidden" && !hasIntercepted) {
-        // Opcional: Alguma lógica para mobile se necessário
-      }
-    };
-    document.addEventListener("visibilitychange", handleVisibilityChange);
-
     return () => {
       window.removeEventListener("popstate", onPopState);
-      document.removeEventListener("visibilitychange", handleVisibilityChange);
+      window.removeEventListener("touchstart", handleInteraction);
+      window.removeEventListener("click", handleInteraction);
     };
-  }, [isOpen, handleIntercept, hasIntercepted]);
+  }, [setupHistory]);
 
   const handleStay = () => {
     setIsOpen(false);
-    // Opcional: Redirecionar para o checkout com desconto ou apenas fechar
-    window.location.href = "https://pay.kiwify.com.br/GTyJjUV"; // Link Premium como exemplo de oferta
+    // Redireciona para o checkout com a oferta de retenção
+    window.location.href = "https://pay.kiwify.com.br/GTyJjUV";
   };
 
   const handleLeave = () => {
     setIsOpen(false);
-    window.history.back(); // Agora ele sai de verdade
+    // Como o popstate já nos moveu para o "Estado 0", 
+    // chamar back() novamente levará o usuário para fora do site.
+    window.history.back();
   };
 
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/95 backdrop-blur-sm p-4 animate-in fade-in duration-500">
+    <div className="fixed inset-0 z-[999999] flex items-center justify-center bg-black/95 backdrop-blur-md p-4 animate-in fade-in duration-300">
       <Card className="w-full max-w-xl bg-white rounded-[3rem] overflow-hidden shadow-2xl border-none animate-in zoom-in-95 slide-in-from-bottom-10 duration-500">
         <div className="bg-primary/10 p-8 md:p-12 text-center relative">
           <Badge className="mb-6 bg-red-500 hover:bg-red-600 text-white border-none px-4 py-1.5 rounded-full animate-bounce">
