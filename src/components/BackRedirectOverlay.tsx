@@ -2,6 +2,7 @@
 "use client";
 
 import { useEffect, useState, useCallback, useRef } from "react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, ArrowRight, ShieldCheck, Zap, AlertTriangle, Sparkles } from "lucide-react";
 
@@ -81,12 +82,24 @@ export function BackRedirectOverlay() {
           
           <div className="space-y-6">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold font-headline leading-tight text-foreground uppercase italic">
-              Espere um pouco! Temos uma <span className="text-amber-600 underline decoration-amber-400">condição única</span> para você
+              Espere um pouco! Temos uma <span className="text-emerald-600 underline decoration-emerald-400">condição única</span> para você
             </h2>
             
             <p className="text-lg md:text-xl text-foreground max-w-lg mx-auto leading-relaxed font-bold italic">
-              Não saia ainda! Aproveite todas as vantagens da <span className="text-amber-600">OFERTA PREMIUM</span> pelo valor do plano básico: <span className="text-foreground border-b-4 border-amber-500">apenas R$ 9,90!</span>
+              Não saia ainda! Aproveite todas as vantagens da <span className="text-emerald-600">OFERTA PREMIUM</span> pelo valor do plano básico: <span className="text-foreground border-b-4 border-emerald-500">apenas R$ 9,90!</span>
             </p>
+          </div>
+
+          {/* Imagem de Mockup entre subheadline e card */}
+          <div className="max-w-md mx-auto py-4">
+            <Image 
+              src="https://i.postimg.cc/7LmjpkzM/mock.png" 
+              alt="Mockup Oferta" 
+              width={600} 
+              height={400} 
+              className="w-full h-auto object-contain drop-shadow-2xl"
+              priority
+            />
           </div>
 
           {/* Card Premium Gold Estreito, Sofisticado e Flutuante */}
