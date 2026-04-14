@@ -67,15 +67,15 @@ export function BackRedirectOverlay() {
   return (
     <div className="fixed inset-0 z-[999999] bg-white overflow-y-auto animate-in fade-in duration-300 font-body">
       {/* Barra de Alerta no Topo (Absolute para rolar com a página) */}
-      <div className="absolute top-0 left-0 right-0 bg-red-600 text-white py-6 md:py-8 flex items-center justify-center gap-6 md:gap-10 z-10 shadow-lg">
-        <AlertTriangle className="w-8 h-8 md:w-12 md:h-12 animate-pulse shrink-0 text-yellow-300" />
-        <span className="text-base md:text-3xl lg:text-4xl font-black uppercase tracking-[0.2em] whitespace-nowrap">
+      <div className="absolute top-0 left-0 right-0 bg-red-600 text-white py-4 md:py-5 flex items-center justify-center gap-4 md:gap-8 z-10 shadow-md">
+        <AlertTriangle className="w-6 h-6 md:w-8 md:h-8 animate-pulse shrink-0 text-yellow-300" />
+        <span className="text-sm md:text-xl lg:text-2xl font-black uppercase tracking-[0.15em] whitespace-nowrap">
           CONDIÇÃO ÚNICA E EXCLUSIVA
         </span>
-        <AlertTriangle className="w-8 h-8 md:w-12 md:h-12 animate-pulse shrink-0 text-yellow-300" />
+        <AlertTriangle className="w-6 h-6 md:w-8 md:h-8 animate-pulse shrink-0 text-yellow-300" />
       </div>
 
-      <div className="container mx-auto px-6 py-32 md:py-48 flex flex-col items-center">
+      <div className="container mx-auto px-6 py-28 md:py-40 flex flex-col items-center">
         <div className="max-w-2xl w-full space-y-12 text-center">
           
           <div className="space-y-8">
