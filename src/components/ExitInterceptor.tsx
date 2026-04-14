@@ -4,60 +4,59 @@
 import { useEffect, useRef } from "react";
 
 /**
- * ExitInterceptor - Sistema de BackRedirect Profissional
+ * ExitInterceptor - Sistema de BackRedirect de Alta Compatibilidade
  * 
- * Este componente utiliza a técnica de ancoragem de histórico (History Anchoring).
- * 1. Aguarda a primeira interação do usuário (essencial para Safari e Chrome modernos).
- * 2. Injeta estados no histórico para criar uma "armadilha" de navegação.
- * 3. Intercepta o evento 'popstate' para redirecionar o usuário na primeira tentativa de saída.
- * 4. Usa sessionStorage para garantir que a ação ocorra apenas uma vez por sessão.
+ * Implementa a técnica de History Anchoring blindada.
+ * - Ativação apenas após interação real (previne bloqueios Safari/Chrome).
+ * - Uso de sessionStorage para garantir execução ÚNICA por sessão.
+ * - Redirecionamento instantâneo no evento popstate.
  */
 export function ExitInterceptor() {
   const REDIRECT_URL = "/oferta-especial";
-  const SESSION_KEY = "backredirect_done";
+  const SESSION_KEY = "backredirect_triggered";
   const initialized = useRef(false);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
 
-    // Proteção: não executa se já tiver sido disparado nesta sessão
+    // Se já disparou nesta sessão, não arma a armadilha novamente
     if (sessionStorage.getItem(SESSION_KEY)) return;
 
     const setupHistoryTrap = () => {
       if (initialized.current) return;
       
       try {
-        // Estado 1: A "Âncora" (Onde o usuário cairá ao clicar em voltar)
+        // Criamos dois estados: a Âncora e o Estado Atual
+        // Quando o usuário clica em voltar, ele sai do Estado Atual e cai na Âncora
         window.history.pushState({ isAnchor: true }, "");
-        // Estado 2: A "Página Real" (Onde o usuário está navegando agora)
         window.history.pushState({ isCurrent: true }, "");
         
         initialized.current = true;
       } catch (e) {
-        console.warn("Erro ao configurar histórico:", e);
+        console.warn("History push failed:", e);
       }
     };
 
-    // Eventos de interação que ativam o sistema (Gesto do Usuário)
-    const interactionEvents = ["click", "touchstart", "scroll", "mousedown", "keydown"];
+    // Eventos de interação que 'desbloqueiam' a permissão de manipular histórico
+    const interactionEvents = ["click", "touchstart", "scroll", "mousedown"];
     
-    const onFirstInteraction = () => {
+    const onUserInteraction = () => {
       setupHistoryTrap();
+      // Remove os listeners após a primeira interação para economizar performance
       interactionEvents.forEach(event => {
-        window.removeEventListener(event, onFirstInteraction);
+        window.removeEventListener(event, onUserInteraction);
       });
     };
 
     interactionEvents.forEach(event => {
-      window.addEventListener(event, onFirstInteraction, { passive: true });
+      window.addEventListener(event, onUserInteraction, { passive: true });
     });
 
-    // Listener de PopState (Detecção do botão Voltar)
     const handlePopState = (event: PopStateEvent) => {
-      // Se o usuário tentar voltar e cair na nossa âncora
+      // Se o estado que restou no histórico for a nossa âncora, redirecionamos
       if (initialized.current && event.state?.isAnchor) {
         sessionStorage.setItem(SESSION_KEY, "true");
-        // Redirecionamento forçado usando replace para evitar loops de histórico
+        // replace() é usado para não criar loops de histórico infinitos
         window.location.replace(REDIRECT_URL);
       }
     };
@@ -67,7 +66,7 @@ export function ExitInterceptor() {
     return () => {
       window.removeEventListener("popstate", handlePopState);
       interactionEvents.forEach(event => {
-        window.removeEventListener(event, onFirstInteraction);
+        window.removeEventListener(event, onUserInteraction);
       });
     };
   }, []);
