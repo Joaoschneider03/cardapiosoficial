@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useEffect, useState, useCallback, useRef } from "react";
@@ -66,8 +67,8 @@ export function BackRedirectOverlay() {
 
   return (
     <div className="fixed inset-0 z-[999999] bg-white overflow-y-auto animate-in fade-in duration-300">
-      {/* Barra Fixa no Topo */}
-      <div className="fixed top-0 left-0 right-0 bg-red-600 text-white py-4 flex items-center justify-center gap-4 z-[1000000] shadow-lg">
+      {/* Barra no Topo - Agora Absolute para rolar com a página */}
+      <div className="absolute top-0 left-0 right-0 bg-red-600 text-white py-4 flex items-center justify-center gap-4 z-10 shadow-lg">
         <AlertTriangle className="w-5 h-5 animate-pulse shrink-0" />
         <span className="text-[10px] md:text-xs font-black uppercase tracking-[0.2em] whitespace-nowrap">
           CONDIÇÃO ÚNICA E EXCLUSIVA
