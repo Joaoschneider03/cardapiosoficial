@@ -1,9 +1,8 @@
-
 "use client";
 
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, ArrowRight, ShieldCheck, Zap, AlertTriangle, Sparkles } from "lucide-react";
+import { CheckCircle2, ArrowRight, ShieldCheck, Zap, AlertTriangle } from "lucide-react";
 
 export default function OfertaEspecial() {
   const handleStay = () => {
@@ -23,7 +22,7 @@ export default function OfertaEspecial() {
 
   return (
     <main className="min-h-screen bg-white overflow-x-hidden font-body animate-in fade-in duration-500">
-      {/* Faixa de Alerta no Topo - Design Enxuto */}
+      {/* Faixa de Alerta no Topo */}
       <div className="bg-red-600 text-white py-2 flex items-center justify-center gap-3 shadow-md relative z-50">
         <AlertTriangle className="w-4 h-4 animate-pulse shrink-0 text-yellow-300" />
         <span className="text-[10px] md:text-xs font-black uppercase tracking-[0.2em] whitespace-nowrap">
@@ -45,7 +44,7 @@ export default function OfertaEspecial() {
             </p>
           </div>
 
-          {/* Imagem de Mockup centralizada entre Texto e Card */}
+          {/* Imagem de Mockup centralizada */}
           <div className="max-w-md mx-auto py-4">
             <Image 
               src="https://i.postimg.cc/7LmjpkzM/mock.png" 
@@ -57,13 +56,12 @@ export default function OfertaEspecial() {
             />
           </div>
 
-          {/* Card Premium Gold Estreito com Flutuação - Design Limpo e Chique */}
+          {/* Card Premium Gold Estreito com Flutuação */}
           <div className="max-w-md mx-auto bg-gradient-to-br from-white via-amber-50/40 to-white rounded-[3rem] p-8 md:p-10 border-[3px] border-amber-200 shadow-[0_30px_70px_-15px_rgba(180,120,0,0.3)] relative overflow-hidden text-left animate-float">
             
             <div className="absolute -top-24 -left-24 w-64 h-64 bg-amber-200/30 blur-[100px] rounded-full pointer-events-none"></div>
             
-            <h3 className="text-xl md:text-2xl font-black mb-8 flex items-center gap-3 text-amber-700 uppercase tracking-tighter italic">
-              <Sparkles className="w-6 h-6 fill-amber-500 text-amber-500 animate-spin-slow" /> 
+            <h3 className="text-xl md:text-2xl font-black mb-8 text-amber-700 uppercase tracking-tighter italic">
               TUDO DO PLANO PREMIUM:
             </h3>
             

@@ -1,10 +1,9 @@
-
 "use client";
 
 import { useEffect, useState, useCallback, useRef } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, ArrowRight, ShieldCheck, Zap, AlertTriangle, Sparkles } from "lucide-react";
+import { CheckCircle2, ArrowRight, ShieldCheck, Zap, AlertTriangle } from "lucide-react";
 
 export function BackRedirectOverlay() {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,7 +14,6 @@ export function BackRedirectOverlay() {
     if (initialized.current) return;
     
     // Adiciona uma entrada extra no histórico após um pequeno delay para garantir que a página carregou
-    // O usuário agora está em "Página + 1"
     try {
       window.history.pushState({ backRedirect: true }, "");
       initialized.current = true;
@@ -25,11 +23,8 @@ export function BackRedirectOverlay() {
   }, []);
 
   useEffect(() => {
-    // Configura o histórico assim que o componente monta
-    // Muitos navegadores exigem que isso aconteça após o carregamento total
     const timer = setTimeout(setupHistory, 1000);
 
-    // Eventos de interação para forçar a ativação do histórico em browsers que exigem gesto do usuário
     const handleInteraction = () => {
       setupHistory();
     };
@@ -39,11 +34,7 @@ export function BackRedirectOverlay() {
     window.addEventListener("scroll", handleInteraction, { passive: true });
 
     const onPopState = (event: PopStateEvent) => {
-      // Quando o usuário clica em voltar, o navegador sai da "Página + 1" e volta para a "Página Original"
-      // Interceptamos esse movimento e mostramos o overlay
       setIsOpen(true);
-      
-      // Bloqueia scroll do body para focar na oferta
       if (typeof document !== 'undefined') {
         document.body.style.overflow = 'hidden';
       }
@@ -74,7 +65,6 @@ export function BackRedirectOverlay() {
   }, [setupHistory]);
 
   const handleStay = () => {
-    // Redireciona para o checkout econômico
     window.location.href = "https://pay.kiwify.com.br/HyN7eak";
   };
 
@@ -83,9 +73,6 @@ export function BackRedirectOverlay() {
     if (typeof document !== 'undefined') {
       document.body.style.overflow = 'auto';
     }
-    // Como o popstate já ocorreu uma vez para abrir o modal,
-    // o usuário já está na "Página Original".
-    // Chamar back() agora levará o usuário para a página REAL anterior (fora do nosso site)
     window.history.back();
   };
 
@@ -140,11 +127,9 @@ export function BackRedirectOverlay() {
           {/* Card Premium Gold Estreito */}
           <div className="max-w-md mx-auto bg-gradient-to-br from-white via-amber-50/40 to-white rounded-[3rem] p-8 md:p-10 border-[3px] border-amber-200 shadow-[0_30px_70px_-15px_rgba(180,120,0,0.3)] relative overflow-hidden text-left group animate-float">
             
-            {/* Efeitos de Luz Premium */}
-            <div className="absolute -top-24 -left-24 w-64 h-64 bg-amber-200/30 blur-[100px] rounded-full pointer-events-none group-hover:translate-x-full transition-transform duration-1000"></div>
+            <div className="absolute -top-24 -left-24 w-64 h-64 bg-amber-200/30 blur-[100px] rounded-full pointer-events-none"></div>
             
-            <h3 className="text-xl md:text-2xl font-black mb-8 flex items-center gap-3 text-amber-700 uppercase tracking-tighter italic">
-              <Sparkles className="w-6 h-6 fill-amber-500 text-amber-500 animate-spin-slow" /> 
+            <h3 className="text-xl md:text-2xl font-black mb-8 text-amber-700 uppercase tracking-tighter italic">
               TUDO DO PLANO PREMIUM:
             </h3>
             

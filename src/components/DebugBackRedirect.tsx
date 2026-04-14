@@ -1,7 +1,9 @@
 "use client";
 
-import { Eye } from "lucide-react";
-
+/**
+ * Atalho sutil para testar o BackRedirectOverlay sem precisar navegar.
+ * Design minimalista: apenas uma pequena esfera vermelha quase invisível.
+ */
 export function DebugBackRedirect() {
   const handlePreview = () => {
     // Dispara o evento que o BackRedirectOverlay está escutando para abrir o modal manualmente
@@ -11,13 +13,8 @@ export function DebugBackRedirect() {
   return (
     <button
       onClick={handlePreview}
-      className="fixed bottom-4 right-4 z-[9999] w-10 h-10 bg-red-600 hover:bg-red-700 text-white rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110 group opacity-40 hover:opacity-100"
-      title="Visualizar BackRedirect"
-    >
-      <Eye className="w-5 h-5" />
-      <span className="absolute right-full mr-3 bg-red-600 text-white text-[10px] font-bold py-1 px-2 rounded opacity-0 group-hover:opacity-100 whitespace-nowrap pointer-events-none transition-opacity">
-        TESTAR BACKREDIRECT
-      </span>
-    </button>
+      className="fixed bottom-2 right-2 z-[9999] w-2 h-2 bg-red-600 rounded-full transition-all opacity-[0.08] hover:opacity-40 cursor-pointer border-none shadow-none"
+      title="Testar"
+    />
   );
 }
