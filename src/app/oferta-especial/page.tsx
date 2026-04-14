@@ -7,6 +7,7 @@ import { CheckCircle2, ArrowRight, ShieldCheck, Zap, AlertTriangle, Sparkles } f
 
 export default function OfertaEspecial() {
   const handleStay = () => {
+    // Link do plano econômico conforme solicitado
     window.location.href = "https://pay.kiwify.com.br/HyN7eak";
   };
 
@@ -44,7 +45,7 @@ export default function OfertaEspecial() {
             </p>
           </div>
 
-          {/* Imagem de Mockup */}
+          {/* Imagem de Mockup entre Headline e Card */}
           <div className="max-w-md mx-auto py-4">
             <Image 
               src="https://i.postimg.cc/7LmjpkzM/mock.png" 
@@ -56,7 +57,7 @@ export default function OfertaEspecial() {
             />
           </div>
 
-          {/* Card Premium Gold */}
+          {/* Card Premium Gold Estreito com Flutuação */}
           <div className="max-w-md mx-auto bg-gradient-to-br from-white via-amber-50/40 to-white rounded-[3rem] p-8 md:p-10 border-[3px] border-amber-200 shadow-[0_30px_70px_-15px_rgba(180,120,0,0.3)] relative overflow-hidden text-left animate-float">
             
             <div className="absolute -top-24 -left-24 w-64 h-64 bg-amber-200/30 blur-[100px] rounded-full pointer-events-none"></div>
