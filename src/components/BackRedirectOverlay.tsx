@@ -2,8 +2,7 @@
 
 import { useEffect, useState, useCallback, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { CheckCircle2, ArrowRight, ShieldCheck, Zap, Star } from "lucide-react";
+import { CheckCircle2, ArrowRight, ShieldCheck, Zap, Star, AlertTriangle } from "lucide-react";
 
 export function BackRedirectOverlay() {
   const [isOpen, setIsOpen] = useState(false);
@@ -45,7 +44,6 @@ export function BackRedirectOverlay() {
   }, [setupHistory]);
 
   const handleStay = () => {
-    // Redireciona para o checkout do plano básico entregando o valor do premium
     window.location.href = "https://pay.kiwify.com.br/HyN7eak";
   };
 
@@ -68,14 +66,19 @@ export function BackRedirectOverlay() {
 
   return (
     <div className="fixed inset-0 z-[999999] bg-white overflow-y-auto animate-in fade-in duration-300">
-      <div className="container mx-auto px-6 py-12 md:py-24 flex flex-col items-center">
+      {/* Barra Fixa no Topo */}
+      <div className="fixed top-0 left-0 right-0 bg-red-600 text-white py-4 flex items-center justify-center gap-4 z-[1000000] shadow-lg">
+        <AlertTriangle className="w-5 h-5 animate-pulse shrink-0" />
+        <span className="text-[10px] md:text-xs font-black uppercase tracking-[0.2em] whitespace-nowrap">
+          CONDIÇÃO ÚNICA E EXCLUSIVA
+        </span>
+        <AlertTriangle className="w-5 h-5 animate-pulse shrink-0" />
+      </div>
+
+      <div className="container mx-auto px-6 py-24 md:py-32 flex flex-col items-center">
         <div className="max-w-3xl w-full space-y-12 text-center">
           
           <div className="space-y-8">
-            <Badge className="bg-red-600 hover:bg-red-600 text-white px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest animate-pulse">
-              CONDIÇÃO ÚNICA E EXCLUSIVA
-            </Badge>
-            
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold font-headline leading-tight text-foreground uppercase italic">
               Espere um pouco! Temos uma <span className="text-primary underline">condição única</span> para você
             </h2>
@@ -112,7 +115,6 @@ export function BackRedirectOverlay() {
                 <Button 
                     onClick={handleStay}
                     className="w-full md:w-auto md:min-w-[400px] h-14 md:h-16 text-base md:text-lg font-bold rounded-full shadow-lg hover:scale-105 transition-all bg-primary animate-bounce mt-4"
-                    suppressHydrationWarning
                 >
                     QUERO O DESCONTO AGORA <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
