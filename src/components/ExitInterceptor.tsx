@@ -2,52 +2,53 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { useRouter } from "next/navigation";
 
+/**
+ * Componente que intercepta a primeira tentativa de "voltar" do usuário
+ * e redireciona para a página de oferta especial.
+ */
 export function ExitInterceptor() {
-  const router = useRouter();
   const initialized = useRef(false);
 
   useEffect(() => {
-    // Verifica se já redirecionamos nesta sessão para evitar loops infinitos
+    // Verifica se já redirecionamos nesta sessão para evitar loops ou redirecionamentos múltiplos
     const hasRedirected = sessionStorage.getItem("exit_redirected");
     if (hasRedirected) return;
 
     const setupHistory = () => {
       if (initialized.current) return;
       
-      // Injeta uma entrada no histórico. Quando o usuário clica em voltar,
-      // ele "volta" para a página original, mas o navegador detecta o popstate.
-      window.history.pushState({ exitIntent: true }, "");
-      initialized.current = true;
+      // Injeta uma entrada extra no histórico.
+      // O usuário "permanece" na página principal, mas agora existe um estado anterior (o real)
+      // e o estado atual injetado.
+      try {
+        window.history.pushState({ exitIntent: true }, "");
+        initialized.current = true;
+      } catch (e) {
+        console.warn("Falha ao manipular histórico", e);
+      }
     };
 
-    // Ativa a interceptação após qualquer interação do usuário (necessário para navegadores modernos)
+    // Navegadores modernos exigem uma interação do usuário para permitir manipulação do histórico
     const handleInteraction = () => {
       setupHistory();
     };
 
-    window.addEventListener("mousedown", handleInteraction);
-    window.addEventListener("touchstart", handleInteraction);
-    window.addEventListener("scroll", handleInteraction);
-    window.addEventListener("keydown", handleInteraction);
+    window.addEventListener("mousedown", handleInteraction, { passive: true });
+    window.addEventListener("touchstart", handleInteraction, { passive: true });
+    window.addEventListener("scroll", handleInteraction, { passive: true });
+    window.addEventListener("keydown", handleInteraction, { passive: true });
 
+    // O evento popstate é disparado quando o usuário clica no botão "voltar" do navegador ou celular
     const onPopState = (event: PopStateEvent) => {
-      // Se o usuário clicar em voltar, redirecionamos para a página de oferta
+      // Marcamos que o redirecionamento ocorreu para não interceptar novamente
       sessionStorage.setItem("exit_redirected", "true");
+      
+      // Redireciona para a página de retenção
       window.location.href = "/oferta-especial";
     };
 
-    // Detecta intenção de saída no Desktop (mouse saindo da tela para o topo)
-    const handleMouseOut = (e: MouseEvent) => {
-      if (e.clientY < 5) {
-        sessionStorage.setItem("exit_redirected", "true");
-        window.location.href = "/oferta-especial";
-      }
-    };
-
     window.addEventListener("popstate", onPopState);
-    document.addEventListener("mouseleave", handleMouseOut);
 
     return () => {
       window.removeEventListener("mousedown", handleInteraction);
@@ -55,7 +56,6 @@ export function ExitInterceptor() {
       window.removeEventListener("scroll", handleInteraction);
       window.removeEventListener("keydown", handleInteraction);
       window.removeEventListener("popstate", onPopState);
-      document.removeEventListener("mouseleave", handleMouseOut);
     };
   }, []);
 
