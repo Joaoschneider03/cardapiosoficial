@@ -13,42 +13,63 @@ export function BackRedirectOverlay() {
   // Função para injetar uma entrada no histórico que será interceptada
   const setupHistory = useCallback(() => {
     if (initialized.current) return;
-    initialized.current = true;
-    // Adiciona uma entrada extra no histórico. O usuário agora está em "Página + 1"
-    window.history.pushState({ backRedirect: true }, "");
+    
+    // Adiciona uma entrada extra no histórico após um pequeno delay para garantir que a página carregou
+    // O usuário agora está em "Página + 1"
+    try {
+      window.history.pushState({ backRedirect: true }, "");
+      initialized.current = true;
+    } catch (e) {
+      console.warn("History push failed", e);
+    }
   }, []);
 
   useEffect(() => {
-    // Tenta configurar o histórico no load
-    setupHistory();
+    // Configura o histórico assim que o componente monta
+    // Muitos navegadores exigem que isso aconteça após o carregamento total
+    const timer = setTimeout(setupHistory, 1000);
 
-    // Alguns navegadores exigem interação do usuário para permitir manipulação de histórico
+    // Eventos de interação para forçar a ativação do histórico em browsers que exigem gesto do usuário
     const handleInteraction = () => {
       setupHistory();
-      window.removeEventListener("touchstart", handleInteraction);
-      window.removeEventListener("click", handleInteraction);
     };
 
     window.addEventListener("touchstart", handleInteraction, { passive: true });
     window.addEventListener("click", handleInteraction, { passive: true });
+    window.addEventListener("scroll", handleInteraction, { passive: true });
 
     const onPopState = (event: PopStateEvent) => {
       // Quando o usuário clica em voltar, o navegador sai da "Página + 1" e volta para a "Página Original"
-      // Aqui interceptamos e mostramos o overlay
+      // Interceptamos esse movimento e mostramos o overlay
       setIsOpen(true);
+      
+      // Bloqueia scroll do body para focar na oferta
+      if (typeof document !== 'undefined') {
+        document.body.style.overflow = 'hidden';
+      }
     };
 
-    const handleManualOpen = () => setIsOpen(true);
-    window.addEventListener("open-back-redirect", handleManualOpen);
+    const handleManualOpen = () => {
+      setIsOpen(true);
+      if (typeof document !== 'undefined') {
+        document.body.style.overflow = 'hidden';
+      }
+    };
 
-    // Ouve o evento de voltar do navegador
+    window.addEventListener("open-back-redirect", handleManualOpen);
     window.addEventListener("popstate", onPopState);
 
     return () => {
+      clearTimeout(timer);
       window.removeEventListener("popstate", onPopState);
       window.removeEventListener("open-back-redirect", handleManualOpen);
       window.removeEventListener("touchstart", handleInteraction);
       window.removeEventListener("click", handleInteraction);
+      window.removeEventListener("scroll", handleInteraction);
+      
+      if (typeof document !== 'undefined') {
+        document.body.style.overflow = 'auto';
+      }
     };
   }, [setupHistory]);
 
@@ -59,8 +80,12 @@ export function BackRedirectOverlay() {
 
   const handleLeave = () => {
     setIsOpen(false);
+    if (typeof document !== 'undefined') {
+      document.body.style.overflow = 'auto';
+    }
     // Como o popstate já ocorreu uma vez para abrir o modal,
-    // chamar back() agora levará o usuário para a página REAL anterior (fora do nosso site)
+    // o usuário já está na "Página Original".
+    // Chamar back() agora levará o usuário para a página REAL anterior (fora do nosso site)
     window.history.back();
   };
 
@@ -79,12 +104,12 @@ export function BackRedirectOverlay() {
   return (
     <div className="fixed inset-0 z-[999999] bg-white overflow-y-auto animate-in fade-in duration-300 font-body">
       {/* Barra de Alerta no Topo */}
-      <div className="absolute top-0 left-0 right-0 bg-red-600 text-white py-3 md:py-4 flex items-center justify-center gap-4 md:gap-8 z-10 shadow-md">
-        <AlertTriangle className="w-5 h-5 md:w-6 md:h-6 animate-pulse shrink-0 text-yellow-300" />
+      <div className="absolute top-0 left-0 right-0 bg-red-600 text-white py-3 flex items-center justify-center gap-4 z-10 shadow-md">
+        <AlertTriangle className="w-5 h-5 animate-pulse shrink-0 text-yellow-300" />
         <span className="text-sm md:text-base font-black uppercase tracking-[0.15em] whitespace-nowrap">
           CONDIÇÃO ÚNICA E EXCLUSIVA
         </span>
-        <AlertTriangle className="w-5 h-5 md:w-6 md:h-6 animate-pulse shrink-0 text-yellow-300" />
+        <AlertTriangle className="w-5 h-5 animate-pulse shrink-0 text-yellow-300" />
       </div>
 
       <div className="container mx-auto px-6 py-24 md:py-36 flex flex-col items-center">
