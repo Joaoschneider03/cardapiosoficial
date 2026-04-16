@@ -77,7 +77,7 @@ export function Pricing() {
             
             <CardFooter className="p-10 pt-0 flex flex-col items-center">
               <Button asChild className="w-full h-14 text-base font-bold shadow-md rounded-full group bg-primary hover:bg-primary/90 text-primary-foreground" suppressHydrationWarning>
-                <a href="https://pay.kiwify.com.br/GTyJjUV" suppressHydrationWarning>
+                <a href="https://compraonlinesegurada.org.ua/c/65ef092d91" suppressHydrationWarning>
                   PEGAR AGORA! <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
               </Button>
