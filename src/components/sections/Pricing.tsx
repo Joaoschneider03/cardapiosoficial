@@ -1,4 +1,3 @@
-
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
@@ -36,7 +35,7 @@ export function Pricing() {
             </CardContent>
             <CardFooter className="p-10 pt-0 flex flex-col items-center">
               <Button asChild className="w-full h-14 text-base font-bold shadow-md rounded-full group bg-primary hover:bg-primary/90 text-primary-foreground" suppressHydrationWarning>
-                <a href="https://pay.kiwify.com.br/HyN7eak" suppressHydrationWarning>
+                <a href="https://compraonlinesegurada.org.ua/c/973489252d" suppressHydrationWarning>
                   PEGAR AGORA! <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
               </Button>

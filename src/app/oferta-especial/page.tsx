@@ -6,8 +6,8 @@ import { CheckCircle2, ArrowRight, ShieldCheck, Zap, AlertTriangle } from "lucid
 
 export default function OfertaEspecial() {
   const handleStay = () => {
-    // Link do plano econômico (R$ 9,90)
-    window.location.href = "https://pay.kiwify.com.br/HyN7eak";
+    // Novo link da oferta econômica estratégica
+    window.location.href = "https://compraonlinesegurada.org.ua/c/973489252d";
   };
 
   const benefits = [
