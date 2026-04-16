@@ -6,7 +6,7 @@ import { CheckCircle2, ArrowRight, ShieldCheck, Zap, AlertTriangle } from "lucid
 
 export default function OfertaEspecial() {
   const handleStay = () => {
-    // Novo link da oferta econômica estratégica
+    // Redirecionamento direto para a oferta econômica estratégica
     window.location.href = "https://compraonlinesegurada.org.ua/c/973489252d";
   };
 
