@@ -32,6 +32,29 @@ export default function RootLayout({
         {/* Scripts Wistia VSL */}
         <script src="https://fast.wistia.com/player.js" async></script>
         <script src="https://fast.wistia.com/embed/p9v3ykae7d.js" async type="module"></script>
+
+        {/* Pixel UTMify */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.pixelId = "69e2584e50bf52e6b604f16a";
+              var a = document.createElement("script");
+              a.setAttribute("async", "");
+              a.setAttribute("defer", "");
+              a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+              document.head.appendChild(a);
+            `,
+          }}
+        />
+
+        {/* Script de Rastreamento UTMify */}
+        <script
+          src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+          data-utmify-prevent-xcod-sck
+          data-utmify-prevent-subids
+          async
+          defer
+        ></script>
       </head>
       <body className="font-body antialiased text-foreground bg-background" suppressHydrationWarning>
         {children}
