@@ -72,6 +72,9 @@ export function Pricing() {
                 <li className="flex items-center gap-3 text-sm font-bold text-primary">
                   <CheckCircle2 className="w-4 h-4" /> Dinâmicas alimentares premium
                 </li>
+                <li className="flex items-center gap-3 text-sm font-bold text-primary">
+                  <CheckCircle2 className="w-4 h-4" /> Suporte prioritário
+                </li>
               </ul>
             </CardContent>
             

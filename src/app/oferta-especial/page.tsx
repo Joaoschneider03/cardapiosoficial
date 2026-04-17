@@ -17,7 +17,8 @@ export default function OfertaEspecial() {
     "Dicas para crianças seletivas",
     "Bônus: Planner semanal de refeições",
     "Acesso a todas as novas atualizações",
-    "Dinâmicas alimentares premium exclusivas"
+    "Dinâmicas alimentares premium exclusivas",
+    "Suporte prioritário"
   ];
 
   return (
