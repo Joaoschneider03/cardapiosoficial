@@ -13,7 +13,7 @@ export function WhatYouGet() {
       imageId: "mockup-cardapios"
     },
     {
-      title: "Cardápios organizados por faixa etária (1 a 12 anos)",
+      title: "Cardápios por faixa etária (1 a 12 anos): Planos adaptados para cada idade, respeitando necessidades e desenvolvimento infantil.",
       imageId: "mockup-faixa-etaria"
     },
     {
