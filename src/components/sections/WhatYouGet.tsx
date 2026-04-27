@@ -84,6 +84,11 @@ export function WhatYouGet() {
             {items.map((item, idx) => {
               const imageData = item.imageId ? PlaceHolderImages.find(img => img.id === item.imageId) : null;
               
+              // Separa o título da descrição usando o último caractere de dois pontos
+              const colonIndex = item.title.lastIndexOf(':');
+              const titlePart = colonIndex !== -1 ? item.title.substring(0, colonIndex) : item.title;
+              const descriptionPart = colonIndex !== -1 ? item.title.substring(colonIndex + 1) : "";
+
               return (
                 <div key={idx} className="flex flex-col bg-white rounded-[2.5rem] border border-white shadow-sm transition-all hover:shadow-md hover:scale-[1.02] overflow-hidden group">
                   <div className="w-full aspect-[4/3] bg-secondary/30 flex flex-col items-center justify-center relative overflow-hidden">
@@ -103,7 +108,16 @@ export function WhatYouGet() {
                     )}
                   </div>
                   <div className="p-8 text-center bg-white border-t border-secondary/10">
-                    <h3 className="text-base font-bold leading-tight text-foreground/90">{item.title}</h3>
+                    <h3 className="text-sm leading-tight text-foreground/90 font-medium">
+                      {colonIndex !== -1 ? (
+                        <>
+                          <span className="font-bold">{titlePart}:</span>
+                          <span>{descriptionPart}</span>
+                        </>
+                      ) : (
+                        item.title
+                      )}
+                    </h3>
                   </div>
                 </div>
               );
