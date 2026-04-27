@@ -1,3 +1,4 @@
+
 'use server';
 /**
  * @fileOverview This file provides an AI flow to generate a personalized benefit statement for 'Cardápios FitKids'
@@ -44,7 +45,7 @@ Product Information:
   - Cardápios para festas e fins de semana: Opções saudáveis e atrativas até nos momentos mais “diffíceis”.
   - Dicas para crianças seletivas: Estratégias práticas para fazer seu filho aceitar legumes e novos alimentos.
   - Tabela de porções por idade: Saiba exatamente quanto servir para evitar excessos e garantir equilíbrio.
-  - Bônus: Planner semanal de refeições para imprimir
+  - Bônus: Planner semanal imprimível: Organize toda a alimentação da semana de forma simples e visual.
   - Práticos, gostosos e aprovados por crianças
 
 Given the specific challenge a parent faces with their child's eating, craft a concise (2-3 sentences), personalized message highlighting how 'Cardápios FitKids' directly addresses and solves that challenge. Focus on empathy and practical solutions, emphasizing how the product makes healthy eating easy and enjoyable for both parent and child.

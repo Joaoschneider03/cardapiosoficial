@@ -1,3 +1,4 @@
+
 "use client";
 
 import { ArrowRight, Image as ImageIcon } from "lucide-react";
@@ -36,7 +37,7 @@ export function WhatYouGet() {
       imageId: "mockup-porcoes"
     },
     {
-      title: "Bônus: Planner semanal de refeições para imprimir",
+      title: "Bônus: Planner semanal imprimível: Organize toda a alimentação da semana de forma simples e visual.",
       imageId: "mockup-planner"
     }
   ];
