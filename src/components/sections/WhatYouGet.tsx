@@ -50,7 +50,7 @@ export function WhatYouGet() {
     const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
     const startPosition = window.pageYOffset;
     const distance = targetPosition - startPosition;
-    const duration = 1500; // Duração de 1.5 segundos para consistência
+    const duration = 1500;
     let start: number | null = null;
 
     function step(timestamp: number) {
@@ -84,40 +84,45 @@ export function WhatYouGet() {
             {items.map((item, idx) => {
               const imageData = item.imageId ? PlaceHolderImages.find(img => img.id === item.imageId) : null;
               
-              // Separa o título da descrição usando o último caractere de dois pontos
               const colonIndex = item.title.lastIndexOf(':');
               const titlePart = colonIndex !== -1 ? item.title.substring(0, colonIndex) : item.title;
               const descriptionPart = colonIndex !== -1 ? item.title.substring(colonIndex + 1) : "";
 
               return (
-                <div key={idx} className="flex flex-col bg-white rounded-[2.5rem] border border-white shadow-sm transition-all hover:shadow-md hover:scale-[1.02] overflow-hidden group">
-                  <div className="w-full aspect-[4/3] bg-secondary/30 flex flex-col items-center justify-center relative overflow-hidden">
-                    {imageData ? (
-                      <Image 
-                        src={imageData.imageUrl}
-                        alt={imageData.description}
-                        fill
-                        className="object-contain p-6 transition-transform duration-500 group-hover:scale-110"
-                        data-ai-hint={imageData.imageHint}
-                      />
-                    ) : (
-                      <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 opacity-20">
-                        <ImageIcon className="w-12 h-12 text-primary" />
-                        <span className="text-[10px] font-bold uppercase tracking-widest px-4 text-center">Espaço para Mockup</span>
-                      </div>
-                    )}
-                  </div>
-                  <div className="p-8 text-center bg-white border-t border-secondary/10">
-                    <h3 className="text-sm leading-tight text-foreground/90 font-medium">
-                      {colonIndex !== -1 ? (
-                        <>
-                          <span className="font-bold">{titlePart}:</span>
-                          <span>{descriptionPart}</span>
-                        </>
+                <div key={idx} className="relative p-[1.5px] overflow-hidden rounded-[2.5rem] group shadow-sm transition-all hover:shadow-md hover:scale-[1.02]">
+                  {/* Efeito de borda dourada minimalista em movimento */}
+                  <div className="absolute inset-[-1000%] animate-spin-slow bg-[conic-gradient(from_0deg,transparent_0%,transparent_70%,#fbbf24_85%,transparent_100%)] pointer-events-none opacity-40"></div>
+                  
+                  {/* Conteúdo do Card */}
+                  <div className="relative flex flex-col bg-white rounded-[calc(2.5rem-1.5px)] h-full overflow-hidden">
+                    <div className="w-full aspect-[4/3] bg-secondary/30 flex flex-col items-center justify-center relative overflow-hidden">
+                      {imageData ? (
+                        <Image 
+                          src={imageData.imageUrl}
+                          alt={imageData.description}
+                          fill
+                          className="object-contain p-6 transition-transform duration-500 group-hover:scale-110"
+                          data-ai-hint={imageData.imageHint}
+                        />
                       ) : (
-                        item.title
+                        <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 opacity-20">
+                          <ImageIcon className="w-12 h-12 text-primary" />
+                          <span className="text-[10px] font-bold uppercase tracking-widest px-4 text-center">Espaço para Mockup</span>
+                        </div>
                       )}
-                    </h3>
+                    </div>
+                    <div className="p-8 text-center bg-white border-t border-secondary/10 flex-1 flex items-center justify-center">
+                      <h3 className="text-[13px] leading-relaxed text-foreground/90 font-medium">
+                        {colonIndex !== -1 ? (
+                          <>
+                            <span className="font-extrabold text-foreground">{titlePart}:</span>
+                            <span className="text-muted-foreground">{descriptionPart}</span>
+                          </>
+                        ) : (
+                          item.title
+                        )}
+                      </h3>
+                    </div>
                   </div>
                 </div>
               );
