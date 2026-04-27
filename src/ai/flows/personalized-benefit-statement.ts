@@ -42,7 +42,7 @@ Product Information:
   - Cardápios organizados por faixa etária (Planos adaptados para cada idade, respeitando necessidades e desenvolvimento infantil)
   - Lista de compras semanal (Tudo organizado para você comprar rápido, economizar e evitar desperdícios)
   - Guia de substituições inteligentes (Troque alimentos prejudiciais por opções saudáveis sem perder o sabor)
-  - Cardápios especiais para festas e fins de semana
+  - Cardápios para festas e fins de semana (Opções saudáveis e atrativas até nos momentos mais “difíceis”)
   - Dicas para crianças seletivas que recusam legumes
   - Tabela de porções por idade
   - Bônus: Planner semanal de refeições para imprimir

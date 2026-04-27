@@ -25,7 +25,7 @@ export function WhatYouGet() {
       imageId: "mockup-substituicoes"
     },
     {
-      title: "Cardápios especiais para festas e fins de semana",
+      title: "Cardápios para festas e fins de semana: Opções saudáveis e atrativas até nos momentos mais “difíceis”.",
       imageId: "mockup-festas"
     },
     {
