@@ -21,7 +21,7 @@ export function WhatYouGet() {
       imageId: "mockup-lista-compras"
     },
     {
-      title: "Guia de substituições inteligentes (troca o ruim pelo saudável)",
+      title: "Guia de substituições inteligentes: Troque alimentos prejudiciais por opções saudáveis sem perder o sabor.",
       imageId: "mockup-substituicoes"
     },
     {

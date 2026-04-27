@@ -1,3 +1,4 @@
+
 'use server';
 /**
  * @fileOverview This file provides an AI flow to generate a personalized benefit statement for 'Cardápios FitKids'
@@ -37,10 +38,10 @@ Product Information:
 - Creator: Dra. Rayane, nutricionista especializada em nutrição infantil e combate à obesidade.
 - Core Promise: Seu filho no peso ideal sem sofrimento, sem briga na mesa e sem dieta complicada. Transformar a alimentação do seu filho em semanas.
 - Key Features & Benefits:
-  - +100 cardápios completos (café, almoço, lanche e jantar)
-  - Cardápios organizados por faixa etária (1 a 12 anos)
-  - Lista de compras semanal pronta para imprimir
-  - Guia de substituições inteligentes (troca o ruim pelo saudável)
+  - +100 cardápios completos (Refeições prontas e equilibradas para o dia todo, sem precisar pensar no que preparar)
+  - Cardápios organizados por faixa etária (Planos adaptados para cada idade, respeitando necessidades e desenvolvimento infantil)
+  - Lista de compras semanal (Tudo organizado para você comprar rápido, economizar e evitar desperdícios)
+  - Guia de substituições inteligentes (Troque alimentos prejudiciais por opções saudáveis sem perder o sabor)
   - Cardápios especiais para festas e fins de semana
   - Dicas para crianças seletivas que recusam legumes
   - Tabela de porções por idade
