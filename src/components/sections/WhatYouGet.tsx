@@ -9,7 +9,7 @@ import { PlaceHolderImages } from "@/app/lib/placeholder-images";
 export function WhatYouGet() {
   const items = [
     {
-      title: "+100 cardápios completos (café, almoço, lanche e jantar)",
+      title: "+100 cardápios completos: Refeições prontas e equilibradas para o dia todo, sem precisar pensar no que preparar.",
       imageId: "mockup-cardapios"
     },
     {
