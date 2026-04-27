@@ -84,17 +84,17 @@ export function WhatYouGet() {
             {items.map((item, idx) => {
               const imageData = item.imageId ? PlaceHolderImages.find(img => img.id === item.imageId) : null;
               
-              const colonIndex = item.title.lastIndexOf(':');
+              const colonIndex = item.title.indexOf(':');
               const titlePart = colonIndex !== -1 ? item.title.substring(0, colonIndex) : item.title;
               const descriptionPart = colonIndex !== -1 ? item.title.substring(colonIndex + 1) : "";
 
               return (
-                <div key={idx} className="relative p-[1.5px] overflow-hidden rounded-[2.5rem] group shadow-sm transition-all hover:shadow-md hover:scale-[1.02]">
-                  {/* Efeito de borda dourada minimalista em movimento */}
-                  <div className="absolute inset-[-1000%] animate-spin-slow bg-[conic-gradient(from_0deg,transparent_0%,transparent_70%,#fbbf24_85%,transparent_100%)] pointer-events-none opacity-40"></div>
+                <div key={idx} className="relative p-[2.5px] overflow-hidden rounded-[2.5rem] group shadow-sm transition-all hover:shadow-md hover:scale-[1.02]">
+                  {/* Efeito de borda dourada INTENSA em movimento lento */}
+                  <div className="absolute inset-[-1000%] animate-spin-slow bg-[conic-gradient(from_0deg,transparent_0%,transparent_50%,#fbbf24_70%,#f59e0b_85%,#fbbf24_95%,transparent_100%)] pointer-events-none opacity-100"></div>
                   
                   {/* Conteúdo do Card */}
-                  <div className="relative flex flex-col bg-white rounded-[calc(2.5rem-1.5px)] h-full overflow-hidden">
+                  <div className="relative flex flex-col bg-white rounded-[calc(2.5rem-2.5px)] h-full overflow-hidden">
                     <div className="w-full aspect-[4/3] bg-secondary/30 flex flex-col items-center justify-center relative overflow-hidden">
                       {imageData ? (
                         <Image 
