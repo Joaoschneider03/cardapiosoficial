@@ -32,7 +32,7 @@ export function WhatYouGet() {
       imageId: "mockup-seletivas"
     },
     {
-      title: "Tabela de porções por idade",
+      title: "Tabela de porções por idade: Saiba exatamente quanto servir para evitar excessos e garantir equilíbrio.",
       imageId: "mockup-porcoes"
     },
     {

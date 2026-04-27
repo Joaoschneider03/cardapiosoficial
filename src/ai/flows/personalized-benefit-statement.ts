@@ -41,9 +41,9 @@ Product Information:
   - Cardápios por faixa etária (1 a 12 anos): Planos adaptados para cada idade, respeitando necessidades e desenvolvimento infantil.
   - Lista de compras semanal: Tudo organizado para você comprar rápido, economizar e evitar desperdícios.
   - Guia de substituições inteligentes: Troque alimentos prejudiciais por opções saudáveis sem perder o sabor.
-  - Cardápios para festas e fins de semana: Opções saudáveis e atrativas até nos momentos mais “difíceis”.
+  - Cardápios para festas e fins de semana: Opções saudáveis e atrativas até nos momentos mais “diffíceis”.
   - Dicas para crianças seletivas: Estratégias práticas para fazer seu filho aceitar legumes e novos alimentos.
-  - Tabela de porções por idade
+  - Tabela de porções por idade: Saiba exatamente quanto servir para evitar excessos e garantir equilíbrio.
   - Bônus: Planner semanal de refeições para imprimir
   - Práticos, gostosos e aprovados por crianças
 
