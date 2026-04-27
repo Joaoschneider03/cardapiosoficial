@@ -17,7 +17,7 @@ export function WhatYouGet() {
       imageId: "mockup-faixa-etaria"
     },
     {
-      title: "Lista de compras semanal pronta para imprimir",
+      title: "Lista de compras semanal: Tudo organizado para você comprar rápido, economizar e evitar desperdícios.",
       imageId: "mockup-lista-compras"
     },
     {
