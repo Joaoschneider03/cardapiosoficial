@@ -45,6 +45,13 @@ export function Hero() {
 
   return (
     <header className="relative overflow-hidden bg-white">
+      {/* Faixa Preta Minimalista */}
+      <div className="bg-black text-yellow-400 py-1.5 md:py-2 text-center">
+        <span className="text-[10px] md:text-xs font-black uppercase tracking-[0.3em] leading-none">
+          OFERTA VÁLIDA SOMENTE HOJE
+        </span>
+      </div>
+
       <div className="container mx-auto px-6 py-12 md:py-20 flex flex-col items-center">
         <div className="max-w-3xl text-center space-y-8">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold font-headline leading-tight text-foreground uppercase">
