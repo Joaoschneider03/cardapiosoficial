@@ -1,4 +1,3 @@
-
 "use client";
 
 import { ArrowRight, Image as ImageIcon } from "lucide-react";
@@ -29,7 +28,7 @@ export function WhatYouGet() {
       imageId: "mockup-festas"
     },
     {
-      title: "Dicas para crianças seletivas que recusam legumes",
+      title: "Dicas para crianças seletivas: Estratégias práticas para fazer seu filho aceitar legumes e novos alimentos.",
       imageId: "mockup-seletivas"
     },
     {
