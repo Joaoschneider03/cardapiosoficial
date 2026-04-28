@@ -1,3 +1,4 @@
+
 import { CheckCircle2 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
@@ -11,6 +12,7 @@ export function TargetAudience() {
     },
     {
       text: "Ele recusa alimentos saudáveis e as refeições viraram um momento de estresse",
+      imageId: "target-audience-2"
     },
     {
       text: "Você tem uma rotina corrida e precisa de cardápios práticos e rápidos",
