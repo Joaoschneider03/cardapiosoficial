@@ -83,6 +83,12 @@
       "description": "Depoimento Fernanda Souza",
       "imageUrl": "https://i.postimg.cc/sXt9zy3V/22.png",
       "imageHint": "mother child"
+    },
+    {
+      "id": "target-audience-1",
+      "description": "Criança acima do peso",
+      "imageUrl": "https://i.postimg.cc/sx6hW6H2/1.jpg",
+      "imageHint": "overweight child"
     }
   ]
 }

@@ -1,12 +1,23 @@
 import { CheckCircle2 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import Image from "next/image";
+import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 export function TargetAudience() {
   const points = [
-    "Seu filho está acima do peso e você precisa de um caminho claro para começar",
-    "Ele recusa alimentos saudáveis e as refeições viraram um momento de estresse",
-    "Você tem uma rotina corrida e precisa de cardápios práticos e rápidos",
-    "Você quer garantir que seu filho cresça com saúde, energia e boa autoestima"
+    {
+      text: "Seu filho está acima do peso e você precisa de um caminho claro para começar",
+      imageId: "target-audience-1"
+    },
+    {
+      text: "Ele recusa alimentos saudáveis e as refeições viraram um momento de estresse",
+    },
+    {
+      text: "Você tem uma rotina corrida e precisa de cardápios práticos e rápidos",
+    },
+    {
+      text: "Você quer garantir que seu filho cresça com saúde, energia e boa autoestima"
+    }
   ];
 
   return (
@@ -17,16 +28,31 @@ export function TargetAudience() {
         </h2>
         
         <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-          {points.map((text, idx) => (
-            <Card key={idx} className="border-primary/30 border-2 shadow-sm bg-secondary/50 hover:bg-secondary/70 transition-colors rounded-[2.5rem] overflow-hidden">
-              <CardContent className="p-8 flex flex-col items-center gap-4 text-center">
-                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm shrink-0 border border-primary/10">
-                  <CheckCircle2 className="w-6 h-6 text-primary" />
-                </div>
-                <p className="text-sm md:text-base font-bold text-foreground/80 leading-relaxed">{text}</p>
-              </CardContent>
-            </Card>
-          ))}
+          {points.map((point, idx) => {
+            const imageData = point.imageId ? PlaceHolderImages.find(img => img.id === point.imageId) : null;
+
+            return (
+              <Card key={idx} className="border-primary/30 border-2 shadow-sm bg-secondary/50 hover:bg-secondary/70 transition-colors rounded-[2.5rem] overflow-hidden">
+                <CardContent className="p-8 flex flex-col items-center gap-4 text-center">
+                  <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-sm shrink-0 border border-primary/10 overflow-hidden">
+                    {imageData ? (
+                      <Image 
+                        src={imageData.imageUrl} 
+                        alt={imageData.description} 
+                        width={64} 
+                        height={64} 
+                        className="object-cover w-full h-full"
+                        data-ai-hint={imageData.imageHint}
+                      />
+                    ) : (
+                      <CheckCircle2 className="w-6 h-6 text-primary" />
+                    )}
+                  </div>
+                  <p className="text-sm md:text-base font-bold text-foreground/80 leading-relaxed">{point.text}</p>
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
       </div>
     </section>
