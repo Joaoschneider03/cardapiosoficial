@@ -16,6 +16,7 @@ export function TargetAudience() {
     },
     {
       text: "Você tem uma rotina corrida e precisa de cardápios práticos e rápidos",
+      imageId: "target-audience-3"
     },
     {
       text: "Você quer garantir que seu filho cresça com saúde, energia e boa autoestima"

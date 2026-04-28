@@ -96,6 +96,12 @@
       "description": "Criança recusando comida",
       "imageUrl": "https://i.postimg.cc/cJYZ8F42/2.jpg",
       "imageHint": "picky child"
+    },
+    {
+      "id": "target-audience-3",
+      "description": "Mãe com rotina corrida cozinhando",
+      "imageUrl": "https://i.postimg.cc/BnnB6zNq/3.jpg",
+      "imageHint": "busy mother"
     }
   ]
 }
