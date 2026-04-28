@@ -19,7 +19,8 @@ export function TargetAudience() {
       imageId: "target-audience-3"
     },
     {
-      text: "Você quer garantir que seu filho cresça com saúde, energia e boa autoestima"
+      text: "Você quer garantir que seu filho cresça com saúde, energia e boa autoestima",
+      imageId: "target-audience-4"
     }
   ];
 

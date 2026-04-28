@@ -102,6 +102,12 @@
       "description": "Mãe com rotina corrida cozinhando",
       "imageUrl": "https://i.postimg.cc/BnnB6zNq/3.jpg",
       "imageHint": "busy mother"
+    },
+    {
+      "id": "target-audience-4",
+      "description": "Criança saudável e feliz",
+      "imageUrl": "https://i.postimg.cc/vTG3vZ7H/4.jpg",
+      "imageHint": "healthy child"
     }
   ]
 }
