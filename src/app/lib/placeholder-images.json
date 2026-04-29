@@ -108,6 +108,18 @@
       "description": "Criança saudável e feliz",
       "imageUrl": "https://i.postimg.cc/vTG3vZ7H/4.jpg",
       "imageHint": "healthy child"
+    },
+    {
+      "id": "bonus-certificado",
+      "description": "Certificado de Boa Alimentação",
+      "imageUrl": "https://picsum.photos/seed/cert/600/400",
+      "imageHint": "reward certificate"
+    },
+    {
+      "id": "bonus-tabela-desafios",
+      "description": "Tabela de Desafios Interativa",
+      "imageUrl": "https://picsum.photos/seed/table/600/400",
+      "imageHint": "challenge board"
     }
   ]
 }
