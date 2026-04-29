@@ -101,6 +101,24 @@
       "description": "Mãe com rotina corrida cozinhando",
       "imageUrl": "https://i.postimg.cc/BnnB6zNq/3.jpg",
       "imageHint": "busy mother"
+    },
+    {
+      "id": "target-audience-4",
+      "description": "Criança saudável e feliz",
+      "imageUrl": "https://i.postimg.cc/vTG3vZ7H/4.jpg",
+      "imageHint": "healthy child"
+    },
+    {
+      "id": "bonus-certificado",
+      "description": "Certificado de Boa Alimentação",
+      "imageUrl": "https://i.postimg.cc/KvYLKtN9/moc1.png",
+      "imageHint": "reward certificate"
+    },
+    {
+      "id": "bonus-tabela-desafios",
+      "description": "Tabela de Desafios Interativa",
+      "imageUrl": "https://picsum.photos/seed/table/600/400",
+      "imageHint": "challenge board"
     }
   ]
 }
