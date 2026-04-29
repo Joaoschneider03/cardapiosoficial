@@ -58,7 +58,7 @@ export function Hero() {
             <span className="text-primary">+100 CARDÁPIOS ANTI OBESIDADE INFANTIL!</span>
           </h1>
           <p className="text-base text-foreground max-w-lg mx-auto leading-relaxed font-bold italic">
-            Material imprimível com +100 cardápios práticos, gostosos e aprovados por crianças.
+            Seu filho no peso ideal sem abrir mão do sabor, com cardápios práticos e materiais interativos prontos para imprimir!
           </p>
           
           {/* Container VSL Mobile (Vertical) */}
