@@ -44,16 +44,18 @@ export function PremiumBonus() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16 space-y-8">
             <div className="flex flex-col items-center gap-4">
-              {/* Card Laranja de Urgência Unificado */}
-              <div className="bg-amber-600 text-white p-6 md:p-8 rounded-[2.5rem] shadow-[0_20px_50px_-12px_rgba(217,119,6,0.5)] flex flex-col items-center gap-4 border-4 border-amber-400/50 animate-in zoom-in duration-500">
-                <div className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/20 text-white font-black text-[10px] md:text-xs uppercase tracking-[0.2em]">
+              {/* Card Laranja de Urgência Estilo Pílula Horizontal */}
+              <div className="bg-amber-600 text-white px-8 py-4 md:py-5 rounded-full shadow-[0_15px_35px_-12px_rgba(217,119,6,0.4)] flex flex-col md:flex-row items-center gap-4 md:gap-8 border-2 border-amber-400/30 animate-in zoom-in duration-500">
+                <div className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/20 text-white font-black text-[10px] md:text-xs uppercase tracking-[0.2em] whitespace-nowrap">
                   <Zap className="w-4 h-4 fill-amber-300" /> Válido Somente Hoje
                 </div>
                 
+                <div className="hidden md:block w-px h-6 bg-amber-400/30"></div>
+                
                 {isMounted && (
                   <div className="flex items-center gap-3">
-                    <Clock className="w-6 h-6 md:w-7 md:h-7 shrink-0 text-amber-200" />
-                    <span className="text-2xl md:text-3xl font-black tracking-tighter font-mono italic">
+                    <Clock className="w-5 h-5 md:w-6 md:h-6 shrink-0 text-amber-200" />
+                    <span className="text-xl md:text-2xl font-black tracking-tighter font-mono italic whitespace-nowrap">
                       EXPIRA EM: {formatTime(timeLeft)}
                     </span>
                   </div>
