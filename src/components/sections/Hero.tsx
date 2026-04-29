@@ -55,7 +55,7 @@ export function Hero() {
       <div className="container mx-auto px-6 py-12 md:py-20 flex flex-col items-center">
         <div className="max-w-3xl text-center space-y-8">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold font-headline leading-tight text-foreground uppercase">
-            <span className="text-primary">+100 CARDÁPIOS ANTI OBESIDADE INFANTIL,</span> SEU FILHO NO PESO IDEAL SEM ABRIR MÃO DO SABOR!
+            <span className="text-primary">+100 CARDÁPIOS ANTI OBESIDADE INFANTIL!</span>
           </h1>
           <p className="text-base text-foreground max-w-lg mx-auto leading-relaxed font-bold italic">
             Material imprimível com +100 cardápios práticos, gostosos e aprovados por crianças.
