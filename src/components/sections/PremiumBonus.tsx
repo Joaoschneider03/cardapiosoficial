@@ -1,11 +1,30 @@
 
 "use client";
 
-import { Star, Zap } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Star, Zap, Clock } from "lucide-react";
 import Image from "next/image";
 import { PlaceHolderImages } from "@/app/lib/placeholder-images";
 
 export function PremiumBonus() {
+  const [timeLeft, setTimeLeft] = useState(2400); // 40 minutos em segundos
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+    const timer = setInterval(() => {
+      setTimeLeft((prev) => (prev > 0 ? prev - 1 : 0));
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const formatTime = (seconds: number) => {
+    const mins = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+    return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+  };
+
   const bonuses = [
     {
       id: "bonus-certificado",
@@ -23,10 +42,22 @@ export function PremiumBonus() {
     <section className="py-24 bg-white overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16 space-y-4">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-100 text-amber-700 font-black text-xs uppercase tracking-[0.2em] animate-pulse">
-              <Zap className="w-4 h-4 fill-amber-500" /> Válido Somente Hoje
+          <div className="text-center mb-16 space-y-6">
+            <div className="flex flex-col items-center gap-4">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-100 text-amber-700 font-black text-xs uppercase tracking-[0.2em] animate-pulse">
+                <Zap className="w-4 h-4 fill-amber-500" /> Válido Somente Hoje
+              </div>
+              
+              {isMounted && (
+                <div className="flex items-center gap-2 px-6 py-2 bg-red-600 text-white rounded-2xl shadow-lg border-2 border-red-400 animate-bounce">
+                  <Clock className="w-5 h-5 shrink-0" />
+                  <span className="text-xl font-black tracking-tighter font-mono italic">
+                    OFERTA EXPIRA EM: {formatTime(timeLeft)}
+                  </span>
+                </div>
+              )}
             </div>
+
             <h2 className="text-3xl md:text-4xl font-black font-headline leading-tight text-foreground uppercase italic">
               🎁 BÔNUS PREMIUM <span className="text-amber-600">DE HOJE</span>
             </h2>
