@@ -67,6 +67,15 @@ export function Pricing() {
                 <li className="flex items-center gap-3 text-sm font-medium text-foreground/70"><CheckCircle2 className="w-4 h-4 text-primary/50" /> Tabela de porções</li>
                 <li className="flex items-center gap-3 text-sm font-medium text-foreground/70"><CheckCircle2 className="w-4 h-4 text-primary/50" /> Dicas crianças seletivas</li>
                 <li className="flex items-center gap-3 text-sm font-medium text-foreground/70"><CheckCircle2 className="w-4 h-4 text-primary/50" /> Bônus: Planner semanal</li>
+                
+                {/* Novos Bônus */}
+                <li className="flex items-center gap-3 text-sm font-bold text-primary">
+                  <CheckCircle2 className="w-4 h-4" /> Certificado de Boa Alimentação
+                </li>
+                <li className="flex items-center gap-3 text-sm font-bold text-primary">
+                  <CheckCircle2 className="w-4 h-4" /> Tabela de Desafios Interativa
+                </li>
+
                 <li className="flex items-center gap-3 text-sm font-bold text-primary">
                   <CheckCircle2 className="w-4 h-4" /> Acesso a novas atualizações
                 </li>

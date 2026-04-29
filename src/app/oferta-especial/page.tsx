@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from "next/image";
@@ -16,6 +17,8 @@ export default function OfertaEspecial() {
     "Tabela de porções por idade",
     "Dicas para crianças seletivas",
     "Bônus: Planner semanal de refeições",
+    "Certificado de Boa Alimentação",
+    "Tabela de Desafios Interativa",
     "Acesso a todas as novas atualizações",
     "Dinâmicas alimentares premium exclusivas",
     "Suporte prioritário"
