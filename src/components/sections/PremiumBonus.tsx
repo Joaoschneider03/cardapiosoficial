@@ -42,20 +42,23 @@ export function PremiumBonus() {
     <section className="py-24 bg-white overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16 space-y-6">
+          <div className="text-center mb-16 space-y-8">
             <div className="flex flex-col items-center gap-4">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-100 text-amber-700 font-black text-xs uppercase tracking-[0.2em] animate-pulse">
-                <Zap className="w-4 h-4 fill-amber-500" /> Válido Somente Hoje
-              </div>
-              
-              {isMounted && (
-                <div className="flex items-center gap-2 px-6 py-2 bg-red-600 text-white rounded-2xl shadow-lg border-2 border-red-400 animate-bounce">
-                  <Clock className="w-5 h-5 shrink-0" />
-                  <span className="text-xl font-black tracking-tighter font-mono italic">
-                    OFERTA EXPIRA EM: {formatTime(timeLeft)}
-                  </span>
+              {/* Card Laranja de Urgência Unificado */}
+              <div className="bg-amber-600 text-white p-6 md:p-8 rounded-[2.5rem] shadow-[0_20px_50px_-12px_rgba(217,119,6,0.5)] flex flex-col items-center gap-4 border-4 border-amber-400/50 animate-in zoom-in duration-500">
+                <div className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/20 text-white font-black text-[10px] md:text-xs uppercase tracking-[0.2em]">
+                  <Zap className="w-4 h-4 fill-amber-300" /> Válido Somente Hoje
                 </div>
-              )}
+                
+                {isMounted && (
+                  <div className="flex items-center gap-3">
+                    <Clock className="w-6 h-6 md:w-7 md:h-7 shrink-0 text-amber-200" />
+                    <span className="text-2xl md:text-3xl font-black tracking-tighter font-mono italic">
+                      EXPIRA EM: {formatTime(timeLeft)}
+                    </span>
+                  </div>
+                )}
+              </div>
             </div>
 
             <h2 className="text-3xl md:text-4xl font-black font-headline leading-tight text-foreground uppercase italic">
