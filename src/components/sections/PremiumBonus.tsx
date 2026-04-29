@@ -41,10 +41,13 @@ export function PremiumBonus() {
 
               return (
                 <div key={idx} className="relative p-[3px] overflow-hidden rounded-[3rem] group shadow-2xl transition-all hover:scale-[1.03]">
-                  {/* Efeito de borda dourada INTENSA em movimento */}
+                  {/* Efeito de borda dourada INTENSA em movimento lento */}
                   <div className="absolute inset-[-1000%] animate-spin-slow bg-[conic-gradient(from_0deg,transparent_0%,transparent_50%,#f59e0b_70%,#fbbf24_85%,#f59e0b_95%,transparent_100%)] pointer-events-none"></div>
                   
                   <div className="relative flex flex-col bg-white rounded-[calc(3rem-3px)] h-full overflow-hidden">
+                    {/* Efeito de Brilho (Shimmer) que percorre o card */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full animate-shimmer pointer-events-none z-20"></div>
+
                     <div className="w-full aspect-video bg-amber-50 relative">
                       {imageData && (
                         <Image 
@@ -56,8 +59,8 @@ export function PremiumBonus() {
                         />
                       )}
                       <div className="absolute inset-0 bg-gradient-to-t from-amber-900/20 to-transparent pointer-events-none"></div>
-                      <div className="absolute top-4 right-4 bg-amber-500 text-white text-[10px] font-black px-3 py-1 rounded-full shadow-lg uppercase tracking-widest">
-                        Grátis
+                      <div className="absolute top-4 right-4 bg-amber-600 text-white text-[9px] font-black px-4 py-1.5 rounded-full shadow-lg uppercase tracking-wider z-10">
+                        INCLUSO NA OFERTA PREMIUM
                       </div>
                     </div>
                     <div className="p-8 text-center space-y-4 bg-gradient-to-b from-white to-amber-50/30 flex-1 flex flex-col justify-center">

@@ -86,6 +86,10 @@ export default {
         'spin-slow': {
           from: { transform: 'rotate(0deg)' },
           to: { transform: 'rotate(360deg)' },
+        },
+        shimmer: {
+          '0%': { transform: 'translateX(-150%) skewX(-20deg)' },
+          '40%, 100%': { transform: 'translateX(150%) skewX(-20deg)' },
         }
       },
       animation: {
@@ -93,6 +97,7 @@ export default {
         'accordion-up': 'accordion-up 0.2s ease-out',
         float: 'float 3s ease-in-out infinite',
         'spin-slow': 'spin-slow 8s linear infinite',
+        shimmer: 'shimmer 3.5s infinite',
       },
     },
   },
