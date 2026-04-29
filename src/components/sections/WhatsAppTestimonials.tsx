@@ -25,7 +25,7 @@ export function WhatsAppTestimonials() {
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center space-y-4 mb-12">
           <h2 className="text-2xl md:text-3xl font-bold font-headline leading-tight">
-            O que as mães estão comentando no WhatsApp...
+            Mais depoimentos de mães:
           </h2>
           <p className="text-sm text-muted-foreground font-medium">
             Resultados reais de quem já está aplicando os cardápios.
