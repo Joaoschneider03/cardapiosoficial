@@ -13,18 +13,18 @@ export function Pricing() {
           <p className="text-base text-muted-foreground font-medium">Invista menos do que um lanche na saúde do seu filho</p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto items-stretch">
+        <div className="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto items-start">
           {/* Oferta Econômica */}
           <Card className="border-border border bg-white flex flex-col hover:shadow-md transition-shadow rounded-[2.5rem]">
-            <CardHeader className="text-center pb-0 pt-10">
+            <CardHeader className="text-center pb-0 pt-8">
               <Badge variant="secondary" className="w-fit mx-auto mb-4 bg-muted text-muted-foreground">Básico</Badge>
               <CardTitle className="text-xl font-bold">Oferta Econômica</CardTitle>
             </CardHeader>
-            <CardContent className="flex-1 space-y-8 p-10">
+            <CardContent className="space-y-6 p-8">
               <div className="text-center">
                 <span className="text-3xl font-bold text-foreground">R$9,90</span>
               </div>
-              <ul className="space-y-4">
+              <ul className="space-y-3">
                 <li className="flex items-center gap-3 text-sm font-bold text-primary">
                   <CheckCircle2 className="w-4 h-4" /> +100 Cardápios Anti Obesidade Infantil
                 </li>
@@ -34,8 +34,8 @@ export function Pricing() {
                 <li className="flex items-center gap-3 text-sm font-medium text-foreground/70"><CheckCircle2 className="w-4 h-4 text-primary/50" /> Bônus: Planner semanal</li>
               </ul>
             </CardContent>
-            <CardFooter className="p-10 pt-0 flex flex-col items-center">
-              <Button asChild className="w-full h-14 text-base font-bold shadow-md rounded-full group bg-primary hover:bg-primary/90 text-primary-foreground" suppressHydrationWarning>
+            <CardFooter className="p-8 pt-0 flex flex-col items-center">
+              <Button asChild className="w-full h-12 text-sm font-bold shadow-md rounded-full group bg-primary hover:bg-primary/90 text-primary-foreground" suppressHydrationWarning>
                 <a href="https://compraonlinesegurada.org.ua/c/973489252d" suppressHydrationWarning>
                   PEGAR AGORA! <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
