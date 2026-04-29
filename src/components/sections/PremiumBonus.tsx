@@ -29,7 +29,7 @@ export function PremiumBonus() {
     {
       id: "bonus-certificado",
       title: "Certificado de Boa Alimentação",
-      description: "Para fazer seu filho sentir que está sendo recompensado pelo seu esforço."
+      description: "Para fazer seu filho sentir que está sendo recompensado pelo seu esforço em manter uma boa alimentação."
     },
     {
       id: "bonus-tabela-desafios",
