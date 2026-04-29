@@ -13,10 +13,11 @@ import {
 import { PlaceHolderImages } from "@/app/lib/placeholder-images";
 
 export function WhatsAppTestimonials() {
+  // Ordenando explicitamente: DP1, DP3 (novo), DP2
   const images = [
     PlaceHolderImages.find((img) => img.id === "whatsapp-1"),
-    PlaceHolderImages.find((img) => img.id === "whatsapp-2"),
     PlaceHolderImages.find((img) => img.id === "whatsapp-3"),
+    PlaceHolderImages.find((img) => img.id === "whatsapp-2"),
   ].filter(Boolean);
 
   return (
