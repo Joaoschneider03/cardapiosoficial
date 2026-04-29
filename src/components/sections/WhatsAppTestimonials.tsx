@@ -27,9 +27,6 @@ export function WhatsAppTestimonials() {
           <h2 className="text-2xl md:text-3xl font-bold font-headline leading-tight">
             Mais depoimentos de mães:
           </h2>
-          <p className="text-sm text-muted-foreground font-medium">
-            Resultados reais de quem já está aplicando os cardápios.
-          </p>
         </div>
 
         <div className="max-w-[280px] md:max-w-xl mx-auto relative px-4">
@@ -55,14 +52,17 @@ export function WhatsAppTestimonials() {
                 </CarouselItem>
               ))}
             </CarouselContent>
+            
+            {/* Setas Desktop - Mais visíveis com fundo e sombra */}
             <div className="hidden md:block">
-              <CarouselPrevious className="-left-12 border-primary/20 text-primary hover:bg-primary/5" />
-              <CarouselNext className="-right-12 border-primary/20 text-primary hover:bg-primary/5" />
+              <CarouselPrevious className="-left-16 border-2 border-primary text-primary bg-white shadow-lg hover:bg-primary hover:text-white transition-all h-12 w-12" />
+              <CarouselNext className="-right-16 border-2 border-primary text-primary bg-white shadow-lg hover:bg-primary hover:text-white transition-all h-12 w-12" />
             </div>
-            {/* Indicadores Mobile */}
-            <div className="flex md:hidden justify-center gap-2 mt-8">
-               <CarouselPrevious className="relative translate-y-0 left-0 border-primary/20 text-primary" />
-               <CarouselNext className="relative translate-y-0 right-0 border-primary/20 text-primary" />
+
+            {/* Setas Mobile - Centralizadas e maiores */}
+            <div className="flex md:hidden justify-center gap-6 mt-10">
+               <CarouselPrevious className="relative translate-y-0 left-0 border-2 border-primary text-primary bg-white shadow-md h-12 w-12" />
+               <CarouselNext className="relative translate-y-0 right-0 border-2 border-primary text-primary bg-white shadow-md h-12 w-12" />
             </div>
           </Carousel>
         </div>
