@@ -120,6 +120,24 @@
       "description": "Tabela de Desafios Interativa",
       "imageUrl": "https://i.postimg.cc/9QwjQNqQ/moc2.png",
       "imageHint": "challenge board"
+    },
+    {
+      "id": "whatsapp-1",
+      "description": "Depoimento WhatsApp 1",
+      "imageUrl": "https://picsum.photos/seed/wa1/400/800",
+      "imageHint": "whatsapp chat"
+    },
+    {
+      "id": "whatsapp-2",
+      "description": "Depoimento WhatsApp 2",
+      "imageUrl": "https://picsum.photos/seed/wa2/400/800",
+      "imageHint": "whatsapp chat"
+    },
+    {
+      "id": "whatsapp-3",
+      "description": "Depoimento WhatsApp 3",
+      "imageUrl": "https://picsum.photos/seed/wa3/400/800",
+      "imageHint": "whatsapp chat"
     }
   ]
 }
